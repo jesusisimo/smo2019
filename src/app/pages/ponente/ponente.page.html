@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <ion-back-button color="light" text="Atras"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Participaciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content>
+      <ion-list>
+          <ion-list-header>
+            Actividades en las que participa
+          </ion-list-header>
+          <ion-item *ngFor="let actividad of _as.actsPonente" href="javascript:;" (click)="verDetalles(actividad.id)">
+            <ion-label style="white-space: normal;">
+              <p>
+                  <ion-icon name="clock" color="primary"></ion-icon> {{actividad.horario}}
+                <!-- <ion-badge color="{{actividad.color}}"> {{actividad.categoria}} </ion-badge> -->
+              </p>
+              <h2>{{actividad.actividad}}</h2>
+              <p>
+                 <ion-icon name="pin"
+                  color="danger"></ion-icon> {{actividad.salon}}
+              </p>
+            </ion-label>
+          </ion-item> 
+        </ion-list>
+  
+  
+  </ion-content>

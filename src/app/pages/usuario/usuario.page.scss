@@ -1,0 +1,56 @@
+ion-content.background{
+    --background: url(../../../assets/img/perfilBck.png) 0 0/100% 100% no-repeat;
+}
+ion-avatar{
+
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 3px;
+    border-radius: 100%;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 0 auto;
+    width: 128px;
+    height: 128px;
+    overflow: hidden; 
+}
+
+.perfil img{
+    width: 128px;
+  border-radius: 100%;
+}
+
+.centerButton{
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.buttoncolor{
+    background-color: antiquewhite;
+}
+
+.centerText{
+    padding-left: 200px;
+
+}
+.center{
+    padding-left: 75px;
+    padding-right: 75px;
+}
+ion-item, ion-segment{
+    border: 2px ;
+    border-color: #006;
+    border-radius: 16px 16px 16px 16px;
+-moz-border-radius: 16px 16px 16px 16px;
+-webkit-border-radius: 16px 16px 16px 16px
+}
+ion-item{
+    border: 2px solid;
+    border-color: #006;
+    background-color: white;
+}
+ion-button {
+    
+    background-color: #838080d8; /* For browsers that do not support gradients */
+    background-image: linear-gradient(-90deg,#006, #838080d8); /* Standard syntax (must be last) */
+  }

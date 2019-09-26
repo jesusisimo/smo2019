@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="light" text="Atras"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="guardarFavorito(_as.actividad)">
+        <ion-icon slot="icon-only" color="{{_ds.is_favorito}}" name="heart"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-badge color="{{_as.actividad.color}}"> {{_as.actividad.categoria}}</ion-badge>
+      </ion-card-subtitle>
+      <ion-card-title>{{_as.actividad.actividad}}</ion-card-title>
+
+    </ion-card-header>
+    
+
+    <ion-card-content>
+      <ion-segment [(ngModel)]="seccion" color="primary">
+        <ion-segment-button value="1">Descripción
+        </ion-segment-button>
+        <ion-segment-button value="2">Temario
+        </ion-segment-button>
+      </ion-segment>
+
+      <div [ngSwitch]="seccion">
+        <ng-container>
+          <div *ngSwitchCase="1">
+            <ion-chip outline>
+              <ion-icon name="clock" color="primary"></ion-icon>
+              <ion-label>{{_as.actividad.horario}}</ion-label>
+            </ion-chip>
+            <ion-chip outline color="danger">
+              <ion-icon name="pin" color="danger"></ion-icon>
+              <ion-label>{{_as.actividad.salon}} - {{_as.actividad.piso}}</ion-label>
+            </ion-chip>
+            <br>
+            <br>
+            <p text-justify [innerHTML]="_as.actividad.descripcion"></p>
+          </div>
+          <div *ngSwitchCase="2">
+            <br>
+            <p color="dark" text-justify [innerHTML]="_as.actividad.temario"></p>
+          </div>
+        </ng-container>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

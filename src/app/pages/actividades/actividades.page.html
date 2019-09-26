@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="light" text="Atras"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Actividades SMO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-card>
+      <ion-card-header text-center>
+          <ion-card-title text-center>Programa Curso Bienal de Actualización</ion-card-title>
+          <ion-note text-center>Toca la imagen para ver el programa</ion-note>
+        </ion-card-header>
+    <img src="/assets/img/programa_smo.jpg"  (click)="verPrograma()">
+    
+   
+  </ion-card>
+
+
+  <ion-card>
+    <img src="/assets/img/coahuila.jpg"  (click)="viewPhoto('coahuila.jpg')">
+    <ion-card-header>
+      <ion-card-title text-center>Coloquio Retina</ion-card-title>
+    </ion-card-header>
+    <ion-card-content text-center>
+      27, 28 y 29 de junio 2019 <br>
+      Torreón Coahuila
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-card>
+    <img src="/assets/img/san_carlos.jpg"  (click)="viewPhoto('san_carlos.jpg')">
+    <ion-card-header>
+      <ion-card-title text-center>
+        Coloquio Catarata y Cirugía Refractiva
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content text-center>
+      10, 11 y 12 de octubre 2019 <br>
+      San Carlos, Son.
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+</ion-content>

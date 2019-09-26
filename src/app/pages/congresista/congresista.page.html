@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="light" text="Atras"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="top-20">
+
+    <ion-col size="12" text-center>
+      <img src="assets/avatars/{{ _cs.congresista.avatar }}" class="img-avatar">
+    </ion-col>
+
+  </ion-row>
+
+
+  <ion-row >
+    <ion-col size="4">
+      <ion-item>
+          <ion-label>Nombre:</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="8">
+      <ion-item>
+        <label for="">{{_cs.congresista.nombre}}</label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4">
+      <ion-item>
+        <ion-label>Apellidos:</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="8">
+      <ion-item>
+        <label for="">{{_cs.congresista.apellidos}}</label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="email_c">
+    <ion-col size="4">
+      <ion-item>
+        <ion-label>Email:</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="8">
+      <ion-item>
+        <label for="">{{_cs.congresista.email}}</label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="telefono_c">
+    <ion-col size="4">
+      <ion-item>
+        <ion-label>Teléfono:</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="8">
+      <ion-item>
+        <label for="">{{_cs.congresista.telefono}}</label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="institucion_c">
+    <ion-col size="4">
+      <ion-item>
+        <ion-label>Institución:</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="8">
+      <ion-item>
+        <label for="">{{_cs.congresista.institucion}}</label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

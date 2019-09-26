@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="light" text="Atras"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rutas de autobuses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title>Ruta 1</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      -Presidente Intercontinental Hotel <br>
+      -Real Inn Hotel
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="secondary">
+    <ion-card-header>
+      <ion-card-title>Ruta 2</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      -Ritz Carlton Hotel <br>
+      -Paradisus Hotel
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Horarios</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content color="dark">
+      -Sábado 25 de mayo: 7 am a 9 pm <br>
+      -Domingo 26 de mayo: 7 am a 6 pm <br>
+      -Lunes 27 de mayo: 7 am a 6 pm <br>
+      -Martes 28 de mayo: 7 am a 2 pm
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="viewPhoto('rutas.jpg')">
+    <img src="/assets/img/esquemas/rutas.jpg" alt="">
+  </ion-card>
+  <ion-card (click)="viewPhoto('direcciones.jpg')">
+      <img src="/assets/img/esquemas/direcciones.jpg" alt="">
+    </ion-card>
+
+</ion-content>

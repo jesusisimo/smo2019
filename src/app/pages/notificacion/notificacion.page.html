@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Notificación</ion-title>
+        <ion-buttons slot="end">
+          <ion-icon slot="icon-only" (click)="salir()" name="close"></ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{notificacion.title}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+         {{notificacion.body}}
+        </ion-card-content>
+      </ion-card>
+</ion-content>

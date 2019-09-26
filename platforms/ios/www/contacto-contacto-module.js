@@ -1,0 +1,111 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["contacto-contacto-module"],{
+
+/***/ "./src/app/pages/contacto/contacto.module.ts":
+/*!***************************************************!*\
+  !*** ./src/app/pages/contacto/contacto.module.ts ***!
+  \***************************************************/
+/*! exports provided: ContactoPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactoPageModule", function() { return ContactoPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _contacto_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./contacto.page */ "./src/app/pages/contacto/contacto.page.ts");
+
+
+
+
+
+
+
+var routes = [
+    {
+        path: '',
+        component: _contacto_page__WEBPACK_IMPORTED_MODULE_6__["ContactoPage"]
+    }
+];
+var ContactoPageModule = /** @class */ (function () {
+    function ContactoPageModule() {
+    }
+    ContactoPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes)
+            ],
+            declarations: [_contacto_page__WEBPACK_IMPORTED_MODULE_6__["ContactoPage"]]
+        })
+    ], ContactoPageModule);
+    return ContactoPageModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/contacto/contacto.page.html":
+/*!***************************************************!*\
+  !*** ./src/app/pages/contacto/contacto.page.html ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Contacto</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  \n  \n\n<ion-content class=\"background\">\n  <ion-card color=\"primary\">\n    <ion-card-header>\n      <ion-card-title color=\"primary\" >Sociedad Mexicana de Oftalmología A.C.</ion-card-title>\n    </ion-card-header>\n  \n    <ion-card-content>\n      Boston 99, <br>\n      Col. Nochebuena, <br>\n      CDMX C.P. 03720, <br>\n      Telefonos:(55) 5563-9393, 5563-7812, 5598-3827 y 5598-5372, 5611-1343 <br>\n      contacto@smo.org.mx\n    </ion-card-content>\n  </ion-card>\n\n \n          <h2>Formulario de Contácto</h2>\n          <div>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"text\" placeholder=\"Nombre:\" [(ngModel)]=\"Nombre\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"text\" placeholder=\"Apellido:\" [(ngModel)]=\"Apellido\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"number\" placeholder=\"Teléfono\" [(ngModel)]=\"Telefono\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"email\" placeholder=\"Correo Electrónico:\" [(ngModel)]=\"email\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                \n                <ion-textarea clearInput type=\"text\" placeholder=\"Comentarios:\" [(ngModel)]=\"comentario\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-textarea>\n              </ion-col>\n            </ion-row>\n   \n      <ion-button>Enviar</ion-button>\n      <img src=\"../../assets/img/logo_smo_blanco.png\" class=\"logoSmall\">\n    </div>\n    <br>\n        <br>\n</ion-content>\n"
+
+/***/ }),
+
+/***/ "./src/app/pages/contacto/contacto.page.scss":
+/*!***************************************************!*\
+  !*** ./src/app/pages/contacto/contacto.page.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "ion-content.background {\n  --background: url('background.jpg') 0 0/100% 100% no-repeat; }\n\n.iconBig {\n  size: 30px;\n  padding: 40px; }\n\nh2 {\n  color: #ffffff;\n  text-align: center; }\n\nion-item {\n  border-radius: 11px 11px 11px 11px;\n  -moz-border-radius: 11px 11px 11px 11px;\n  -webkit-border-radius: 11px 11px 11px 11px;\n  border: 0px solid #000000; }\n\ndiv {\n  padding: 20px; }\n\n.input {\n  background-color: #f0f0f0;\n  border: 1px solid #a2a2a2;\n  border-radius: 9px;\n  font-size: .9em !important; }\n\nion-button {\n  text-align: center; }\n\n.logoSmall {\n  background-color: #00000000;\n  size: 4em; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9BUFBfU01PL3Ntby9zcmMvYXBwL3BhZ2VzL2NvbnRhY3RvL2NvbnRhY3RvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDJEQUFhLEVBQUE7O0FBR2pCO0VBQ0ksVUFBVTtFQUNWLGFBQWEsRUFBQTs7QUFHakI7RUFDSSxjQUFjO0VBQ2Qsa0JBQWtCLEVBQUE7O0FBR3RCO0VBQ0ksa0NBQWtDO0VBQ2xDLHVDQUF1QztFQUN2QywwQ0FBMEM7RUFDMUMseUJBQXlCLEVBQUE7O0FBRzdCO0VBQ0ksYUFBYSxFQUFBOztBQUdqQjtFQUNJLHlCQUFvQztFQUNwQyx5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLDBCQUEwQixFQUFBOztBQUc5QjtFQUNJLGtCQUFrQixFQUFBOztBQUd0QjtFQUNJLDJCQUEyQjtFQUMzQixTQUFTLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9jb250YWN0by9jb250YWN0by5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudC5iYWNrZ3JvdW5ke1xuICAgIC0tYmFja2dyb3VuZDogdXJsKC4uLy4uLy4uL2Fzc2V0cy9pbWcvYmFja2dyb3VuZC5qcGcpIDAgMC8xMDAlIDEwMCUgbm8tcmVwZWF0O1xufVxuXG4uaWNvbkJpZ3tcbiAgICBzaXplOiAzMHB4O1xuICAgIHBhZGRpbmc6IDQwcHg7XG59XG5cbmgye1xuICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuaW9uLWl0ZW17XG4gICAgYm9yZGVyLXJhZGl1czogMTFweCAxMXB4IDExcHggMTFweDtcbiAgICAtbW96LWJvcmRlci1yYWRpdXM6IDExcHggMTFweCAxMXB4IDExcHg7XG4gICAgLXdlYmtpdC1ib3JkZXItcmFkaXVzOiAxMXB4IDExcHggMTFweCAxMXB4O1xuICAgIGJvcmRlcjogMHB4IHNvbGlkICMwMDAwMDA7XG59XG5cbmRpdntcbiAgICBwYWRkaW5nOiAyMHB4O1xufVxuXG4uaW5wdXQge1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDAsIDI0MCwgMjQwKTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYTJhMmEyO1xuICAgIGJvcmRlci1yYWRpdXM6IDlweDtcbiAgICBmb250LXNpemU6IC45ZW0gIWltcG9ydGFudDtcbn1cblxuaW9uLWJ1dHRvbntcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5sb2dvU21hbGx7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDAwO1xuICAgIHNpemU6IDRlbTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/pages/contacto/contacto.page.ts":
+/*!*************************************************!*\
+  !*** ./src/app/pages/contacto/contacto.page.ts ***!
+  \*************************************************/
+/*! exports provided: ContactoPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactoPage", function() { return ContactoPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ContactoPage = /** @class */ (function () {
+    function ContactoPage() {
+    }
+    ContactoPage.prototype.ngOnInit = function () {
+    };
+    ContactoPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-contacto',
+            template: __webpack_require__(/*! ./contacto.page.html */ "./src/app/pages/contacto/contacto.page.html"),
+            styles: [__webpack_require__(/*! ./contacto.page.scss */ "./src/app/pages/contacto/contacto.page.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ContactoPage);
+    return ContactoPage;
+}());
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=contacto-contacto-module.js.map

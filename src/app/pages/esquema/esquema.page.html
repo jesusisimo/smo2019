@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="light" text="Atras"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Esquema general de actividades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-row >
+        <ion-col text-center>
+          <ion-note >Toca las imagenes, luego haz zoom</ion-note>
+          <img src="/assets/img/zoomgesture.gif" width="50px;">
+        </ion-col>
+      </ion-row>
+  <ion-card (click)="viewPhoto('sabado.jpg')">
+    <ion-card-header>
+      <ion-card-subtitle text-center color="dark">Sábado 25 May 2019</ion-card-subtitle>
+    </ion-card-header>
+    <img src="/assets/img/esquemas/sabado.jpg" alt="">
+  </ion-card>
+  <ion-card (click)="viewPhoto('domingo.jpg')">
+    <ion-card-header>
+      <ion-card-subtitle text-center color="dark">Domingo 26 May 2019</ion-card-subtitle>
+    </ion-card-header>
+    <img src="/assets/img/esquemas/domingo.jpg" alt="">
+  </ion-card>
+  <ion-card (click)="viewPhoto('lunes.jpg')">
+    <ion-card-header>
+      <ion-card-subtitle text-center color="dark">Lunes 27 May 2019</ion-card-subtitle>
+    </ion-card-header>
+    <img src="/assets/img/esquemas/lunes.jpg" alt="">
+  </ion-card>
+  <ion-card (click)="viewPhoto('martes.jpg')">
+    <ion-card-header>
+      <ion-card-subtitle text-center color="dark">Martes 28 May 2019</ion-card-subtitle>
+    </ion-card-header>
+    <img src="/assets/img/esquemas/martes.jpg" alt="">
+  </ion-card>
+<br>
+<ion-row >
+    <ion-col size="2">
+      <p text-center color="dark"><br>Código de colores</p>
+    </ion-col>
+    <ion-col size="2" class="color1">
+        <p text-center color="light">
+        Hotel Fiesta Americana Coral
+        </p>
+    </ion-col>
+    <ion-col size="2"  class="color2">
+        <p text-center color="light">
+        planta baja / ground floor Cancun ICC	
+        </p>
+    </ion-col>
+    <ion-col size="2"  class="color3">
+        <p text-center color="light">
+        primer piso / 1st floor Cancun ICC
+        </p>
+    </ion-col>
+    <ion-col size="2"  class="color4">
+        <p text-center color="light">
+        segundo piso / 2nd floor Cancun ICC
+        </p>
+    </ion-col>
+    <ion-col size="2"  class="color5">
+        <p text-center color="light">
+        tercer piso / 3rd floor Cancun ICC
+        </p>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,10 @@
+{
+    "UIKit.framework": 1,
+    "Foundation.framework": 1,
+    "QuartzCore.framework": 1,
+    "ImageIO.framework": 1,
+    "MessageUI.framework": 1,
+    "WebKit.framework": 1,
+    "SystemConfiguration.framework": 2,
+    "CoreTelephony.framework": 1
+}

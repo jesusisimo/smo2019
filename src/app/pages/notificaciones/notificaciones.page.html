@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Notificaciones</ion-title>
+    <ion-buttons slot="end">
+      <ion-button  (click)="borrarMensajes()">
+        <ion-icon slot="icon-only"  name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-item *ngFor="let notificacion of mensajes" (click)="verNotificacion(notificacion)" href="javascript:;">
+      <ion-label>
+        <h2>{{notificacion.title}}</h2>
+
+        <p>{{notificacion.body}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="!existen">
+      <ion-label>
+        <h3>No hay notificaciones</h3>
+
+      </ion-label>
+    </ion-item>
+    
+  </ion-list>
+<!-- 
+  <ion-button color="danger" (click)="verNotificacion('Notificacion','Mensaje');">
+      <ion-icon slot="icon-only" color="danger" name="trash"></ion-icon>
+    </ion-button> -->
+
+
+
+  
+</ion-content>

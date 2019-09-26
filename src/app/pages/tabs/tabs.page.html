@@ -1,0 +1,28 @@
+<ion-tabs>
+  <!-- <ion-toolbar class="publicidad">
+    <ion-slides pager="false" [options]="slideOpts">
+      <ion-slide>
+        <img src="/assets/img/banner_patrocinador.png" alt="">
+      </ion-slide>
+      <ion-slide>
+        <img src="/assets/img/banner_patrocinador2.png" alt="" (click)="abrirWeb('https://www.alcon.com')">
+      </ion-slide>
+    </ion-slides>
+  </ion-toolbar> -->
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="notificaciones">
+      <ion-icon name="notifications"></ion-icon>
+      <ion-label>Notificaciones</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="principal">
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="validarVista()">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

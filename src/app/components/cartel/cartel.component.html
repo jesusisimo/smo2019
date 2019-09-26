@@ -1,0 +1,30 @@
+<ion-content>
+
+<ion-card *ngFor="let car of cartel">
+  <img src="./madison.jpg">
+  <ion-card-header>
+    <ion-card-subtitle>{{car.especialidad}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <p>Titulo: {{car.titulo}}</p>
+    <p>Autores: {{car.autores}}</p>
+    <p>Coautores: {{car.coautores}}</p>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+<ion-footer  no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="regresar()">
+        <ion-icon slot="start" name="arrow-aroud-back"></ion-icon>
+        <ion-label>Regresar</ion-label>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" color="primary">
+      <ion-button >
+        <ion-icon slot="end" name="start-outline"></ion-icon>
+        <ion-label>Favorito</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

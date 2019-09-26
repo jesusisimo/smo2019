@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <ion-back-button color="light" text="Volver"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Contacto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  
+
+<ion-content class="background">
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title color="primary" >Sociedad Mexicana de Oftalmología A.C.</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Boston 99, <br>
+      Col. Nochebuena, <br>
+      CDMX C.P. 03720, <br>
+      Telefonos:(55) 5563-9393, 5563-7812, 5598-3827 y 5598-5372, 5611-1343 <br>
+      contacto@smo.org.mx
+    </ion-card-content>
+  </ion-card>
+
+ 
+          <h2>Formulario de Contácto</h2>
+          <div>
+            <ion-row>
+              <ion-col>
+                <ion-input clearInput type="text" placeholder="Nombre:" [(ngModel)]="Nombre" class="input" padding-horizontal clear-input="true"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-input clearInput type="text" placeholder="Apellido:" [(ngModel)]="Apellido" class="input" padding-horizontal clear-input="true"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-input clearInput type="number" placeholder="Teléfono" [(ngModel)]="Telefono" class="input" padding-horizontal clear-input="true"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-input clearInput type="email" placeholder="Correo Electrónico:" [(ngModel)]="email" class="input" padding-horizontal clear-input="true"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                
+                <ion-textarea clearInput type="text" placeholder="Comentarios:" [(ngModel)]="comentario" class="input" padding-horizontal clear-input="true"></ion-textarea>
+              </ion-col>
+            </ion-row>
+   
+      <ion-button>Enviar</ion-button>
+      <img src="../../assets/img/logo_smo_blanco.png" class="logoSmall">
+    </div>
+    <br>
+        <br>
+</ion-content>

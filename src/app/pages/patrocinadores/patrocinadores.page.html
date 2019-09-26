@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="light" text="Atras"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Patrocinadores</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary" class="buscadores">
+    <ion-searchbar class="buscador" debounce="550" animated placeholder="Buscar patrocinador..."
+      (ionChange)="buscar($event)" color="light" showCancelButton cancelButtonText="OK"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content ion-padding="ion-padding">
+  <ion-refresher  (ionRefresh)="recargar($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-list>
+    <ion-item ion-item *ngFor="let patrocinador of _ps.patrocinadores">
+          <ion-card color="light">
+              <img src="{{ patrocinador.logo }}">
+              
+                <h3 text-center [innerHTML]="patrocinador.patrocinador"></h3>
+            
+            
+              <ion-card-content text-justify>
+                  <p text-justify [innerHTML]="patrocinador.descripcion"></p>
+              </ion-card-content>
+              <h5 text-right>
+              <ion-button text-center color="primary" (click)="abrirWeb(patrocinador.pagina)" *ngIf="patrocinador.pagina!=''">
+                  <ion-icon name="link" ></ion-icon>
+                  Visitar página
+              </ion-button>
+            </h5>
+            </ion-card>
+    </ion-item>
+
+
+  </ion-list>
+  <ion-infinite-scroll  (ionInfinite)="siguiente_pagina($event)">
+    <ion-infinite-scroll-content loadingText="Cargando mas información…"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>
