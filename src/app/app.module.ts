@@ -19,10 +19,11 @@ import { File } from '@ionic-native/file/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { PostImagenComponent } from './pages/post-imagen/post-imagen.component'
 
 @NgModule({
-  declarations: [AppComponent, CartelComponent],
-  entryComponents: [CartelComponent],
+  declarations: [AppComponent, CartelComponent, PostImagenComponent],
+  entryComponents: [CartelComponent,PostImagenComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

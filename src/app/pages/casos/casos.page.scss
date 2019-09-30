@@ -1,0 +1,97 @@
+ion-content.background{
+    --background: #09095ec4 0 0/100% 100% no-repeat;
+}
+
+ion-toolbar.backgrounds{
+    --background: #09095ec4 0 0/100% 100% no-repeat;
+}
+
+ion-card.backCards{
+    --background: #ffffff 0 0/100% 100% no-repeat;
+}
+
+ion-item{
+    border: 0px solid #000000;
+}
+
+.coment{
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 3px;
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 0 auto;
+    width: 90%;
+    height: 15%;
+    overflow: hidden; 
+}
+
+.hora{
+    padding-left: 70%;
+    margin: 0px;
+}
+
+p.horaComent{
+    padding-left: 70%;
+    padding-bottom: 5%;
+    margin: 0px;
+}
+
+.name{
+    padding-left: 10px;
+}
+
+h4{
+    font-weight: 300;
+    font-size: 13px;
+}
+
+h3{
+    font-size: 16px;
+}
+
+p{
+    font-weight: 300;
+    font-size: 11px;
+}
+
+.postImagen{
+    max-width: 50%;
+}
+
+.postTexto{
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+.centerPost{
+    padding-left: 30%;
+}
+
+.input-position {
+    background: white;
+  }
+
+  .input {
+    background-color: white;
+    border-radius: 20px ;
+    font-size: 0.9em !important;
+    border: 1px solid #444;
+  }
+
+  .restrict {
+    --height: 33px;
+  }
+
+  .send-button {
+    height: 36px;
+    width: 90%;
+    border-radius: 50%;
+
+    color: #ffffff;
+    background: #09095ec4;
+  }
+

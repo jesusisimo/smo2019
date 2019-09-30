@@ -1,0 +1,11 @@
+<ion-content [forceOverscroll]="false" color="dark" fullscreen="true">
+  <ion-slides [options]="slideOpts">
+    <ion-slide >
+      <div class="imagenZoom"><img [src]="imgLink" height="100vh" /></div>
+    </ion-slide>
+    <ion-button class="botonCerrar" color="invisible"  slot="icon-only" (click)="cerrarImagen()"> <ion-icon slot="icon-only" name="close" ></ion-icon> </ion-button>
+  </ion-slides>
+</ion-content>
+    
+
+

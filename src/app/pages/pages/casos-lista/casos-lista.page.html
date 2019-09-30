@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Casos Clínicos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+        
+  <ion-item (click)="casoImagen('casos')">
+      <ion-label class="ion-text-wrap">     
+        <ion-row>
+          <ion-col size="3">
+              <ion-avatar>
+                  <img class="perfil" src="../../assets/avatars/av-4.png">
+                </ion-avatar>
+          </ion-col>
+          <ion-col size="8">               
+        <ion-text color="secondary">
+            <ion-text color="primary">         
+                <h3>Coloquio Sociedad Mexicana de Oftalmología</h3>
+              </ion-text>
+              <p>Peter Parker</p>
+        </ion-text>
+        <p>26/09/2019</p>
+      </ion-col>
+      <ion-col size="1">
+          <ion-icon name="photos"></ion-icon>
+      </ion-col>
+    </ion-row>  
+      </ion-label>
+    </ion-item>
+
+  <ion-item>
+      <ion-label class="ion-text-wrap">     
+        <ion-row>
+          <ion-col size="3">
+              <ion-avatar>
+                  <img class="perfil" src="../../assets/avatars/{{ usuario.avatar }}">
+                </ion-avatar>
+          </ion-col>
+          <ion-col size="8">               
+        <ion-text color="secondary">
+            <ion-text color="primary">         
+                <h3>Caso Clinico Oftalmología</h3>
+              </ion-text>
+              <p>{{ usuario.nombre }} {{ usuario.apellidos }}</p>
+        </ion-text>
+        <p>29/09/2019</p>
+      </ion-col>
+      <ion-col size="1">
+          <ion-icon name="document"></ion-icon>
+      </ion-col>
+    </ion-row>  
+      </ion-label>
+    </ion-item>
+
+ 
+</ion-content>

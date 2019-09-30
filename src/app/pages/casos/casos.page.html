@@ -4,19 +4,50 @@
         <ion-menu-button></ion-menu-button>
         <ion-back-button color="light" text="Volver"></ion-back-button>
       </ion-buttons>
-      <ion-title>Casos Clínicos</ion-title>
+      <ion-title>Caso Coloquio</ion-title>
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
-  <ion-card>
-    <img src="../../assets/img/col1.png" class="logoSmall">
-  </ion-card>
-  <ion-card>
-    <img src="../../assets/img/col2.png" class="logoSmall">
-  </ion-card>
-  <ion-card>
-    <img src="../../assets/img/col3.png" class="logoSmall">
+  <ion-content class="background">
+  <ion-card class="backCards">
+    <ion-item lines="none">
+        <ion-avatar>
+            <img class="perfil" src="../../assets/avatars/av-4.png">
+        </ion-avatar>
+      <h3 class="name">Peter Parker</h3><br> 
+    </ion-item> 
+    <p class="hora">26/09/2019</p> 
+      <ion-item lines="none" class="postTexto"><h4>Coloquio Catarata y cirugía refractiva</h4></ion-item>
+       
+    <ion-card class="centerPost text-center">
+        <img class="postImagen text-center" src="../../assets/img/san_carlos.jpg" (click)="verImagen(imgLink)">
+     </ion-card>
+
+     <ion-card>
+      <ion-item lines="none">
+        <ion-avatar>
+          <img class="perfil" src="../../assets/avatars/{{ usuario.avatar }}">
+        </ion-avatar>
+        <h3 class="name">{{ usuario.nombre }} {{ usuario.apellidos }}</h3>
+      </ion-item>
+      <p class="hora">26/09/2019</p>  
+      <ion-item lines="none" id=""><h4>Excelente Coloquio</h4></ion-item>
+      <br>
+    </ion-card>
+
   </ion-card>
   </ion-content>
-  
+  <ion-footer >
+    <ion-toolbar class="backgrounds">
+      <ion-row class="input-position">
+        <ion-col size="9">
+          <ion-input class="input restrict" type="text" placeholder="   Escribe tu comentario"></ion-input>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button shape="round" class="send-button"  >
+            <ion-text color="light">Enviar</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-footer>

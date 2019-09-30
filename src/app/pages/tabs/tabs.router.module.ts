@@ -46,7 +46,11 @@ const routes: Routes = [
           },
           {
             path: 'casos',
-            loadChildren: '../casos/casos.module#CasosPageModule'
+                loadChildren: '../casos/casos.module#CasosPageModule'
+          },
+          {
+            path: 'lista',
+            loadChildren: '../pages/casos-lista/casos-lista.module#CasosListaPageModule'
           },
           {
             path: 'usuario',
