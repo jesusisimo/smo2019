@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 @Component({
   selector: 'app-congresos',
   templateUrl: './congresos.page.html',
@@ -8,7 +9,9 @@ import { File } from '@ionic-native/file/ngx';
 })
 export class CongresosPage implements OnInit {
 
-  constructor( private photoViewer: PhotoViewer,
+  constructor(
+    private photoViewer: PhotoViewer,
+    private iab: InAppBrowser,
     private file: File) { }
 
   ngOnInit() {
@@ -18,4 +21,7 @@ export class CongresosPage implements OnInit {
     this.photoViewer.show(this.file.applicationDirectory + "www/assets/img/"+imageName, "Esquema");
 
   }
+  abrirWeb(url:string, target:string){
+		this.iab.create(url, target);
+	}
 }
