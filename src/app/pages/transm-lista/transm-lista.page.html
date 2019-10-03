@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <ion-back-button color="light" text="Volver"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Transmisión en Vivo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+  <ion-card class="centerCard">
+    <iframe class="centerObjeto" src="https://www.youtube.com/watch?v=TRZ08-9Cb_0"> </iframe>
+  </ion-card>
+
+  <h3 class="center">Próximas Transmisiones</h3><br>
+    <ion-item >
+        <ion-label class="ion-text-wrap">     
+          <ion-row>
+            <ion-col size="3">
+                
+                    <img class="perfil" src="../../assets/img/col1.png">
+                  
+            </ion-col>
+            <ion-col size="9">               
+          <ion-text color="secondary">
+              <ion-text color="primary">         
+                  <h3>Transmisión Diplomado en Enfermería Quirúrgica oftálmica<</h3>
+                </ion-text>
+                <p>Septiembre 2019</p>
+          </ion-text>
+        </ion-col>
+      </ion-row>  
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="casoImagen('casos')">
+          <ion-label class="ion-text-wrap">     
+            <ion-row>
+              <ion-col size="3">
+                  
+                      <img class="perfil" src="../../assets/img/col2.png">
+                    
+              </ion-col>
+              <ion-col size="9">               
+            <ion-text color="secondary">
+                <ion-text color="primary">         
+                    <h3>Transmisión Trabajos por la Discapacidad Visual</h3>
+                  </ion-text>
+                  <p>Septiembre 2019</p>
+            </ion-text>
+          </ion-col>
+        </ion-row>  
+          </ion-label>
+        </ion-item>
+      
+</ion-content>

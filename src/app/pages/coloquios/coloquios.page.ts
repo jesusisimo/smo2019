@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-coloquios',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColoquiosPage implements OnInit {
 
-  constructor() { }
+  constructor(private iab: InAppBrowser,) { }
+
+  abrirWeb(url: string, target: string){
+		this.iab.create(url, target);
+	}
 
   ngOnInit() {
   }

@@ -137,6 +137,10 @@ const routes: Routes = [
               },
             ]
           },
+          {
+            path: 'transm-lista',
+            loadChildren: '../transm-lista/transm-lista.module#TransmListaPageModule'
+          },
         ]
       },
       {
