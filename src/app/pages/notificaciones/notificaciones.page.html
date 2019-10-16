@@ -15,8 +15,8 @@
     <ion-item *ngFor="let notificacion of mensajes" (click)="verNotificacion(notificacion); notificacion.visto=1;" href="javascript:;" [ngClass]="(!notificacion.visto) ? 'novisto' : ''">
       <ion-label>
         <h2>{{notificacion.titulo}}</h2>
-
-        <p>{{notificacion.mensaje}}</p>
+        <h3>{{notificacion.mensaje}}</h3>
+        <p>{{notificacion.time}}</p>
       </ion-label>
     </ion-item>
     <ion-item *ngIf="!existen">
