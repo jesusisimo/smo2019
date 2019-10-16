@@ -58,7 +58,7 @@ var CongresosPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Congresos</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n      <ion-card>\n        <img   src=\"../../assets/img/expoxxxv.png\" (click)=\"viewPhoto('expo-oftalmo-1.png')\" >\n        </ion-card>\n  </ion-content>\n  \n  "
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Congreso Nacional</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n      <ion-card>\n        <img   src=\"../../assets/img/expoxxxv.png\" (click)=\"viewPhoto('smo_final_congreso.png')\" >\n        <ion-item color=\"primary\" (click)=\"abrirWeb('https://www.servimed.com.mx/ev/2020/acapulco/','_system')\">\n          <ion-buttons expand=\"full\" class=\"text-center\">\n          <h4>Visitar sitio web </h4>\n        </ion-buttons>\n        </ion-item>\n        </ion-card>\n  </ion-content>\n  \n  "
 
 /***/ }),
 
@@ -69,7 +69,7 @@ module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NvbmdyZXNvcy9jb25ncmVzb3MucGFnZS5zY3NzIn0= */"
+module.exports = "h4 {\n  font-size: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvY29uZ3Jlc29zL2NvbmdyZXNvcy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRyxlQUFlLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9jb25ncmVzb3MvY29uZ3Jlc29zLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImg0e1xuICAgZm9udC1zaXplOiAxNXB4O1xufVxuIl19 */"
 
 /***/ }),
 
@@ -87,13 +87,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/photo-viewer/ngx */ "./node_modules/@ionic-native/photo-viewer/ngx/index.js");
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
+/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
+
 
 
 
 
 var CongresosPage = /** @class */ (function () {
-    function CongresosPage(photoViewer, file) {
+    function CongresosPage(photoViewer, iab, file) {
         this.photoViewer = photoViewer;
+        this.iab = iab;
         this.file = file;
     }
     CongresosPage.prototype.ngOnInit = function () {
@@ -102,6 +105,9 @@ var CongresosPage = /** @class */ (function () {
         var imageName = img;
         this.photoViewer.show(this.file.applicationDirectory + "www/assets/img/" + imageName, "Esquema");
     };
+    CongresosPage.prototype.abrirWeb = function (url, target) {
+        this.iab.create(url, target);
+    };
     CongresosPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-congresos',
@@ -109,6 +115,7 @@ var CongresosPage = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./congresos.page.scss */ "./src/app/pages/congresos/congresos.page.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_2__["PhotoViewer"],
+            _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__["InAppBrowser"],
             _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_3__["File"]])
     ], CongresosPage);
     return CongresosPage;

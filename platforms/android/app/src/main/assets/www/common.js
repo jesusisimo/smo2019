@@ -313,6 +313,7 @@ var UsuarioService = /** @class */ (function () {
                     resolve(true);
                 }
                 else {
+                    _this._as.presentAlert(resp['mensaje']);
                     _this.token = null;
                     _this.storage.remove('token');
                     resolve(false);

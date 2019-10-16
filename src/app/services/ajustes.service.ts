@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoadingController, Platform, ToastController, AlertController } from '@ionic/angular';
 import { Network } from '@ionic-native/network/ngx';
+import { Device } from '@ionic-native/device/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,15 @@ import { Network } from '@ionic-native/network/ngx';
 export class AjustesService {
   loading: any;
   online: boolean = true;
+  uuid:string= "XXXXX";
+  sinleer:number=0;
   constructor(
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private platform: Platform,
     private network: Network,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private device: Device
   ) {
     this.checkConexion();
   }
@@ -26,7 +30,9 @@ export class AjustesService {
     });
     await this.loading.present();
   }
-
+async getDevice(){
+   this.uuid= await this.device.uuid;
+}
   async presentToast(mensaje: string) {
     const toast = await this.toastCtrl.create({
       message: mensaje,

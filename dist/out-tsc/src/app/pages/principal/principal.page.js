@@ -47,6 +47,27 @@ var PrincipalPage = /** @class */ (function () {
             });
         });
     };
+    PrincipalPage.prototype.validarVista = function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var existe;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this._us.existeToken()];
+                    case 1:
+                        existe = _a.sent();
+                        if (existe) {
+                            console.log("dirigir a user");
+                            this.navCtrl.navigateRoot('/tabs/login/usuario');
+                        }
+                        else {
+                            console.log("dirigir a log");
+                            this.navCtrl.navigateRoot('/tabs/login');
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     PrincipalPage.prototype.abrirWeb = function (url, target) {
         this.iab.create(url, target);
     };

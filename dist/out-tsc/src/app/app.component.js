@@ -22,7 +22,7 @@ var AppComponent = /** @class */ (function () {
             setTimeout(function () {
                 _this.splashScreen.hide();
                 _this.noti.configuracionInicial();
-                _this._ds.actualizaciones();
+                //this._ds.actualizaciones();
             }, 3000);
         });
     };

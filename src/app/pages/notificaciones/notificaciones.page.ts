@@ -3,13 +3,16 @@ import { PushService } from 'src/app/services/push.service';
 import { OSNotificationPayload } from '@ionic-native/onesignal/ngx';
 import { AlertController, ModalController } from '@ionic/angular';
 import { NotificacionPage } from '../notificacion/notificacion.page';
+import { INotificacion, INotificaciones } from 'src/app/interfaces/notificaciones';
+import { AjustesService } from 'src/app/services/ajustes.service';
 @Component({
   selector: 'app-notificaciones',
   templateUrl: './notificaciones.page.html',
   styleUrls: ['./notificaciones.page.scss'],
 })
 export class NotificacionesPage implements OnInit {
-  mensajes: OSNotificationPayload[] = [];
+  mensajes: INotificacion[];
+  notificaciones: INotificacion[];
   msgs = [
     {
       title: 'Titulo de la push',
@@ -22,8 +25,12 @@ export class NotificacionesPage implements OnInit {
     private pushService: PushService,
     private applicationRef: ApplicationRef,
     private alertCtrl: AlertController,
-    private modalCtrl: ModalController
-  ) { }
+    private modalCtrl: ModalController,
+    private _as:AjustesService
+  ) {
+   // this.pushService.cargar_todos();
+   }
+
 
   ngOnInit() {
     this.pushService.pushListener.subscribe(
@@ -43,7 +50,7 @@ export class NotificacionesPage implements OnInit {
 
   async ionViewWillEnter() {
     this.mensajes=[];
-    this.mensajes = await this.pushService.getMensajes();
+    this.mensajes = await this.pushService.cargar_todos();
     if(this.mensajes.length>0){
       console.log("si hay will");
       this.existen=true;
@@ -89,6 +96,11 @@ export class NotificacionesPage implements OnInit {
         'notificacion': notificacion
        }
     });
+    if(this._as.sinleer>0){
+      this._as.sinleer=this._as.sinleer-1;
+    }
+    
+    this.pushService.marcar_visto(notificacion.id);
     return await modal.present();
 
 

@@ -18,13 +18,14 @@ import { File } from '@ionic-native/file/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { PostImagenComponent } from './pages/post-imagen/post-imagen.component';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib_1.__decorate([
         NgModule({
-            declarations: [AppComponent, CartelComponent],
-            entryComponents: [CartelComponent],
+            declarations: [AppComponent, CartelComponent, PostImagenComponent],
+            entryComponents: [CartelComponent, PostImagenComponent],
             imports: [
                 BrowserModule,
                 IonicModule.forRoot(),

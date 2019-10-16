@@ -7,6 +7,7 @@ import { AjustesService } from './ajustes.service';
 import { InterfaceCarteles, ICartel } from '../interfaces/carteles';
 import { InterfaceVideos, IVideo } from '../interfaces/videos';
 import { IPatrocinador } from '../interfaces/patrocinadores';
+import { INotificacion, INotificaciones } from '../interfaces/notificaciones';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class DatosService {
   actividad: IActividad[] = [];
   is_favorito = "ligth";
   videos: IVideo[];
+  notificaciones: INotificacion[];
   favoritos: IActividad[] = [];
   patrocinadores: IPatrocinador[];
   actividades: InterfaceActividades[];
@@ -129,6 +131,31 @@ export class DatosService {
   async getVideos() {
     let promesa = await this.storage.get('videos').then((valores) => {
       this.videos = valores;
+      return valores;
+    });
+    return promesa;
+  }
+
+  guardarNotificaciones() {
+    let url = URL_SERVICIOS + "/notificaciones.php?get";
+    let promesa = this.http.get<INotificaciones>(url)
+      .toPromise()
+      .then(data => {
+        if (data.notificaciones.length > 0) {
+          this.storage.set('videos', data.notificaciones);
+          //this._as.presentToast("Videos guardados en dispositivo");
+        }
+        return promesa;
+      })
+      .catch(error => {
+        return Promise.reject(error);
+      });
+    return promesa;
+  }
+
+  async getNotificaciones() {
+    let promesa = await this.storage.get('notificaciones').then((valores) => {
+      this.notificaciones = valores;
       return valores;
     });
     return promesa;

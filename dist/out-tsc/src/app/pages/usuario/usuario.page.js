@@ -1,10 +1,12 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AjustesService } from 'src/app/services/ajustes.service';
 var UsuarioPage = /** @class */ (function () {
-    function UsuarioPage(_us, _as) {
+    function UsuarioPage(_us, iab, _as) {
         this._us = _us;
+        this.iab = iab;
         this._as = _as;
         this.avatars = [
             {
@@ -48,50 +50,19 @@ var UsuarioPage = /** @class */ (function () {
     }
     UsuarioPage.prototype.ngOnInit = function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var _a, _i, _b, avatar;
-            return tslib_1.__generator(this, function (_c) {
-                switch (_c.label) {
+            var _a;
+            return tslib_1.__generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
                         _a = this;
                         return [4 /*yield*/, this._us.getUsuario()];
                     case 1:
-                        _a.usuario = _c.sent();
-                        this.avatars.forEach(function (avatar) { return avatar.seleccionado = false; });
-                        for (_i = 0, _b = this.avatars; _i < _b.length; _i++) {
-                            avatar = _b[_i];
-                            if (avatar.img === this.usuario.avatar) {
-                                avatar.seleccionado = true;
-                                break;
-                            }
-                        }
-                        if (this.usuario.email_c == "1") {
-                            this.usuario.email_c = "true";
-                        }
-                        else {
-                            this.usuario.email_c = "false";
-                        }
-                        if (this.usuario.telefono_c == "1") {
-                            this.usuario.telefono_c = "true";
-                        }
-                        else {
-                            this.usuario.telefono_c = "false";
-                        }
-                        if (this.usuario.institucion_c == "1") {
-                            this.usuario.institucion_c = "true";
-                        }
-                        else {
-                            this.usuario.institucion_c = "false";
-                        }
+                        _a.usuario = _b.sent();
                         console.log(this.usuario);
                         return [2 /*return*/];
                 }
             });
         });
-    };
-    UsuarioPage.prototype.seleccionarAvatar = function (avatar) {
-        this.avatars.forEach(function (av) { return av.seleccionado = false; });
-        avatar.seleccionado = true;
-        this.usuario.avatar = avatar.img;
     };
     UsuarioPage.prototype.logout = function () {
         this._us.logout();
@@ -119,6 +90,9 @@ var UsuarioPage = /** @class */ (function () {
             });
         });
     };
+    UsuarioPage.prototype.abrirWeb = function (url, target) {
+        this.iab.create(url, target);
+    };
     UsuarioPage = tslib_1.__decorate([
         Component({
             selector: 'app-usuario',
@@ -126,6 +100,7 @@ var UsuarioPage = /** @class */ (function () {
             styleUrls: ['./usuario.page.scss'],
         }),
         tslib_1.__metadata("design:paramtypes", [UsuarioService,
+            InAppBrowser,
             AjustesService])
     ], UsuarioPage);
     return UsuarioPage;

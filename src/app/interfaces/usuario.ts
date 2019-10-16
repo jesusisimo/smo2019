@@ -10,6 +10,7 @@ interface IUsuario {
   email_c?:string;
   telefono_c?:string;
   institucion_c?:string;
+  categoria?:string;
   an2017?: string;
   an2018?: string;
   an2019?: string;

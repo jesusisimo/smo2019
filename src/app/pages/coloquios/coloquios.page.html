@@ -4,72 +4,35 @@
         <ion-menu-button></ion-menu-button>
         <ion-back-button color="light" text="Volver"></ion-back-button>
       </ion-buttons>
-      <ion-title>Coloquios</ion-title>
+      <ion-title>Coloquios y Cursos</ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content>
-
-      <ion-item (click)="abrirWeb('https://www.smo.org.mx/','_system')" >
+    <ion-list>
+      <ion-item  *ngFor="let coloquio of coloquios" (click)="abrirWeb( coloquio.url,'_system')" >
           <ion-label class="ion-text-wrap">     
             <ion-row>
               <ion-col size="4">
                   <ion-avatar>
-                      <img class="logoSmall" src="../../assets/img/oculoplastica.png">
+                      <img class="logoSmall" src="{{coloquio.ruta_ico}}{{coloquio.img_ext}}">
                     </ion-avatar>
               </ion-col>
               <ion-col size="8">               
             <ion-text color="secondary">
                 <ion-text color="primary">         
-                    <h3>1er Diplomado en Enfermería Quirúrgica oftálmica</h3>
+                    <h3>{{coloquio.titulo}}</h3>
                   </ion-text>
             </ion-text>
-            <p>Septiembre 2019</p>
+            <p>{{coloquio.fecha}}</p>
           </ion-col>
         </ion-row>  
           </ion-label>
         </ion-item>
-
-        <ion-item (click)="abrirWeb('https://www.smo.org.mx/','_system')">
-            <ion-label class="ion-text-wrap">     
-              <ion-row>
-                <ion-col size="4">
-                    <ion-avatar>
-                        <img class="logoSmall" src="../../assets/img/oculoplastica.png">
-                      </ion-avatar>
-                </ion-col>
-                <ion-col size="8">               
-              <ion-text color="secondary">
-                  <ion-text color="primary">         
-                      <h3>Trabajos por la Discapacidad Visual</h3>
-                    </ion-text>
-              </ion-text>
-              <p>Septiembre 2019</p>
-            </ion-col>
-          </ion-row>  
-            </ion-label>
-          </ion-item>
+        </ion-list>
 
 
-          <ion-item (click)="abrirWeb('https://www.smo.org.mx/','_system')">
-              <ion-label class="ion-text-wrap">     
-                <ion-row>
-                  <ion-col size="4">
-                      <ion-avatar>
-                          <img class="logoSmall" src="../../assets/img/oculoplastica.png">
-                        </ion-avatar>
-                  </ion-col>
-                  <ion-col size="8">               
-                <ion-text color="secondary">
-                    <ion-text color="primary">         
-                        <h3>5o Curso de Actualización en Enfermedades Inflamatorias Oculares</h3>
-                      </ion-text>
-                </ion-text>
-                <p>20 y 21 de Septiembre 2019</p>
-              </ion-col>
-            </ion-row>  
-              </ion-label>
-            </ion-item>
+
   <!--ion-card>
     <img src="../../assets/img/col1.png" class="logoSmall">
   </ion-card>

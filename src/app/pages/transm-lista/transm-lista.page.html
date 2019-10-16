@@ -11,11 +11,12 @@
 <ion-content>
 
   <ion-card class="centerCard">
-    <iframe class="centerObjeto" src="https://www.youtube.com/watch?v=TRZ08-9Cb_0"> </iframe>
+    <iframe  width="100%" height="250" src="https://player.vimeo.com/video/336680837" frameborder="0" allowfullscreen></iframe>
   </ion-card>
 
   <h3 class="center">Próximas Transmisiones</h3><br>
-    <ion-item >
+  <ion-list>
+    <ion-item *ngFor="let transmision of transmisiones" >
         <ion-label class="ion-text-wrap">     
           <ion-row>
             <ion-col size="3">
@@ -26,32 +27,15 @@
             <ion-col size="9">               
           <ion-text color="secondary">
               <ion-text color="primary">         
-                  <h3>Transmisión Diplomado en Enfermería Quirúrgica oftálmica<</h3>
+                  <h3>{{transmision.titulo}}</h3>
                 </ion-text>
-                <p>Septiembre 2019</p>
+                <p>{{transmision.fecha}}</p>
           </ion-text>
         </ion-col>
       </ion-row>  
         </ion-label>
       </ion-item>
-      <ion-item (click)="casoImagen('casos')">
-          <ion-label class="ion-text-wrap">     
-            <ion-row>
-              <ion-col size="3">
-                  
-                      <img class="perfil" src="../../assets/img/col2.png">
-                    
-              </ion-col>
-              <ion-col size="9">               
-            <ion-text color="secondary">
-                <ion-text color="primary">         
-                    <h3>Transmisión Trabajos por la Discapacidad Visual</h3>
-                  </ion-text>
-                  <p>Septiembre 2019</p>
-            </ion-text>
-          </ion-col>
-        </ion-row>  
-          </ion-label>
-        </ion-item>
+    </ion-list>
+
       
 </ion-content>

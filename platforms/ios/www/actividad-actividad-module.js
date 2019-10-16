@@ -69,7 +69,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-butt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".etiqueta {\n  font-size: 12px;\n  text-transform: none; }\n\nion-card {\n  margin: 5px; }\n\nion-card-title {\n  font-size: 22px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9BUFBfU01PL3Ntby9zcmMvYXBwL3BhZ2VzL2FjdGl2aWRhZC9hY3RpdmlkYWQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0ksZUFBZTtFQUNuQixvQkFBb0IsRUFBQTs7QUFFcEI7RUFDSSxXQUFXLEVBQUE7O0FBRWY7RUFDSSxlQUFlLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9hY3RpdmlkYWQvYWN0aXZpZGFkLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuLmV0aXF1ZXRhe1xuICAgIGZvbnQtc2l6ZTogMTJweDtcbnRleHQtdHJhbnNmb3JtOiBub25lO1xufVxuaW9uLWNhcmR7XG4gICAgbWFyZ2luOiA1cHg7XG59XG5pb24tY2FyZC10aXRsZXtcbiAgICBmb250LXNpemU6IDIycHg7XG59Il19 */"
+module.exports = ".etiqueta {\n  font-size: 12px;\n  text-transform: none; }\n\nion-card {\n  margin: 5px; }\n\nion-card-title {\n  font-size: 22px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvYWN0aXZpZGFkL2FjdGl2aWRhZC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxlQUFlO0VBQ25CLG9CQUFvQixFQUFBOztBQUVwQjtFQUNJLFdBQVcsRUFBQTs7QUFFZjtFQUNJLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FjdGl2aWRhZC9hY3RpdmlkYWQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4uZXRpcXVldGF7XG4gICAgZm9udC1zaXplOiAxMnB4O1xudGV4dC10cmFuc2Zvcm06IG5vbmU7XG59XG5pb24tY2FyZHtcbiAgICBtYXJnaW46IDVweDtcbn1cbmlvbi1jYXJkLXRpdGxle1xuICAgIGZvbnQtc2l6ZTogMjJweDtcbn0iXX0= */"
 
 /***/ }),
 

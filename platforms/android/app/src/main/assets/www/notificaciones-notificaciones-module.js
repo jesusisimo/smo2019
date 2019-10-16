@@ -49,7 +49,7 @@ var NotificacionPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-title>Notificación</ion-title>\n        <ion-buttons slot=\"end\">\n          <ion-icon slot=\"icon-only\" (click)=\"salir()\" name=\"close\"></ion-icon>\n        </ion-buttons>\n      </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>{{notificacion.title}}</ion-card-title>\n        </ion-card-header>\n      \n        <ion-card-content>\n         {{notificacion.body}}\n        </ion-card-content>\n      </ion-card>\n</ion-content>\n"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-title>Notificación</ion-title>\n        <ion-buttons slot=\"end\">\n          <ion-icon slot=\"icon-only\" (click)=\"salir()\" name=\"close\"></ion-icon>\n        </ion-buttons>\n      </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>{{notificacion.titulo}}</ion-card-title>\n        </ion-card-header>\n      \n        <ion-card-content>\n         {{notificacion.mensaje}}\n        </ion-card-content>\n      </ion-card>\n</ion-content>\n"
 
 /***/ }),
 
@@ -175,7 +175,7 @@ var NotificacionesPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-title>Notificaciones</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button  (click)=\"borrarMensajes()\">\n        <ion-icon slot=\"icon-only\"  name=\"trash\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <!-- List of Text Items -->\n  <ion-list>\n    <ion-item *ngFor=\"let notificacion of mensajes\" (click)=\"verNotificacion(notificacion)\" href=\"javascript:;\">\n      <ion-label>\n        <h2>{{notificacion.title}}</h2>\n\n        <p>{{notificacion.body}}</p>\n      </ion-label>\n    </ion-item>\n    <ion-item *ngIf=\"!existen\">\n      <ion-label>\n        <h3>No hay notificaciones</h3>\n\n      </ion-label>\n    </ion-item>\n    \n  </ion-list>\n<!-- \n  <ion-button color=\"danger\" (click)=\"verNotificacion('Notificacion','Mensaje');\">\n      <ion-icon slot=\"icon-only\" color=\"danger\" name=\"trash\"></ion-icon>\n    </ion-button> -->\n\n\n\n  \n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-title>Notificaciones</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button  (click)=\"borrarMensajes()\">\n        <ion-icon slot=\"icon-only\"  name=\"trash\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <!-- List of Text Items -->\n  <ion-list>\n    <ion-item *ngFor=\"let notificacion of mensajes\" (click)=\"verNotificacion(notificacion); notificacion.visto=1;\" href=\"javascript:;\" [ngClass]=\"(!notificacion.visto) ? 'novisto' : ''\">\n      <ion-label>\n        <h2>{{notificacion.titulo}}</h2>\n\n        <p>{{notificacion.mensaje}}</p>\n      </ion-label>\n    </ion-item>\n    <ion-item *ngIf=\"!existen\">\n      <ion-label>\n        <h3>No hay notificaciones</h3>\n\n      </ion-label>\n    </ion-item>\n    \n  </ion-list>\n<!-- \n  <ion-button color=\"danger\" (click)=\"verNotificacion('Notificacion','Mensaje');\">\n      <ion-icon slot=\"icon-only\" color=\"danger\" name=\"trash\"></ion-icon>\n    </ion-button> -->\n\n\n\n  \n</ion-content>"
 
 /***/ }),
 
@@ -186,7 +186,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-titl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL25vdGlmaWNhY2lvbmVzL25vdGlmaWNhY2lvbmVzLnBhZ2Uuc2NzcyJ9 */"
+module.exports = ".novisto {\n  --ion-background-color: #e4e4e4; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvbm90aWZpY2FjaW9uZXMvbm90aWZpY2FjaW9uZXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQXVCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9ub3RpZmljYWNpb25lcy9ub3RpZmljYWNpb25lcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubm92aXN0b3tcbiAgICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjZTRlNGU0O1xuXHR9XG4iXX0= */"
 
 /***/ }),
 
@@ -205,18 +205,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_push_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/push.service */ "./src/app/services/push.service.ts");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _notificacion_notificacion_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../notificacion/notificacion.page */ "./src/app/pages/notificacion/notificacion.page.ts");
+/* harmony import */ var src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/ajustes.service */ "./src/app/services/ajustes.service.ts");
+
 
 
 
 
 
 var NotificacionesPage = /** @class */ (function () {
-    function NotificacionesPage(pushService, applicationRef, alertCtrl, modalCtrl) {
+    function NotificacionesPage(pushService, applicationRef, alertCtrl, modalCtrl, _as) {
         this.pushService = pushService;
         this.applicationRef = applicationRef;
         this.alertCtrl = alertCtrl;
         this.modalCtrl = modalCtrl;
-        this.mensajes = [];
+        this._as = _as;
         this.msgs = [
             {
                 title: 'Titulo de la push',
@@ -225,6 +227,7 @@ var NotificacionesPage = /** @class */ (function () {
             }
         ];
         this.existen = false;
+        // this.pushService.cargar_todos();
     }
     NotificacionesPage.prototype.ngOnInit = function () {
         var _this = this;
@@ -249,7 +252,7 @@ var NotificacionesPage = /** @class */ (function () {
                     case 0:
                         this.mensajes = [];
                         _a = this;
-                        return [4 /*yield*/, this.pushService.getMensajes()];
+                        return [4 /*yield*/, this.pushService.cargar_todos()];
                     case 1:
                         _a.mensajes = _b.sent();
                         if (this.mensajes.length > 0) {
@@ -315,6 +318,10 @@ var NotificacionesPage = /** @class */ (function () {
                         })];
                     case 1:
                         modal = _a.sent();
+                        if (this._as.sinleer > 0) {
+                            this._as.sinleer = this._as.sinleer - 1;
+                        }
+                        this.pushService.marcar_visto(notificacion.id);
                         return [4 /*yield*/, modal.present()];
                     case 2: return [2 /*return*/, _a.sent()];
                 }
@@ -330,7 +337,8 @@ var NotificacionesPage = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_push_service__WEBPACK_IMPORTED_MODULE_2__["PushService"],
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ApplicationRef"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"],
+            src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_5__["AjustesService"]])
     ], NotificacionesPage);
     return NotificacionesPage;
 }());

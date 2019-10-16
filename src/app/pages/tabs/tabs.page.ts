@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { NavController } from '@ionic/angular';
+import { AjustesService } from 'src/app/services/ajustes.service';
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
@@ -15,11 +16,13 @@ export class TabsPage {
     autoplay:false,
 		loop:true
     };
+  notificaciones:number=0;
   constructor(
     private iab: InAppBrowser,
     private _us:UsuarioService,
+    private _as:AjustesService,
     private navCtrl: NavController){
-
+      this.notificaciones=this._as.sinleer;
   }
   abrirWeb(url:string){
     const browser = this.iab.create(url,'_system');

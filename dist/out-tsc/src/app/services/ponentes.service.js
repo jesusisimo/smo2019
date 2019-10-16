@@ -44,6 +44,7 @@ var PonentesService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         if (!!this._as.online) return [3 /*break*/, 1];
+                        this._as.presentLoading("Cargando...", 3);
                         promise = this._ds.getProfesores()
                             .then(function (data) {
                             _this.ponentes = data;
@@ -53,7 +54,7 @@ var PonentesService = /** @class */ (function () {
                         });
                         return [3 /*break*/, 3];
                     case 1:
-                        this._as.presentLoading("Cargando...");
+                        this._as.presentLoading("Cargando...", 1);
                         url = URL_SERVICIOS + "/profesores.php?todos&pagina=" + this.pagina;
                         return [4 /*yield*/, this.http.get(url)
                                 .toPromise()
@@ -118,11 +119,9 @@ var PonentesService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         if (!!this._as.online) return [3 /*break*/, 2];
-                        console.log("No hay red");
                         variable = variable.toUpperCase();
                         return [4 /*yield*/, this._ds.getProfesores()
                                 .then(function (data) {
-                                console.log("Proresores obtennidos", data);
                                 _this.ponentes = [];
                                 var list = [];
                                 list = data;
@@ -137,7 +136,6 @@ var PonentesService = /** @class */ (function () {
                         promise_1 = _a.sent();
                         return [3 /*break*/, 4];
                     case 2:
-                        console.log("En linea");
                         url = URL_SERVICIOS + "/profesores.php?search=" + variable;
                         return [4 /*yield*/, this.http.get(url)
                                 .toPromise()

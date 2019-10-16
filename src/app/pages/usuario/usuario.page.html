@@ -16,11 +16,11 @@
     <ion-card color="primary">
       <ion-card-content>
         <ion-avatar>
-          <img id="perfil" src="../../assets/avatars/{{ usuario.avatar }}">
+          <img id="perfil" src="{{ usuario.avatar }}">
         </ion-avatar>
         <br>  
             <ion-card-title text-center>{{ usuario.nombre }} {{ usuario.apellidos }}</ion-card-title>
-            <p text-center>{{ usuario.email }}</p>
+            <p text-center>{{ usuario.categoria }} | {{ usuario.email }}</p>
         </ion-card-content> 
     </ion-card>
     <ion-card>

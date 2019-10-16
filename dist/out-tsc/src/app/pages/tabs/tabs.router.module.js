@@ -25,6 +25,39 @@ var routes = [
                         loadChildren: '../principal/principal.module#PrincipalPageModule'
                     },
                     {
+                        path: 'contacto',
+                        loadChildren: '../contacto/contacto.module#ContactoPageModule'
+                    },
+                    {
+                        path: 'coloquios',
+                        loadChildren: '../coloquios/coloquios.module#ColoquiosPageModule'
+                    },
+                    {
+                        path: 'congresos',
+                        loadChildren: '../congresos/congresos.module#CongresosPageModule'
+                    },
+                    {
+                        path: 'sesiones',
+                        loadChildren: '../sesiones/sesiones.module#SesionesPageModule'
+                    },
+                    {
+                        path: 'mesadirectiva',
+                        loadChildren: '../mesadirectiva/mesadirectiva.module#MesadirectivaPageModule'
+                    },
+                    {
+                        path: 'casos',
+                        loadChildren: '../casos/casos.module#CasosPageModule'
+                    },
+                    {
+                        path: 'lista',
+                        loadChildren: '../pages/casos-lista/casos-lista.module#CasosListaPageModule'
+                    },
+                    {
+                        path: 'usuario',
+                        loadChildren: '../usuario/usuario.module#UsuarioPageModule',
+                        canLoad: [UsuarioGuard]
+                    },
+                    {
                         path: 'programa',
                         children: [
                             {
@@ -103,6 +136,10 @@ var routes = [
                                 loadChildren: '../congresista/congresista.module#CongresistaPageModule'
                             },
                         ]
+                    },
+                    {
+                        path: 'transm-lista',
+                        loadChildren: '../transm-lista/transm-lista.module#TransmListaPageModule'
                     },
                 ]
             },

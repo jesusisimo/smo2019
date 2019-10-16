@@ -16,6 +16,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
+import { Device } from '@ionic-native/device/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
@@ -43,6 +44,7 @@ import { PostImagenComponent } from './pages/post-imagen/post-imagen.component'
     FileOpener,
     FileTransfer,
     DocumentViewer,
+    Device,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

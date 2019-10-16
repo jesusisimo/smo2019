@@ -104,14 +104,61 @@ var ActividadesService = /** @class */ (function () {
     };
     ActividadesService.prototype.buscar = function (variable) {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var url, promesa;
+            var promesa_5, url, promesa_6;
             var _this = this;
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, URL_SERVICIOS];
-                    case 1:
+                    case 0:
+                        if (!!this._as.online) return [3 /*break*/, 1];
+                        variable = variable.toUpperCase();
+                        this._as.presentLoading("Cargando...", 1.5);
+                        promesa_5 = this._ds.getActividades()
+                            .then(function (data) {
+                            _this.dias = [];
+                            _this.dia_actual = data.diaactual;
+                            _this.pagina = 0;
+                            var dia_fecinido = false;
+                            var nuevosdia = [];
+                            var list = [];
+                            list = data.dias;
+                            list.forEach(function (dia) {
+                                var nuevasactividades = [];
+                                var hay_actividades_endia = false;
+                                var listaactividades = [];
+                                listaactividades = dia.actividades;
+                                listaactividades.forEach(function (actividad) {
+                                    if (actividad.actividad.toUpperCase().indexOf(variable) >= 0 || actividad.descripcion.toUpperCase().indexOf(variable) >= 0 || actividad.temario.toUpperCase().indexOf(variable) >= 0 || actividad.categoria.toUpperCase().indexOf(variable) >= 0 || actividad.clave.toUpperCase().indexOf(variable) >= 0 || actividad.profesor.toUpperCase().indexOf(variable) >= 0) {
+                                        nuevasactividades.push(actividad);
+                                        hay_actividades_endia = true;
+                                        if (!dia_fecinido) {
+                                            dia_fecinido = true;
+                                            _this.dia_actual = dia.clave_dia;
+                                        }
+                                    }
+                                });
+                                var ndia;
+                                if (hay_actividades_endia) {
+                                    var ndia_1 = {
+                                        'actividades': nuevasactividades,
+                                        'clave_dia': dia.clave_dia,
+                                        'dia': dia.dia
+                                    };
+                                    nuevosdia.push(ndia_1);
+                                }
+                            });
+                            _this.dias = nuevosdia;
+                            _this._as.loading.dismiss();
+                            return promesa_5;
+                        })
+                            .catch(function (error) {
+                            _this._as.loading.dismiss();
+                            return Promise.reject(error);
+                        });
+                        return [3 /*break*/, 3];
+                    case 1: return [4 /*yield*/, URL_SERVICIOS];
+                    case 2:
                         url = (_a.sent()) + "/minutoxminuto.php?search=" + variable;
-                        promesa = this.http.get(url)
+                        promesa_6 = this.http.get(url)
                             .toPromise()
                             .then(function (data) {
                             _this.dias = data.dias;
@@ -122,40 +169,65 @@ var ActividadesService = /** @class */ (function () {
                                 _this.dia_actual = d.clave_dia;
                                 break;
                             }
-                            return promesa;
-                        })
-                            .catch(function (error) {
-                            return Promise.reject(error);
-                        });
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ActividadesService.prototype.actividadesPonente = function (ponente) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var url, promesa_5;
-            var _this = this;
-            return tslib_1.__generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!!this._as.online) return [3 /*break*/, 1];
-                        return [3 /*break*/, 3];
-                    case 1: return [4 /*yield*/, URL_SERVICIOS];
-                    case 2:
-                        url = (_a.sent()) + "/actividadesprofesor.php?profesor=" + ponente;
-                        promesa_5 = this.http.get(url)
-                            .toPromise()
-                            .then(function (data) {
-                            console.log(data);
-                            _this.actsPonente = data.actividades;
-                            return promesa_5;
+                            return promesa_6;
                         })
                             .catch(function (error) {
                             return Promise.reject(error);
                         });
                         _a.label = 3;
                     case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ActividadesService.prototype.actividadesPonente = function (ponente) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var promise_1, url, promesa_7;
+            var _this = this;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!!this._as.online) return [3 /*break*/, 2];
+                        this._as.presentLoading("Cargando...", 2);
+                        ponente = ponente.toUpperCase();
+                        return [4 /*yield*/, this._ds.getActividades()
+                                .then(function (data) {
+                                _this.actsPonente = [];
+                                var list = [];
+                                list = data.dias;
+                                list.forEach(function (dia) {
+                                    var listaactividades = [];
+                                    listaactividades = dia.actividades;
+                                    listaactividades.forEach(function (actividad) {
+                                        var listaproresores = [];
+                                        listaproresores = actividad.profesores;
+                                        listaproresores.forEach(function (profesor) {
+                                            if (profesor.profesor_id == ponente) {
+                                                _this.actsPonente.push(actividad);
+                                            }
+                                        });
+                                    });
+                                });
+                                return promise_1;
+                            })];
+                    case 1:
+                        promise_1 = _a.sent();
+                        return [3 /*break*/, 4];
+                    case 2: return [4 /*yield*/, URL_SERVICIOS];
+                    case 3:
+                        url = (_a.sent()) + "/actividadesprofesor.php?profesor=" + ponente;
+                        promesa_7 = this.http.get(url)
+                            .toPromise()
+                            .then(function (data) {
+                            console.log(data);
+                            _this.actsPonente = data.actividades;
+                            return promesa_7;
+                        })
+                            .catch(function (error) {
+                            return Promise.reject(error);
+                        });
+                        _a.label = 4;
+                    case 4: return [2 /*return*/];
                 }
             });
         });

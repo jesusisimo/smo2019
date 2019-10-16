@@ -32,6 +32,7 @@ export class UsuarioService {
             this.guardarToken(resp['token']);
             resolve(true);
           } else {
+            this._as.presentAlert(resp['mensaje']);
             this.token = null;
             this.storage.remove('token');
             resolve(false);

@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^7.2.2",
     "@angular/router": "^7.2.2",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/device": "^5.15.0",
     "@ionic-native/document-viewer": "^5.0.0",
     "@ionic-native/file": "^5.0.0",
     "@ionic-native/file-opener": "^5.0.0",

@@ -38,8 +38,6 @@
 	<string>Necesita acceso a la ubicación para encontrar cosas cercanas</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Necesita acceso a la ubicación para encontrar cosas cercanas</string>
-	<key>NSMainNibFile</key>
-	<string/>
 	<key>NSMainNibFile~ipad</key>
 	<string/>
 	<key>UIBackgroundModes</key>
