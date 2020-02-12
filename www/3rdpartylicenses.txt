@@ -41,6 +41,9 @@ MIT
 @ionic-native/core
 MIT
 
+@ionic-native/device
+MIT
+
 @ionic-native/document-viewer
 MIT
 
@@ -149,7 +152,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-loader
+ionic-loader
 
 localforage
 Apache-2.0

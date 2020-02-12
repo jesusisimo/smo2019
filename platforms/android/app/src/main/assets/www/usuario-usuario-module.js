@@ -58,7 +58,7 @@ var UsuarioPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header no-border >\n  <ion-toolbar color=\"primary\">\n      \n    <ion-buttons slot=\"end\">Salir \n      <ion-button (click)=\"logout()\"\n                  color=\"light\">\n        <ion-icon slot=\"icon-only\" name=\"exit\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"background\">\n\n\n    <ion-card color=\"primary\">\n      <ion-card-content>\n        <ion-avatar>\n          <img id=\"perfil\" src=\"{{ usuario.avatar }}\">\n        </ion-avatar>\n        <br>  \n            <ion-card-title text-center>{{ usuario.nombre }} {{ usuario.apellidos }}</ion-card-title>\n            <p text-center>{{ usuario.categoria }} | {{ usuario.email }}</p>\n        </ion-card-content> \n    </ion-card>\n    <ion-card>\n        <ion-card-content>\n            <ion-card-title text-center>Anualidades</ion-card-title>\n            <ion-row>\n                <ion-col size=\"4\" text-center>\n                    <ion-label>2017</ion-label><br>\n                    <ion-toggle  checked=\"{{usuario.an2017}}\" color=\"primary\"></ion-toggle>\n                  </ion-col>\n                  <ion-col size=\"4\" text-center>\n                      <ion-label>2018</ion-label><br>\n                      <ion-toggle  checked=\"{{usuario.an2018}}\" color=\"primary\"></ion-toggle>\n                    </ion-col>\n                    <ion-col size=\"4\" text-center>\n                        <ion-label>2019</ion-label><br>\n                        <ion-toggle  checked=\"{{usuario.an2019}}\" color=\"primary\"></ion-toggle>\n                      </ion-col>\n            </ion-row>\n    </ion-card-content>\n        </ion-card>\n    <ion-card color=\"light\">\n      <ion-row>\n        <ion-col size=\"6\">\n          <ion-item (click)=\"abrirWeb('https://smo.org.mx/archivos/documentos/ESTATUTO%20Final%20abril%202017.pdf','_system')\">           \n                  <p>Reglamento <br> y estatuto</p> \n                  <ion-icon slot=\"end\" name=\"bookmark\"></ion-icon>\n          </ion-item>  \n        </ion-col>\n        <ion-col size=\"6\">\n          <ion-item (click)=\"abrirWeb('https://smo.org.mx/archivos/smonline/smonline_busqueda.php','_system')\" >\n              <p>Artículos <br> de revistas</p>\n                  <ion-icon slot=\"end\" name=\"today\"></ion-icon>\n          </ion-item>         \n        </ion-col>\n        <ion-col size=\"6\">\n            <ion-item > \n                    <p>Publicar <br> Anuncios</p> \n                    <ion-icon slot=\"end\" name=\"list-box\"></ion-icon>\n            </ion-item>  \n          </ion-col>\n          <ion-col size=\"6\">\n            <ion-item > \n                <p>Publicar <br> Artículos</p>\n                    <ion-icon slot=\"end\" name=\"paper\"></ion-icon>\n            </ion-item>         \n          </ion-col>\n      </ion-row> \n    </ion-card>\n   \n  </ion-content>"
+module.exports = "<ion-header no-border >\n  <ion-toolbar color=\"primary\">\n      \n    <ion-buttons slot=\"end\">Salir \n      <ion-button (click)=\"logout()\"\n                  color=\"light\">\n        <ion-icon slot=\"icon-only\" name=\"exit\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"background\">\n\n\n    <ion-card color=\"primary\">\n      <ion-card-content>\n        <ion-avatar>\n          <img id=\"perfil\" src=\"{{ usuario.avatar }}\">\n        </ion-avatar>\n        <br>  \n            <ion-card-title text-center>{{ usuario.nombre }} {{ usuario.apellidos }}</ion-card-title>\n            <p text-center>{{ usuario.categoria }} | {{ usuario.email }}</p>\n        </ion-card-content> \n    </ion-card>\n    <ion-card>\n        <ion-card-content>\n            <ion-card-title text-center>Anualidades</ion-card-title>\n            <ion-row>\n                <ion-col size=\"4\" text-center>\n                    <ion-label>2017</ion-label><br>\n                    <ion-toggle  checked=\"{{usuario.an2017}}\" color=\"primary\"></ion-toggle>\n                  </ion-col>\n                  <ion-col size=\"4\" text-center>\n                      <ion-label>2018</ion-label><br>\n                      <ion-toggle  checked=\"{{usuario.an2018}}\" color=\"primary\"></ion-toggle>\n                    </ion-col>\n                    <ion-col size=\"4\" text-center>\n                      <ion-label>2019</ion-label><br>\n                      <ion-toggle  checked=\"{{usuario.an2019}}\" color=\"primary\"></ion-toggle>\n                    </ion-col>\n                    <ion-col size=\"4\" text-center>\n                      <ion-label>2020</ion-label><br>\n                      <ion-toggle  checked=\"{{usuario.an2020}}\" color=\"primary\"></ion-toggle>\n                    </ion-col>\n            </ion-row>\n    </ion-card-content>\n        </ion-card>\n    <ion-card color=\"light\">\n      <ion-row>\n        <ion-col size=\"6\">\n          <ion-item (click)=\"abrirWeb('https://smo.org.mx/archivos/documentos/ESTATUTO%20Final%20abril%202017.pdf','_system')\">           \n                  <p>Reglamento <br> y estatuto</p> \n                  <ion-icon slot=\"end\" name=\"bookmark\"></ion-icon>\n          </ion-item>  \n        </ion-col>\n        <ion-col size=\"6\">\n          <ion-item (click)=\"abrirWeb('https://smo.org.mx/archivos/smonline/smonline_busqueda.php','_system')\" >\n              <p>Artículos <br> de revistas</p>\n                  <ion-icon slot=\"end\" name=\"today\"></ion-icon>\n          </ion-item>         \n        </ion-col>\n        <ion-col size=\"3\">\n        </ion-col>\n        <ion-col size=\"6\">\n\n            <ion-item > \n                    <p>Votaciones</p> \n                    <ion-icon slot=\"end\" name=\"list-box\"></ion-icon>\n            </ion-item>  \n          </ion-col>\n\n      </ion-row> \n    </ion-card>\n   \n  </ion-content>"
 
 /***/ }),
 
@@ -69,7 +69,7 @@ module.exports = "<ion-header no-border >\n  <ion-toolbar color=\"primary\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-content.background {\n  --background: url('perfilBck.png') 0 0/100% 100% no-repeat; }\n\nion-avatar {\n  border: 1px solid rgba(0, 0, 0, 0.25);\n  padding: 3px;\n  border-radius: 100%;\n  box-sizing: content-box;\n  margin: 0 auto;\n  width: 128px;\n  height: 128px;\n  overflow: hidden; }\n\n.perfil img {\n  width: 128px;\n  border-radius: 100%; }\n\n.centerButton {\n  padding-left: 20px;\n  padding-right: 20px; }\n\n.buttoncolor {\n  background-color: antiquewhite; }\n\n.centerText {\n  padding-left: 200px; }\n\n.center {\n  padding-left: 75px;\n  padding-right: 75px; }\n\nion-item, ion-segment {\n  border: 2px;\n  border-color: #006;\n  border-radius: 16px 16px 16px 16px;\n  -moz-border-radius: 16px 16px 16px 16px;\n  -webkit-border-radius: 4px 4px 4px 4px; }\n\nion-item {\n  border: 2px solid;\n  border-color: #006;\n  background-color: white; }\n\nion-button {\n  background-color: #838080d8;\n  /* For browsers that do not support gradients */\n  background-image: linear-gradient(-90deg, #006, #838080d8);\n  /* Standard syntax (must be last) */ }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvdXN1YXJpby91c3VhcmlvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDBEQUFhLEVBQUE7O0FBRWpCO0VBRUkscUNBQXFDO0VBQ3JDLFlBQVk7RUFDWixtQkFBbUI7RUFHbkIsdUJBQXVCO0VBQ3ZCLGNBQWM7RUFDZCxZQUFZO0VBQ1osYUFBYTtFQUNiLGdCQUFnQixFQUFBOztBQUdwQjtFQUNJLFlBQVk7RUFDZCxtQkFBbUIsRUFBQTs7QUFHckI7RUFDSSxrQkFBa0I7RUFDbEIsbUJBQW1CLEVBQUE7O0FBR3ZCO0VBQ0ksOEJBQThCLEVBQUE7O0FBR2xDO0VBQ0ksbUJBQW1CLEVBQUE7O0FBR3ZCO0VBQ0ksa0JBQWtCO0VBQ2xCLG1CQUFtQixFQUFBOztBQUV2QjtFQUNJLFdBQVk7RUFDWixrQkFBa0I7RUFDbEIsa0NBQWtDO0VBQ3RDLHVDQUF1QztFQUN2QyxzQ0FDQSxFQUFBOztBQUNBO0VBQ0ksaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQix1QkFBdUIsRUFBQTs7QUFFM0I7RUFFSSwyQkFBMkI7RUFBRSwrQ0FBQTtFQUM3QiwwREFBeUQ7RUFBRSxtQ0FBQSxFQUFvQyIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3VzdWFyaW8vdXN1YXJpby5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudC5iYWNrZ3JvdW5ke1xuICAgIC0tYmFja2dyb3VuZDogdXJsKC4uLy4uLy4uL2Fzc2V0cy9pbWcvcGVyZmlsQmNrLnBuZykgMCAwLzEwMCUgMTAwJSBuby1yZXBlYXQ7XG59XG5pb24tYXZhdGFye1xuXG4gICAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjI1KTtcbiAgICBwYWRkaW5nOiAzcHg7XG4gICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAtd2Via2l0LWJveC1zaXppbmc6IGNvbnRlbnQtYm94O1xuICAgIC1tb3otYm94LXNpemluZzogY29udGVudC1ib3g7XG4gICAgYm94LXNpemluZzogY29udGVudC1ib3g7XG4gICAgbWFyZ2luOiAwIGF1dG87XG4gICAgd2lkdGg6IDEyOHB4O1xuICAgIGhlaWdodDogMTI4cHg7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjsgXG59XG5cbi5wZXJmaWwgaW1ne1xuICAgIHdpZHRoOiAxMjhweDtcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcbn1cblxuLmNlbnRlckJ1dHRvbntcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gICAgcGFkZGluZy1yaWdodDogMjBweDtcbiAgICBcbn1cbi5idXR0b25jb2xvcntcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBhbnRpcXVld2hpdGU7XG59XG5cbi5jZW50ZXJUZXh0e1xuICAgIHBhZGRpbmctbGVmdDogMjAwcHg7XG5cbn1cbi5jZW50ZXJ7XG4gICAgcGFkZGluZy1sZWZ0OiA3NXB4O1xuICAgIHBhZGRpbmctcmlnaHQ6IDc1cHg7XG59XG5pb24taXRlbSwgaW9uLXNlZ21lbnR7XG4gICAgYm9yZGVyOiAycHggO1xuICAgIGJvcmRlci1jb2xvcjogIzAwNjtcbiAgICBib3JkZXItcmFkaXVzOiAxNnB4IDE2cHggMTZweCAxNnB4O1xuLW1vei1ib3JkZXItcmFkaXVzOiAxNnB4IDE2cHggMTZweCAxNnB4O1xuLXdlYmtpdC1ib3JkZXItcmFkaXVzOiA0cHggNHB4IDRweCA0cHhcbn1cbmlvbi1pdGVte1xuICAgIGJvcmRlcjogMnB4IHNvbGlkO1xuICAgIGJvcmRlci1jb2xvcjogIzAwNjtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbn1cbmlvbi1idXR0b24ge1xuICAgIFxuICAgIGJhY2tncm91bmQtY29sb3I6ICM4MzgwODBkODsgLyogRm9yIGJyb3dzZXJzIHRoYXQgZG8gbm90IHN1cHBvcnQgZ3JhZGllbnRzICovXG4gICAgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KC05MGRlZywjMDA2LCAjODM4MDgwZDgpOyAvKiBTdGFuZGFyZCBzeW50YXggKG11c3QgYmUgbGFzdCkgKi9cbiAgfSJdfQ== */"
+module.exports = "ion-content.background {\n  --background: url('perfilBck.png') 0 0/100% 100% no-repeat; }\n\nion-avatar {\n  border: 1px solid rgba(0, 0, 0, 0.25);\n  padding: 3px;\n  border-radius: 100%;\n  box-sizing: content-box;\n  margin: 0 auto;\n  width: 128px;\n  height: 128px;\n  overflow: hidden; }\n\n.perfil img {\n  width: 128px;\n  border-radius: 100%; }\n\n.centerButton {\n  padding-left: 20px;\n  padding-right: 20px; }\n\n.buttoncolor {\n  background-color: antiquewhite; }\n\n.centerText {\n  padding-left: 200px; }\n\n.center {\n  padding-left: 75px;\n  padding-right: 75px; }\n\nion-item, ion-segment {\n  border: 2px;\n  border-color: #006;\n  border-radius: 16px 16px 16px 16px;\n  -moz-border-radius: 16px 16px 16px 16px;\n  -webkit-border-radius: 4px 4px 4px 4px; }\n\nion-item {\n  border: 2px solid;\n  border-color: #006;\n  background-color: white; }\n\nion-button {\n  background-color: #838080d8;\n  /* For browsers that do not support gradients */\n  background-image: -webkit-gradient(linear, right top, left top, from(#006), to(#838080d8));\n  background-image: linear-gradient(-90deg, #006, #838080d8);\n  /* Standard syntax (must be last) */ }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvdXN1YXJpby91c3VhcmlvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDBEQUFhLEVBQUE7O0FBRWpCO0VBRUkscUNBQXFDO0VBQ3JDLFlBQVk7RUFDWixtQkFBbUI7RUFHbkIsdUJBQXVCO0VBQ3ZCLGNBQWM7RUFDZCxZQUFZO0VBQ1osYUFBYTtFQUNiLGdCQUFnQixFQUFBOztBQUdwQjtFQUNJLFlBQVk7RUFDZCxtQkFBbUIsRUFBQTs7QUFHckI7RUFDSSxrQkFBa0I7RUFDbEIsbUJBQW1CLEVBQUE7O0FBR3ZCO0VBQ0ksOEJBQThCLEVBQUE7O0FBR2xDO0VBQ0ksbUJBQW1CLEVBQUE7O0FBR3ZCO0VBQ0ksa0JBQWtCO0VBQ2xCLG1CQUFtQixFQUFBOztBQUV2QjtFQUNJLFdBQVk7RUFDWixrQkFBa0I7RUFDbEIsa0NBQWtDO0VBQ3RDLHVDQUF1QztFQUN2QyxzQ0FDQSxFQUFBOztBQUNBO0VBQ0ksaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQix1QkFBdUIsRUFBQTs7QUFFM0I7RUFFSSwyQkFBMkI7RUFBRSwrQ0FBQTtFQUM3QiwwRkFBeUQ7RUFBekQsMERBQXlEO0VBQUUsbUNBQUEsRUFBb0MiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy91c3VhcmlvL3VzdWFyaW8ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnQuYmFja2dyb3VuZHtcbiAgICAtLWJhY2tncm91bmQ6IHVybCguLi8uLi8uLi9hc3NldHMvaW1nL3BlcmZpbEJjay5wbmcpIDAgMC8xMDAlIDEwMCUgbm8tcmVwZWF0O1xufVxuaW9uLWF2YXRhcntcblxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC4yNSk7XG4gICAgcGFkZGluZzogM3B4O1xuICAgIGJvcmRlci1yYWRpdXM6IDEwMCU7XG4gICAgLXdlYmtpdC1ib3gtc2l6aW5nOiBjb250ZW50LWJveDtcbiAgICAtbW96LWJveC1zaXppbmc6IGNvbnRlbnQtYm94O1xuICAgIGJveC1zaXppbmc6IGNvbnRlbnQtYm94O1xuICAgIG1hcmdpbjogMCBhdXRvO1xuICAgIHdpZHRoOiAxMjhweDtcbiAgICBoZWlnaHQ6IDEyOHB4O1xuICAgIG92ZXJmbG93OiBoaWRkZW47IFxufVxuXG4ucGVyZmlsIGltZ3tcbiAgICB3aWR0aDogMTI4cHg7XG4gIGJvcmRlci1yYWRpdXM6IDEwMCU7XG59XG5cbi5jZW50ZXJCdXR0b257XG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xuICAgIHBhZGRpbmctcmlnaHQ6IDIwcHg7XG4gICAgXG59XG4uYnV0dG9uY29sb3J7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogYW50aXF1ZXdoaXRlO1xufVxuXG4uY2VudGVyVGV4dHtcbiAgICBwYWRkaW5nLWxlZnQ6IDIwMHB4O1xuXG59XG4uY2VudGVye1xuICAgIHBhZGRpbmctbGVmdDogNzVweDtcbiAgICBwYWRkaW5nLXJpZ2h0OiA3NXB4O1xufVxuaW9uLWl0ZW0sIGlvbi1zZWdtZW50e1xuICAgIGJvcmRlcjogMnB4IDtcbiAgICBib3JkZXItY29sb3I6ICMwMDY7XG4gICAgYm9yZGVyLXJhZGl1czogMTZweCAxNnB4IDE2cHggMTZweDtcbi1tb3otYm9yZGVyLXJhZGl1czogMTZweCAxNnB4IDE2cHggMTZweDtcbi13ZWJraXQtYm9yZGVyLXJhZGl1czogNHB4IDRweCA0cHggNHB4XG59XG5pb24taXRlbXtcbiAgICBib3JkZXI6IDJweCBzb2xpZDtcbiAgICBib3JkZXItY29sb3I6ICMwMDY7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG59XG5pb24tYnV0dG9uIHtcbiAgICBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjODM4MDgwZDg7IC8qIEZvciBicm93c2VycyB0aGF0IGRvIG5vdCBzdXBwb3J0IGdyYWRpZW50cyAqL1xuICAgIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCgtOTBkZWcsIzAwNiwgIzgzODA4MGQ4KTsgLyogU3RhbmRhcmQgc3ludGF4IChtdXN0IGJlIGxhc3QpICovXG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -194,6 +194,228 @@ var UsuarioPage = /** @class */ (function () {
             src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_4__["AjustesService"]])
     ], UsuarioPage);
     return UsuarioPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/usuario.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/usuario.service.ts ***!
+  \*********************************************/
+/*! exports provided: UsuarioService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsuarioService", function() { return UsuarioService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config/url.servicios */ "./src/app/config/url.servicios.ts");
+/* harmony import */ var _ajustes_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ajustes.service */ "./src/app/services/ajustes.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+
+
+
+
+
+var UsuarioService = /** @class */ (function () {
+    function UsuarioService(storage, http, _as, navCtrl) {
+        this.storage = storage;
+        this.http = http;
+        this._as = _as;
+        this.navCtrl = navCtrl;
+        this.token = null;
+        this.usuario = {};
+    }
+    UsuarioService.prototype.login = function (email, password) {
+        var _this = this;
+        var data = { email: email, password: password };
+        var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/login.php";
+        return new Promise(function (resolve) {
+            _this.http.post(url, data).subscribe(function (resp) {
+                console.log(resp);
+                if (!resp['error']) {
+                    _this.guardarToken(resp['token']);
+                    resolve(true);
+                }
+                else {
+                    _this._as.presentAlert(resp['mensaje']);
+                    _this.token = null;
+                    _this.storage.remove('token');
+                    resolve(false);
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.registro = function (usuario) {
+        var _this = this;
+        var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/registro.php";
+        return new Promise(function (resolve) {
+            _this.http.post(url, usuario).subscribe(function (resp) {
+                console.log(resp);
+                if (!resp['error']) {
+                    _this.guardarToken(resp['token']);
+                    resolve(true);
+                }
+                else {
+                    _this._as.presentAlert(resp['mensaje']);
+                    _this.token = null;
+                    _this.storage.remove('token');
+                    resolve(false);
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.getUsuario = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.validaToken()];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, this.usuario)];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.guardarToken = function (token) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.token = token;
+                        return [4 /*yield*/, this.storage.set('token', token)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.cargarToken = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.storage.get('token')];
+                    case 1:
+                        _a.token = (_b.sent()) || null;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.existeToken = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.cargarToken()];
+                    case 1:
+                        _a.sent();
+                        if (!this.token) {
+                            console.log("No existe token");
+                            return [2 /*return*/, Promise.resolve(false)];
+                        }
+                        else {
+                            console.log("Si existe token");
+                            return [2 /*return*/, Promise.resolve(true)];
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.tienePermiso = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.cargarToken()];
+                    case 1:
+                        _a.sent();
+                        if (!this.token) {
+                            //this._as.presentAlert("Ir a mi perfil para registrarme");
+                            return [2 /*return*/, Promise.resolve(false)];
+                        }
+                        else {
+                            console.log("Si existe token");
+                            return [2 /*return*/, Promise.resolve(true)];
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.validaToken = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.cargarToken()];
+                    case 1:
+                        _a.sent();
+                        if (!this.token) {
+                            this.navCtrl.navigateRoot('/tabs/login');
+                            return [2 /*return*/, Promise.resolve(false)];
+                        }
+                        return [2 /*return*/, new Promise(function (resolve) {
+                                var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/usuario.php";
+                                var data = { token: _this.token };
+                                _this.http.post(url, data)
+                                    .subscribe(function (resp) {
+                                    if (resp['id']) {
+                                        _this.usuario = resp;
+                                        resolve(true);
+                                    }
+                                    else {
+                                        _this.navCtrl.navigateRoot('/tabs/login');
+                                        resolve(false);
+                                    }
+                                });
+                            })];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.logout = function () {
+        this.token = null;
+        this.usuario = null;
+        this.storage.remove('token');
+        this.navCtrl.navigateRoot('/tabs/login', { animated: true });
+    };
+    UsuarioService.prototype.actualizarUsuario = function (usuario) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/updateuser.php";
+            _this.http.post(url, usuario)
+                .subscribe(function (resp) {
+                if (resp['success']) {
+                    resolve(true);
+                }
+                else {
+                    resolve(false);
+                }
+            });
+        });
+    };
+    UsuarioService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
+            _ajustes_service__WEBPACK_IMPORTED_MODULE_5__["AjustesService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"]])
+    ], UsuarioService);
+    return UsuarioService;
 }());
 
 

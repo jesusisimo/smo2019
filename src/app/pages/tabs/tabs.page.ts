@@ -20,7 +20,7 @@ export class TabsPage {
   constructor(
     private iab: InAppBrowser,
     private _us:UsuarioService,
-    private _as:AjustesService,
+    public _as:AjustesService,
     private navCtrl: NavController){
       this.notificaciones=this._as.sinleer;
   }

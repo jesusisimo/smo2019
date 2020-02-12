@@ -38,7 +38,7 @@ export class PushService {
     });
     this.oneSignal.getIds().then(info => {
       this.userID = info.userId;
-      console.log(this.userID);
+      console.log("ID notifi: "+this.userID);
     });
     this.oneSignal.endInit();
   }
@@ -120,11 +120,13 @@ export class PushService {
 
   async getNoVistos() {
       let url = URL_SERVICIOS + "/notificaciones.php?accion=countNovisto&uuid="+this._as.uuid;
-      console.log(url);
       let promesa = await this.http.get<INotificaciones>(url)
         .toPromise()
         .then(data => {
-          console.log(data.novistos);
+          console.log("sin leer ",data.novistos);
+          if(data.novistos<0){
+            data.novistos=0;
+          }
           return data.novistos;
         })
         .catch(error => {

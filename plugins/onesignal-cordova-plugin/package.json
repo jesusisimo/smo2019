@@ -1,8 +1,8 @@
 {
   "_from": "onesignal-cordova-plugin",
-  "_id": "onesignal-cordova-plugin@2.4.7",
+  "_id": "onesignal-cordova-plugin@2.8.3",
   "_inBundle": false,
-  "_integrity": "sha512-gPCFdx/2+l34g5CWlH8LyC5RobJyiyHHFvuJIbHgeEagcL0ieE+hg5YS+3YzFl93Isnh/mhfV3LEYaUON3ZKuw==",
+  "_integrity": "sha512-DKZGxrN9Tqj6z27Z5ix+9jpCaD+BsdpoAMlCDGH3gZAafkdp1PaRCHDcXMeXkmImFnYqP0gBThYIdSIN4mlXfQ==",
   "_location": "/onesignal-cordova-plugin",
   "_phantomChildren": {},
   "_requested": {
@@ -19,12 +19,12 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-2.4.7.tgz",
-  "_shasum": "834dcbf6adf36ed989770320dc35c933e9568ea0",
+  "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-2.8.3.tgz",
+  "_shasum": "9de0464c7dbd2715016d2c4bf093abb73be46445",
   "_spec": "onesignal-cordova-plugin",
-  "_where": "/Users/brb/Documents/GitHub/smo/smo",
+  "_where": "/Users/brb/Documents/GitHub/smo2019",
   "author": {
-    "name": "Josh Kasten & Brad Hesse"
+    "name": "Josh Kasten, Brad Hesse, Rodrigo Gomez-Palacio"
   },
   "bugs": {
     "url": "https://github.com/onesignal/OneSignal-Cordova-SDK/issues"
@@ -92,5 +92,5 @@
     "type": "git",
     "url": "git+https://github.com/onesignal/OneSignal-Cordova-SDK.git"
   },
-  "version": "2.4.7"
+  "version": "2.8.3"
 }

@@ -9,18 +9,18 @@
 		<key>CFBundleIdentifier</key>
 		<string>com.jcinnovation.smo</string>
 		<key>CFBundleShortVersionString</key>
-		<string>1.0.1</string>
+		<string>1.0.5</string>
 		<key>CFBundleVersion</key>
-		<string>1.0.1</string>
+		<string>1.0.5</string>
 		<key>SigningIdentity</key>
-		<string>iPhone Developer: Jesus Cuevas Sanchez (7Z4ZV2M4J2)</string>
+		<string>Apple Development: Jesus Cuevas Sanchez (7Z4ZV2M4J2)</string>
 		<key>Team</key>
 		<string>VF6838B5PA</string>
 	</dict>
 	<key>ArchiveVersion</key>
 	<integer>2</integer>
 	<key>CreationDate</key>
-	<date>2019-10-14T06:08:30Z</date>
+	<date>2020-02-05T03:46:57Z</date>
 	<key>Name</key>
 	<string>SMO</string>
 	<key>SchemeName</key>

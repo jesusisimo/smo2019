@@ -1,8 +1,8 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-47b88144.js":
+/***/ "./node_modules/@ionic/core/dist/esm-es5/input-shims-a4fc53ac.js":
 /*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-47b88144.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm-es5/input-shims-a4fc53ac.js ***!
   \***********************************************************************/
 /*! exports provided: startInputShims */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -10,8 +10,332 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startInputShims", function() { return startInputShims; });
-/* harmony import */ var _chunk_6d7d2f8c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-6d7d2f8c.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js");
-var cloneMap=new WeakMap;function relocateInput(e,t,n,o){void 0===o&&(o=0),cloneMap.has(e)!==n&&(n?addClone(e,t,o):removeClone(e,t))}function isFocused(e){return e===e.getRootNode().activeElement}function addClone(e,t,n){var o=t.parentNode,r=t.cloneNode(!1);r.classList.add("cloned-input"),r.tabIndex=-1,o.appendChild(r),cloneMap.set(e,r);var a="rtl"===e.ownerDocument.dir?9999:-9999;e.style.pointerEvents="none",t.style.transform="translate3d("+a+"px,"+n+"px,0) scale(0)"}function removeClone(e,t){var n=cloneMap.get(e);n&&(cloneMap.delete(e),n.remove()),e.style.pointerEvents="",t.style.transform=""}function enableHideCaretOnScroll(e,t,n){if(!n||!t)return function(){};var o=function(n){isFocused(t)&&relocateInput(e,t,n)},r=function(){return relocateInput(e,t,!1)},a=function(){return o(!0)},i=function(){return o(!1)};return n.addEventListener("ionScrollStart",a),n.addEventListener("ionScrollEnd",i),t.addEventListener("blur",r),function(){n.removeEventListener("ionScrollStart",a),n.removeEventListener("ionScrollEnd",i),t.addEventListener("ionBlur",r)}}var SKIP_SELECTOR="input, textarea, [no-blur]";function enableInputBlurring(e){var t=!0,n=!1;function o(){n=!0}function r(){t=!0}function a(o){if(n)n=!1;else{var r=e.activeElement;if(r&&!r.matches(SKIP_SELECTOR)){var a=o.target;a!==r&&(a.matches(SKIP_SELECTOR)||a.closest(SKIP_SELECTOR)||(t=!1,setTimeout(function(){t||r.blur()},50)))}}}return e.addEventListener("ionScrollStart",o),e.addEventListener("focusin",r,!0),e.addEventListener("touchend",a,!1),function(){e.removeEventListener("ionScrollStart",o,!0),e.removeEventListener("focusin",r,!0),e.removeEventListener("touchend",a,!1)}}var SCROLL_ASSIST_SPEED=.3;function getScrollData(e,t,n){return calcScrollData((e.closest("ion-item,[ion-item]")||e).getBoundingClientRect(),t.getBoundingClientRect(),n,e.ownerDocument.defaultView.innerHeight)}function calcScrollData(e,t,n,o){var r=e.top,a=e.bottom,i=t.top+15,l=.5*Math.min(t.bottom,o-n)-a,c=i-r,u=Math.round(l<0?-l:c>0?-c:0),s=Math.abs(u);return{scrollAmount:u,scrollDuration:Math.min(400,Math.max(150,s/SCROLL_ASSIST_SPEED)),scrollPadding:n,inputSafeY:4-(r-i)}}function enableScrollAssist(e,t,n,o){var r,a=function(e){r=Object(_chunk_6d7d2f8c_js__WEBPACK_IMPORTED_MODULE_0__["k"])(e)},i=function(a){if(r){var i=Object(_chunk_6d7d2f8c_js__WEBPACK_IMPORTED_MODULE_0__["k"])(a);hasPointerMoved(6,r,i)||isFocused(t)||(a.preventDefault(),a.stopPropagation(),jsSetFocus(e,t,n,o))}};return e.addEventListener("touchstart",a,!0),e.addEventListener("touchend",i,!0),function(){e.removeEventListener("touchstart",a,!0),e.removeEventListener("touchend",i,!0)}}function jsSetFocus(e,t,n,o){var r=getScrollData(e,n,o);Math.abs(r.scrollAmount)<4?t.focus():(relocateInput(e,t,!0,r.inputSafeY),t.focus(),n.scrollByPoint(0,r.scrollAmount,r.scrollDuration).then(function(){relocateInput(e,t,!1,r.inputSafeY),t.focus()}))}function hasPointerMoved(e,t,n){if(t&&n){var o=t.x-n.x,r=t.y-n.y;return o*o+r*r>e*e}return!1}var PADDING_TIMER_KEY="$ionPaddingTimer";function enableScrollPadding(e,t){function n(e){setScrollPadding(e.target,t)}function o(e){setScrollPadding(e.target,0)}return e.addEventListener("focusin",n),e.addEventListener("focusout",o),function(){e.removeEventListener("focusin",n),e.removeEventListener("focusout",o)}}function setScrollPadding(e,t){if("INPUT"===e.tagName&&(!e.parentElement||"ION-INPUT"!==e.parentElement.tagName)){var n=e.closest("ion-content");if(null!==n){var o=n[PADDING_TIMER_KEY];o&&clearTimeout(o),t>0?n.style.setProperty("--keyboard-offset",t+"px"):n[PADDING_TIMER_KEY]=setTimeout(function(){n.style.setProperty("--keyboard-offset","0px")},120)}}}var INPUT_BLURRING=!0,SCROLL_PADDING=!0;function startInputShims(e,t){var n=t.getNumber("keyboardHeight",290),o=t.getBoolean("scrollAssist",!0),r=t.getBoolean("hideCaretOnScroll",!0),a=t.getBoolean("inputBlurring",!0),i=t.getBoolean("scrollPadding",!0),l=new WeakMap,c=new WeakMap;function u(e){var t=(e.shadowRoot||e).querySelector("input"),a=e.closest("ion-content");if(t){if(a&&r&&!l.has(e)){var i=enableHideCaretOnScroll(e,t,a);l.set(e,i)}a&&o&&!c.has(e)&&(i=enableScrollAssist(e,t,a,n),c.set(e,i))}}a&&INPUT_BLURRING&&enableInputBlurring(e),i&&SCROLL_PADDING&&enableScrollPadding(e,n);for(var s=0,d=Array.from(e.querySelectorAll("ion-input"));s<d.length;s++)u(d[s]);e.body.addEventListener("ionInputDidLoad",function(e){u(e.target)}),e.body.addEventListener("ionInputDidUnload",function(e){var t,n;t=e.target,r&&((n=l.get(t))&&n(),l.delete(t)),o&&((n=c.get(t))&&n(),c.delete(t))})}
+/* harmony import */ var _helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers-46f4a262.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-46f4a262.js");
+
+var cloneMap = new WeakMap();
+var relocateInput = function (componentEl, inputEl, shouldRelocate, inputRelativeY) {
+    if (inputRelativeY === void 0) { inputRelativeY = 0; }
+    if (cloneMap.has(componentEl) === shouldRelocate) {
+        return;
+    }
+    if (shouldRelocate) {
+        addClone(componentEl, inputEl, inputRelativeY);
+    }
+    else {
+        removeClone(componentEl, inputEl);
+    }
+};
+var isFocused = function (input) {
+    return input === input.getRootNode().activeElement;
+};
+var addClone = function (componentEl, inputEl, inputRelativeY) {
+    // this allows for the actual input to receive the focus from
+    // the user's touch event, but before it receives focus, it
+    // moves the actual input to a location that will not screw
+    // up the app's layout, and does not allow the native browser
+    // to attempt to scroll the input into place (messing up headers/footers)
+    // the cloned input fills the area of where native input should be
+    // while the native input fakes out the browser by relocating itself
+    // before it receives the actual focus event
+    // We hide the focused input (with the visible caret) invisible by making it scale(0),
+    var parentEl = inputEl.parentNode;
+    // DOM WRITES
+    var clonedEl = inputEl.cloneNode(false);
+    clonedEl.classList.add('cloned-input');
+    clonedEl.tabIndex = -1;
+    parentEl.appendChild(clonedEl);
+    cloneMap.set(componentEl, clonedEl);
+    var doc = componentEl.ownerDocument;
+    var tx = doc.dir === 'rtl' ? 9999 : -9999;
+    componentEl.style.pointerEvents = 'none';
+    inputEl.style.transform = "translate3d(" + tx + "px," + inputRelativeY + "px,0) scale(0)";
+};
+var removeClone = function (componentEl, inputEl) {
+    var clone = cloneMap.get(componentEl);
+    if (clone) {
+        cloneMap.delete(componentEl);
+        clone.remove();
+    }
+    componentEl.style.pointerEvents = '';
+    inputEl.style.transform = '';
+};
+var enableHideCaretOnScroll = function (componentEl, inputEl, scrollEl) {
+    if (!scrollEl || !inputEl) {
+        return function () { return; };
+    }
+    var scrollHideCaret = function (shouldHideCaret) {
+        if (isFocused(inputEl)) {
+            relocateInput(componentEl, inputEl, shouldHideCaret);
+        }
+    };
+    var onBlur = function () { return relocateInput(componentEl, inputEl, false); };
+    var hideCaret = function () { return scrollHideCaret(true); };
+    var showCaret = function () { return scrollHideCaret(false); };
+    scrollEl.addEventListener('ionScrollStart', hideCaret);
+    scrollEl.addEventListener('ionScrollEnd', showCaret);
+    inputEl.addEventListener('blur', onBlur);
+    return function () {
+        scrollEl.removeEventListener('ionScrollStart', hideCaret);
+        scrollEl.removeEventListener('ionScrollEnd', showCaret);
+        inputEl.addEventListener('ionBlur', onBlur);
+    };
+};
+var SKIP_SELECTOR = 'input, textarea, [no-blur]';
+var enableInputBlurring = function () {
+    var focused = true;
+    var didScroll = false;
+    var doc = document;
+    var onScroll = function () {
+        didScroll = true;
+    };
+    var onFocusin = function () {
+        focused = true;
+    };
+    var onTouchend = function (ev) {
+        // if app did scroll return early
+        if (didScroll) {
+            didScroll = false;
+            return;
+        }
+        var active = doc.activeElement;
+        if (!active) {
+            return;
+        }
+        // only blur if the active element is a text-input or a textarea
+        if (active.matches(SKIP_SELECTOR)) {
+            return;
+        }
+        // if the selected target is the active element, do not blur
+        var tapped = ev.target;
+        if (tapped === active) {
+            return;
+        }
+        if (tapped.matches(SKIP_SELECTOR) || tapped.closest(SKIP_SELECTOR)) {
+            return;
+        }
+        focused = false;
+        // TODO: find a better way, why 50ms?
+        setTimeout(function () {
+            if (!focused) {
+                active.blur();
+            }
+        }, 50);
+    };
+    doc.addEventListener('ionScrollStart', onScroll);
+    doc.addEventListener('focusin', onFocusin, true);
+    doc.addEventListener('touchend', onTouchend, false);
+    return function () {
+        doc.removeEventListener('ionScrollStart', onScroll, true);
+        doc.removeEventListener('focusin', onFocusin, true);
+        doc.removeEventListener('touchend', onTouchend, false);
+    };
+};
+var SCROLL_ASSIST_SPEED = 0.3;
+var getScrollData = function (componentEl, contentEl, keyboardHeight) {
+    var itemEl = componentEl.closest('ion-item,[ion-item]') || componentEl;
+    return calcScrollData(itemEl.getBoundingClientRect(), contentEl.getBoundingClientRect(), keyboardHeight, componentEl.ownerDocument.defaultView.innerHeight);
+};
+var calcScrollData = function (inputRect, contentRect, keyboardHeight, platformHeight) {
+    // compute input's Y values relative to the body
+    var inputTop = inputRect.top;
+    var inputBottom = inputRect.bottom;
+    // compute visible area
+    var visibleAreaTop = contentRect.top;
+    var visibleAreaBottom = Math.min(contentRect.bottom, platformHeight - keyboardHeight);
+    // compute safe area
+    var safeAreaTop = visibleAreaTop + 15;
+    var safeAreaBottom = visibleAreaBottom * 0.5;
+    // figure out if each edge of the input is within the safe area
+    var distanceToBottom = safeAreaBottom - inputBottom;
+    var distanceToTop = safeAreaTop - inputTop;
+    // desiredScrollAmount is the negated distance to the safe area according to our calculations.
+    var desiredScrollAmount = Math.round((distanceToBottom < 0)
+        ? -distanceToBottom
+        : (distanceToTop > 0)
+            ? -distanceToTop
+            : 0);
+    // our calculations make some assumptions that aren't always true, like the keyboard being closed when an input
+    // gets focus, so make sure we don't scroll the input above the visible area
+    var scrollAmount = Math.min(desiredScrollAmount, inputTop - visibleAreaTop);
+    var distance = Math.abs(scrollAmount);
+    var duration = distance / SCROLL_ASSIST_SPEED;
+    var scrollDuration = Math.min(400, Math.max(150, duration));
+    return {
+        scrollAmount: scrollAmount,
+        scrollDuration: scrollDuration,
+        scrollPadding: keyboardHeight,
+        inputSafeY: -(inputTop - safeAreaTop) + 4
+    };
+};
+var enableScrollAssist = function (componentEl, inputEl, contentEl, keyboardHeight) {
+    var coord;
+    var touchStart = function (ev) {
+        coord = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_0__["p"])(ev);
+    };
+    var touchEnd = function (ev) {
+        // input cover touchend/mouseup
+        if (!coord) {
+            return;
+        }
+        // get where the touchend/mouseup ended
+        var endCoord = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_0__["p"])(ev);
+        // focus this input if the pointer hasn't moved XX pixels
+        // and the input doesn't already have focus
+        if (!hasPointerMoved(6, coord, endCoord) && !isFocused(inputEl)) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            // begin the input focus process
+            jsSetFocus(componentEl, inputEl, contentEl, keyboardHeight);
+        }
+    };
+    componentEl.addEventListener('touchstart', touchStart, true);
+    componentEl.addEventListener('touchend', touchEnd, true);
+    return function () {
+        componentEl.removeEventListener('touchstart', touchStart, true);
+        componentEl.removeEventListener('touchend', touchEnd, true);
+    };
+};
+var jsSetFocus = function (componentEl, inputEl, contentEl, keyboardHeight) {
+    var scrollData = getScrollData(componentEl, contentEl, keyboardHeight);
+    if (Math.abs(scrollData.scrollAmount) < 4) {
+        // the text input is in a safe position that doesn't
+        // require it to be scrolled into view, just set focus now
+        inputEl.focus();
+        return;
+    }
+    // temporarily move the focus to the focus holder so the browser
+    // doesn't freak out while it's trying to get the input in place
+    // at this point the native text input still does not have focus
+    relocateInput(componentEl, inputEl, true, scrollData.inputSafeY);
+    inputEl.focus();
+    // scroll the input into place
+    contentEl.scrollByPoint(0, scrollData.scrollAmount, scrollData.scrollDuration).then(function () {
+        // the scroll view is in the correct position now
+        // give the native text input focus
+        relocateInput(componentEl, inputEl, false, scrollData.inputSafeY);
+        // ensure this is the focused input
+        inputEl.focus();
+    });
+};
+var hasPointerMoved = function (threshold, startCoord, endCoord) {
+    if (startCoord && endCoord) {
+        var deltaX = (startCoord.x - endCoord.x);
+        var deltaY = (startCoord.y - endCoord.y);
+        var distance = deltaX * deltaX + deltaY * deltaY;
+        return distance > (threshold * threshold);
+    }
+    return false;
+};
+var PADDING_TIMER_KEY = '$ionPaddingTimer';
+var enableScrollPadding = function (keyboardHeight) {
+    var doc = document;
+    var onFocusin = function (ev) {
+        setScrollPadding(ev.target, keyboardHeight);
+    };
+    var onFocusout = function (ev) {
+        setScrollPadding(ev.target, 0);
+    };
+    doc.addEventListener('focusin', onFocusin);
+    doc.addEventListener('focusout', onFocusout);
+    return function () {
+        doc.removeEventListener('focusin', onFocusin);
+        doc.removeEventListener('focusout', onFocusout);
+    };
+};
+var setScrollPadding = function (input, keyboardHeight) {
+    if (input.tagName !== 'INPUT') {
+        return;
+    }
+    if (input.parentElement && input.parentElement.tagName === 'ION-INPUT') {
+        return;
+    }
+    if (input.parentElement &&
+        input.parentElement.parentElement &&
+        input.parentElement.parentElement.tagName === 'ION-SEARCHBAR') {
+        return;
+    }
+    var el = input.closest('ion-content');
+    if (el === null) {
+        return;
+    }
+    var timer = el[PADDING_TIMER_KEY];
+    if (timer) {
+        clearTimeout(timer);
+    }
+    if (keyboardHeight > 0) {
+        el.style.setProperty('--keyboard-offset', keyboardHeight + "px");
+    }
+    else {
+        el[PADDING_TIMER_KEY] = setTimeout(function () {
+            el.style.setProperty('--keyboard-offset', '0px');
+        }, 120);
+    }
+};
+var INPUT_BLURRING = true;
+var SCROLL_PADDING = true;
+var startInputShims = function (config) {
+    var doc = document;
+    var keyboardHeight = config.getNumber('keyboardHeight', 290);
+    var scrollAssist = config.getBoolean('scrollAssist', true);
+    var hideCaret = config.getBoolean('hideCaretOnScroll', true);
+    var inputBlurring = config.getBoolean('inputBlurring', true);
+    var scrollPadding = config.getBoolean('scrollPadding', true);
+    var inputs = Array.from(doc.querySelectorAll('ion-input, ion-textarea'));
+    var hideCaretMap = new WeakMap();
+    var scrollAssistMap = new WeakMap();
+    var registerInput = function (componentEl) {
+        var inputEl = (componentEl.shadowRoot || componentEl).querySelector('input') || (componentEl.shadowRoot || componentEl).querySelector('textarea');
+        var scrollEl = componentEl.closest('ion-content');
+        if (!inputEl) {
+            return;
+        }
+        if (!!scrollEl && hideCaret && !hideCaretMap.has(componentEl)) {
+            var rmFn = enableHideCaretOnScroll(componentEl, inputEl, scrollEl);
+            hideCaretMap.set(componentEl, rmFn);
+        }
+        if (!!scrollEl && scrollAssist && !scrollAssistMap.has(componentEl)) {
+            var rmFn = enableScrollAssist(componentEl, inputEl, scrollEl, keyboardHeight);
+            scrollAssistMap.set(componentEl, rmFn);
+        }
+    };
+    var unregisterInput = function (componentEl) {
+        if (hideCaret) {
+            var fn = hideCaretMap.get(componentEl);
+            if (fn) {
+                fn();
+            }
+            hideCaretMap.delete(componentEl);
+        }
+        if (scrollAssist) {
+            var fn = scrollAssistMap.get(componentEl);
+            if (fn) {
+                fn();
+            }
+            scrollAssistMap.delete(componentEl);
+        }
+    };
+    if (inputBlurring && INPUT_BLURRING) {
+        enableInputBlurring();
+    }
+    if (scrollPadding && SCROLL_PADDING) {
+        enableScrollPadding(keyboardHeight);
+    }
+    // Input might be already loaded in the DOM before ion-device-hacks did.
+    // At this point we need to look for all of the inputs not registered yet
+    // and register them.
+    for (var _i = 0, inputs_1 = inputs; _i < inputs_1.length; _i++) {
+        var input = inputs_1[_i];
+        registerInput(input);
+    }
+    doc.addEventListener('ionInputDidLoad', (function (ev) {
+        registerInput(ev.detail);
+    }));
+    doc.addEventListener('ionInputDidUnload', (function (ev) {
+        unregisterInput(ev.detail);
+    }));
+};
+
+
 
 /***/ })
 

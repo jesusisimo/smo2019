@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar color="primary">
       <ion-buttons slot="start">
@@ -9,8 +10,8 @@
 </ion-header>
 
 <ion-content>
-        
-  <ion-item (click)="casoImagen('casos')">
+        <ion-list>
+  <ion-item (click)="casoImagen(caso.id)" *ngFor="let caso of casos">
       <ion-label class="ion-text-wrap">     
         <ion-row>
           <ion-col size="3">
@@ -21,42 +22,20 @@
           <ion-col size="8">               
         <ion-text color="secondary">
             <ion-text color="primary">         
-                <h3>Coloquio Sociedad Mexicana de Oftalmología</h3>
+                <h3>{{caso.titulo}}</h3>
               </ion-text>
-              <p>Sociedad Mexicana de Oftalmología</p>
+              <p>{{caso.autor}}</p>
         </ion-text>
-        <p>26/09/2019</p>
+        <p>{{caso.fecha}}</p>
       </ion-col>
       <ion-col size="1">
-          <ion-icon name="photos"></ion-icon>
+        <ion-icon name="photos" *ngIf="caso.arch_ext=='.jpg' || caso.arch_ext=='.png' || caso.arch_ext=='.bmp' "></ion-icon>
+        <ion-icon name="document" *ngIf="caso.arch_ext=='.pdf' || caso.arch_ext=='.doc'  || caso.arch_ext=='.docx' "></ion-icon>
       </ion-col>
     </ion-row>  
       </ion-label>
     </ion-item>
-
-  <ion-item>
-      <ion-label class="ion-text-wrap">     
-        <ion-row>
-          <ion-col size="3">
-              <ion-avatar>
-                  <img class="perfil" src="https://wsbrb-services.com/appsmo/img/avatar-no-img.png">
-                </ion-avatar>
-          </ion-col>
-          <ion-col size="8">               
-        <ion-text color="secondary">
-            <ion-text color="primary">         
-                <h3>Caso Clinico Oftalmología</h3>
-              </ion-text>
-              <p>{{ usuario.nombre }} {{ usuario.apellidos }}</p>
-        </ion-text>
-        <p>29/09/2019</p>
-      </ion-col>
-      <ion-col size="1">
-          <ion-icon name="document"></ion-icon>
-      </ion-col>
-    </ion-row>  
-      </ion-label>
-    </ion-item>
+</ion-list>
 
  
 </ion-content>

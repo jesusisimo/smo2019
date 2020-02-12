@@ -9,9 +9,17 @@
   </ion-header>
 
 <ion-content>
-
-  <ion-card class="centerCard">
-    <iframe  width="100%" height="250" src="https://player.vimeo.com/video/336680837" frameborder="0" allowfullscreen></iframe>
+  <ion-card *ngIf="url!=''">
+    <img src="{{icono}}" />
+    <ion-card-header class="ion-text-center">
+      <ion-card-subtitle>{{fecha}}</ion-card-subtitle>
+      <ion-text color="primary">
+        <h4>{{tema}}</h4>
+      </ion-text>
+    </ion-card-header>
+    <section class="full-width" (click)="abrirWeb(url,'_system')" >
+      <ion-button expand="full" color="primary">Ir a la transmisión</ion-button>
+    </section>
   </ion-card>
 
   <h3 class="center">Próximas Transmisiones</h3><br>
@@ -21,7 +29,7 @@
           <ion-row>
             <ion-col size="3">
                 
-                    <img class="perfil" src="../../assets/img/col1.png">
+                    <img class="perfil" src="{{transmision.ruta_img}}">
                   
             </ion-col>
             <ion-col size="9">               

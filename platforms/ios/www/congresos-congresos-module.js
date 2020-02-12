@@ -58,7 +58,7 @@ var CongresosPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Congreso Nacional</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n      <ion-card>\n        <img   src=\"../../assets/img/expoxxxv.png\" (click)=\"viewPhoto('smo_final_congreso.png')\" >\n        <ion-item color=\"primary\" (click)=\"abrirWeb('https://www.servimed.com.mx/ev/2020/acapulco/','_system')\">\n          <ion-buttons expand=\"full\" class=\"text-center\">\n          <h4>Visitar sitio web </h4>\n        </ion-buttons>\n        </ion-item>\n        </ion-card>\n  </ion-content>\n  \n  "
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Congreso Nacional</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n      <ion-card>\n        <img   src=\"../../assets/img/smo_final_congreso.png\" (click)=\"viewPhoto('smo_final_congreso.png')\" >\n        <ion-item color=\"primary\" (click)=\"abrirWeb('https://www.servimed.com.mx/ev/2020/acapulco/','_system')\">\n          <ion-buttons expand=\"full\" class=\"text-center\">\n          <h4>www.servimed.com.mx/ev/2020/acapulco</h4>\n        </ion-buttons>\n        </ion-item>\n        </ion-card>\n  </ion-content>\n  \n  "
 
 /***/ }),
 

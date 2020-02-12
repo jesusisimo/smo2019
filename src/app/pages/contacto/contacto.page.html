@@ -27,21 +27,16 @@
   </ion-card>
 
  
-          <h2>Formulario de Contácto</h2>
+          <h2>Formulario de contácto</h2>
           <div>
             <ion-row>
               <ion-col>
-                <ion-input clearInput type="text" placeholder="Nombre:" [(ngModel)]="Nombre" class="input" padding-horizontal clear-input="true"></ion-input>
+                <ion-input clearInput type="text" placeholder="Nombre:" [(ngModel)]="nombre" class="input" padding-horizontal clear-input="true"></ion-input>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col>
-                <ion-input clearInput type="text" placeholder="Apellido:" [(ngModel)]="Apellido" class="input" padding-horizontal clear-input="true"></ion-input>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <ion-input clearInput type="number" placeholder="Teléfono" [(ngModel)]="Telefono" class="input" padding-horizontal clear-input="true"></ion-input>
+                <ion-input clearInput type="number" placeholder="Teléfono" [(ngModel)]="telefono" class="input" padding-horizontal clear-input="true"></ion-input>
               </ion-col>
             </ion-row>
             <ion-row>
@@ -56,7 +51,7 @@
               </ion-col>
             </ion-row>
    
-      <ion-button>Enviar</ion-button>
+      <ion-button (click)="enviarMensaje()">Enviar</ion-button>
       <img src="../../assets/img/logo_smo_blanco.png" class="logoSmall">
     </div>
     <br>

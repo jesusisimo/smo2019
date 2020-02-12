@@ -12,6 +12,9 @@ export class TransmisionService {
   transmision: Transmision;
   transmisiones: Transmision[];
   url_video:string;
+  icono:string;
+  tema:string;
+  fecha:string;
   constructor(
     private tr:TransmisionService,
     private http: HttpClient,
@@ -28,7 +31,9 @@ export class TransmisionService {
       .toPromise()
       .then(data => {
         this.url_video=data.url;
-
+        this.icono=data.icono;
+        this.tema=data.tema;
+        this.fecha=data.fecha;
         this.transmisiones =  data.transmision;
         return this.transmisiones;
       })

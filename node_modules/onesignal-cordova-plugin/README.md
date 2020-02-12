@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://onesignal.com/assets/common/logo_onesignal_color.png"/>
+  <img src="https://media.onesignal.com/cms/Website%20Layout/logo-red.svg"/>
 </p>
 
 ### OneSignal Cordova Push Notification Plugin
@@ -9,7 +9,7 @@
 
 [OneSignal](https://onesignal.com/) is a free push notification service for mobile apps. This plugin makes it easy to integrate your [Cordova](http://cordova.apache.org/) based (e.g. [Ionic](http://ionicframework.com/), [PhoneGap](https://phonegap.com/), and PhoneGap Build app with OneSignal. 
 
-![alt text](https://onesignal.com/images/android_and_ios_notification_image.gif)
+<p align="center"><img src="https://app.onesignal.com/images/android_and_ios_notification_image.gif" width="500" alt="Cordova Notification"></p>
 
 #### Installation and Setup
 See the [Documentation](https://documentation.onesignal.com/docs) for installation and setup instructions:

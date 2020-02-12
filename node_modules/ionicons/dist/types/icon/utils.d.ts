@@ -1,8 +1,10 @@
-export declare function getIconMap(): Map<string, string>;
-export declare function addIcons(icons: {
+import { Icon } from './icon';
+export declare const getIconMap: () => Map<string, string>;
+export declare const addIcons: (icons: {
     [name: string]: string;
-}): void;
-export declare function getName(name: string | undefined, mode: string | undefined, ios: string | undefined, md: string | undefined): string | null;
-export declare function getSrc(src: string | undefined): string | null;
-export declare function isSrc(str: string): boolean;
-export declare function isValid(elm: HTMLElement): boolean;
+}) => void;
+export declare const getUrl: (i: Icon) => string | null;
+export declare const getName: (name: string | undefined, icon: string | undefined, mode: string | undefined, ios: string | undefined, md: string | undefined) => string | null;
+export declare const getSrc: (src: string | undefined) => string | null;
+export declare const isSrc: (str: string) => boolean;
+export declare const isStr: (val: any) => val is string;

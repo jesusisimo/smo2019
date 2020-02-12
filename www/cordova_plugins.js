@@ -176,8 +176,8 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
-      "id": "cordova-plugin-file.iosFileSystem",
-      "file": "plugins/cordova-plugin-file/www/ios/FileSystem.js",
+      "id": "cordova-plugin-file.androidFileSystem",
+      "file": "plugins/cordova-plugin-file/www/android/FileSystem.js",
       "pluginId": "cordova-plugin-file",
       "merges": [
         "FileSystem"
@@ -233,7 +233,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     },
     {
       "id": "cordova-plugin-ionic-keyboard.keyboard",
-      "file": "plugins/cordova-plugin-ionic-keyboard/www/ios/keyboard.js",
+      "file": "plugins/cordova-plugin-ionic-keyboard/www/android/keyboard.js",
       "pluginId": "cordova-plugin-ionic-keyboard",
       "clobbers": [
         "window.Keyboard"
@@ -245,14 +245,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "pluginId": "cordova-plugin-ionic-webview",
       "clobbers": [
         "Ionic.WebView"
-      ]
-    },
-    {
-      "id": "cordova-plugin-ionic-webview.ios-wkwebview-exec",
-      "file": "plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js",
-      "pluginId": "cordova-plugin-ionic-webview",
-      "clobbers": [
-        "cordova.exec"
       ]
     },
     {
@@ -314,12 +306,12 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-file-transfer": "1.7.1",
     "cordova-plugin-inappbrowser": "3.0.0",
     "cordova-plugin-ionic-keyboard": "2.1.3",
-    "cordova-plugin-ionic-webview": "3.1.2",
+    "cordova-plugin-ionic-webview": "4.1.0",
     "cordova-plugin-network-information": "2.0.1",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-sqlite-storage": "3.2.0",
-    "onesignal-cordova-plugin": "2.4.7"
+    "onesignal-cordova-plugin": "2.8.3"
   };
 });

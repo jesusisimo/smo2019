@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		C9D61A3CBFCA621922B262620D19395C /* OneSignal */ = {
+		210EB05CEC7AD9C148F90F752DE74C48 /* OneSignal */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 09A5A4D585F2B2C7D977A4F1E5213117 /* Build configuration list for PBXAggregateTarget "OneSignal" */;
 			buildPhases = (
@@ -19,33 +19,34 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		82F7F7B40643CB55955379DF6EB24B13 /* Pods-SMO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A584DB872161B419B9DC209BA33FC3F /* Pods-SMO-dummy.m */; };
+		8D809BE6FD909CC2A51736879A768FEA /* Pods-SMO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FEDA175049B740B4BABB600221B49A /* Pods-SMO-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		387297FFD1F1D0D394715AF3F1013C9D /* PBXContainerItemProxy */ = {
+		2A5080BF93C6FD760BF8C41371EAD4E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C9D61A3CBFCA621922B262620D19395C;
+			remoteGlobalIDString = 210EB05CEC7AD9C148F90F752DE74C48;
 			remoteInfo = OneSignal;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B6077F0921559B9F038339A9475D4A7 /* Pods-SMO-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SMO-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4D7ADBC0A7837C480E181CCA94A4E966 /* Pods-SMO-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SMO-acknowledgements.plist"; sourceTree = "<group>"; };
-		5A584DB872161B419B9DC209BA33FC3F /* Pods-SMO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SMO-dummy.m"; sourceTree = "<group>"; };
-		7A9BDE772D56D96B53FD814090403CE4 /* OneSignal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OneSignal.xcconfig; sourceTree = "<group>"; };
+		11FEDA175049B740B4BABB600221B49A /* Pods-SMO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SMO-dummy.m"; sourceTree = "<group>"; };
+		1AC7EC09DFE458DFAA2429F45C31474E /* Pods-SMO-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SMO-acknowledgements.markdown"; sourceTree = "<group>"; };
+		357A3636E1C8FC08BAC7321B6397AC78 /* libPods-SMO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SMO.a"; path = "libPods-SMO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D10D53A46F62D6781F94D2B3A86AB9 /* Pods-SMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SMO.release.xcconfig"; sourceTree = "<group>"; };
+		87BB9C070A44FF982EBCA58629F88A4A /* Pods-SMO-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SMO-acknowledgements.plist"; sourceTree = "<group>"; };
+		902E93CF36123E61715248B4BAD22E33 /* OneSignal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OneSignal.debug.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AAF0E89AB5B259658B196F78420ACA82 /* libPods-SMO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SMO.a"; path = "libPods-SMO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB9F3473E6AE5286AA71DCA442FF5990 /* Pods-SMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SMO.release.xcconfig"; sourceTree = "<group>"; };
-		DCC104B7C4AED1BB23BE7C1A0A7B4532 /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = iOS_SDK/OneSignalSDK/Framework/OneSignal.framework; sourceTree = "<group>"; };
-		EAB16FFC10464A16F068C5DB1853A413 /* Pods-SMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SMO.debug.xcconfig"; sourceTree = "<group>"; };
+		BB3853256275543F0627078F179BC0CB /* Pods-SMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SMO.debug.xcconfig"; sourceTree = "<group>"; };
+		DE970C2B67E152876EBCB1DA43AB863F /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = iOS_SDK/OneSignalSDK/Framework/OneSignal.framework; sourceTree = "<group>"; };
+		EB8C2A5F2DDBF831C0AA4A938F63A708 /* OneSignal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OneSignal.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B1475DCB4BB3BD44D61EEB07EBFE9DE9 /* Frameworks */ = {
+		FF7398225A259304705E534D2B80B828 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,18 +56,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09E310EB22806134300BFC537FB27F3D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				902E93CF36123E61715248B4BAD22E33 /* OneSignal.debug.xcconfig */,
+				EB8C2A5F2DDBF831C0AA4A938F63A708 /* OneSignal.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OneSignal";
+			sourceTree = "<group>";
+		};
 		1D40C0AE1924259957A7C76C1386542E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B10C24FB33FE3136E6593AC0D20A734B /* OneSignal */,
+				699A7B2578216D4BEBAE7B6C9CF67AED /* OneSignal */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		410D8B80CDD1821D371C337E7DB26A4C /* Pods-SMO */ = {
+			isa = PBXGroup;
+			children = (
+				1AC7EC09DFE458DFAA2429F45C31474E /* Pods-SMO-acknowledgements.markdown */,
+				87BB9C070A44FF982EBCA58629F88A4A /* Pods-SMO-acknowledgements.plist */,
+				11FEDA175049B740B4BABB600221B49A /* Pods-SMO-dummy.m */,
+				BB3853256275543F0627078F179BC0CB /* Pods-SMO.debug.xcconfig */,
+				79D10D53A46F62D6781F94D2B3A86AB9 /* Pods-SMO.release.xcconfig */,
+			);
+			name = "Pods-SMO";
+			path = "Target Support Files/Pods-SMO";
 			sourceTree = "<group>";
 		};
 		463D6FA9FFFA503E3B6035E128AEF839 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CE62BA89B73616498768E444ABD5CA6A /* Pods-SMO */,
+				410D8B80CDD1821D371C337E7DB26A4C /* Pods-SMO */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -74,49 +98,19 @@
 		54BE2049B43BE21DC11A08E7E9776FCC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AAF0E89AB5B259658B196F78420ACA82 /* libPods-SMO.a */,
+				357A3636E1C8FC08BAC7321B6397AC78 /* libPods-SMO.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5E85155AD0B3EF01DE1A7952577867E3 /* Frameworks */ = {
+		699A7B2578216D4BEBAE7B6C9CF67AED /* OneSignal */ = {
 			isa = PBXGroup;
 			children = (
-				DCC104B7C4AED1BB23BE7C1A0A7B4532 /* OneSignal.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		76232A45A134EE9759F82C12B0830BB7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7A9BDE772D56D96B53FD814090403CE4 /* OneSignal.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/OneSignal";
-			sourceTree = "<group>";
-		};
-		B10C24FB33FE3136E6593AC0D20A734B /* OneSignal */ = {
-			isa = PBXGroup;
-			children = (
-				5E85155AD0B3EF01DE1A7952577867E3 /* Frameworks */,
-				76232A45A134EE9759F82C12B0830BB7 /* Support Files */,
+				CFE090658AE1E3252BAA8610D3A558D4 /* Frameworks */,
+				09E310EB22806134300BFC537FB27F3D /* Support Files */,
 			);
 			name = OneSignal;
 			path = OneSignal;
-			sourceTree = "<group>";
-		};
-		CE62BA89B73616498768E444ABD5CA6A /* Pods-SMO */ = {
-			isa = PBXGroup;
-			children = (
-				0B6077F0921559B9F038339A9475D4A7 /* Pods-SMO-acknowledgements.markdown */,
-				4D7ADBC0A7837C480E181CCA94A4E966 /* Pods-SMO-acknowledgements.plist */,
-				5A584DB872161B419B9DC209BA33FC3F /* Pods-SMO-dummy.m */,
-				EAB16FFC10464A16F068C5DB1853A413 /* Pods-SMO.debug.xcconfig */,
-				BB9F3473E6AE5286AA71DCA442FF5990 /* Pods-SMO.release.xcconfig */,
-			);
-			name = "Pods-SMO";
-			path = "Target Support Files/Pods-SMO";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -130,6 +124,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		CFE090658AE1E3252BAA8610D3A558D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE970C2B67E152876EBCB1DA43AB863F /* OneSignal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +142,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B1C0EE3BCE98CEC70C924C6980EA6F32 /* Headers */ = {
+		19810523A861388E9BC80F1978226CF5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -150,22 +152,22 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BC4E429BFB6D6DF53641D78129798B48 /* Pods-SMO */ = {
+		70915738ABB5D1770F1F0E3E2A3018B9 /* Pods-SMO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DD5144EC7F9E15F92FF6E556499AF1C /* Build configuration list for PBXNativeTarget "Pods-SMO" */;
+			buildConfigurationList = 34EF1FBE5AA4A60AF63912A56BBB1ADB /* Build configuration list for PBXNativeTarget "Pods-SMO" */;
 			buildPhases = (
-				B1C0EE3BCE98CEC70C924C6980EA6F32 /* Headers */,
-				1314AB6107D5C0CC0ED07F8A7B88292A /* Sources */,
-				B1475DCB4BB3BD44D61EEB07EBFE9DE9 /* Frameworks */,
+				19810523A861388E9BC80F1978226CF5 /* Headers */,
+				EFA8126AC96BAA6F1594DCAC613D61BA /* Sources */,
+				FF7398225A259304705E534D2B80B828 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				96FEE745A744BD9E710113CE5ACFE6F5 /* PBXTargetDependency */,
+				9E270C68133098E4CAAF148313C2E511 /* PBXTargetDependency */,
 			);
 			name = "Pods-SMO";
 			productName = "Pods-SMO";
-			productReference = AAF0E89AB5B259658B196F78420ACA82 /* libPods-SMO.a */;
+			productReference = 357A3636E1C8FC08BAC7321B6397AC78 /* libPods-SMO.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -174,8 +176,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -183,39 +185,55 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 54BE2049B43BE21DC11A08E7E9776FCC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C9D61A3CBFCA621922B262620D19395C /* OneSignal */,
-				BC4E429BFB6D6DF53641D78129798B48 /* Pods-SMO */,
+				210EB05CEC7AD9C148F90F752DE74C48 /* OneSignal */,
+				70915738ABB5D1770F1F0E3E2A3018B9 /* Pods-SMO */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1314AB6107D5C0CC0ED07F8A7B88292A /* Sources */ = {
+		EFA8126AC96BAA6F1594DCAC613D61BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F7F7B40643CB55955379DF6EB24B13 /* Pods-SMO-dummy.m in Sources */,
+				8D809BE6FD909CC2A51736879A768FEA /* Pods-SMO-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		96FEE745A744BD9E710113CE5ACFE6F5 /* PBXTargetDependency */ = {
+		9E270C68133098E4CAAF148313C2E511 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OneSignal;
-			target = C9D61A3CBFCA621922B262620D19395C /* OneSignal */;
-			targetProxy = 387297FFD1F1D0D394715AF3F1013C9D /* PBXContainerItemProxy */;
+			target = 210EB05CEC7AD9C148F90F752DE74C48 /* OneSignal */;
+			targetProxy = 2A5080BF93C6FD760BF8C41371EAD4E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0E3F0D76AFC7258D3D114828308D92E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 902E93CF36123E61715248B4BAD22E33 /* OneSignal.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -276,25 +294,9 @@
 			};
 			name = Release;
 		};
-		2E55F24EB4BEEB8BE640F54264926A5C /* Release */ = {
+		659ADD663845767D36476F242C64859F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A9BDE772D56D96B53FD814090403CE4 /* OneSignal.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		A0A1CF1AE398FA5FFA605446F57E1A86 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAB16FFC10464A16F068C5DB1853A413 /* Pods-SMO.debug.xcconfig */;
+			baseConfigurationReference = BB3853256275543F0627078F179BC0CB /* Pods-SMO.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -315,9 +317,25 @@
 			};
 			name = Debug;
 		};
-		BA7E07251553225BDBDF844E0738D12C /* Release */ = {
+		7508BF82681A74DC41A29DAA0447B4DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB9F3473E6AE5286AA71DCA442FF5990 /* Pods-SMO.release.xcconfig */;
+			baseConfigurationReference = EB8C2A5F2DDBF831C0AA4A938F63A708 /* OneSignal.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC00365FD0C87B6D08FE19F2FBCD9EB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79D10D53A46F62D6781F94D2B3A86AB9 /* Pods-SMO.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -338,21 +356,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		C4E009377901A9ACF464FE710EDE8EE7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A9BDE772D56D96B53FD814090403CE4 /* OneSignal.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -424,17 +427,17 @@
 		09A5A4D585F2B2C7D977A4F1E5213117 /* Build configuration list for PBXAggregateTarget "OneSignal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C4E009377901A9ACF464FE710EDE8EE7 /* Debug */,
-				2E55F24EB4BEEB8BE640F54264926A5C /* Release */,
+				0E3F0D76AFC7258D3D114828308D92E2 /* Debug */,
+				7508BF82681A74DC41A29DAA0447B4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DD5144EC7F9E15F92FF6E556499AF1C /* Build configuration list for PBXNativeTarget "Pods-SMO" */ = {
+		34EF1FBE5AA4A60AF63912A56BBB1ADB /* Build configuration list for PBXNativeTarget "Pods-SMO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0A1CF1AE398FA5FFA605446F57E1A86 /* Debug */,
-				BA7E07251553225BDBDF844E0738D12C /* Release */,
+				659ADD663845767D36476F242C64859F /* Debug */,
+				CC00365FD0C87B6D08FE19F2FBCD9EB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

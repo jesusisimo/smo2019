@@ -314,12 +314,12 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-file-transfer": "1.7.1",
     "cordova-plugin-inappbrowser": "3.0.0",
     "cordova-plugin-ionic-keyboard": "2.1.3",
-    "cordova-plugin-ionic-webview": "3.1.2",
+    "cordova-plugin-ionic-webview": "4.1.0",
     "cordova-plugin-network-information": "2.0.1",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-sqlite-storage": "3.2.0",
-    "onesignal-cordova-plugin": "2.4.7"
+    "onesignal-cordova-plugin": "2.8.3"
   };
 });

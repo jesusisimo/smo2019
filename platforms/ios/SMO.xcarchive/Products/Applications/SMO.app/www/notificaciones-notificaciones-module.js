@@ -49,7 +49,7 @@ var NotificacionPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-title>Notificación</ion-title>\n        <ion-buttons slot=\"end\">\n          <ion-icon slot=\"icon-only\" (click)=\"salir()\" name=\"close\"></ion-icon>\n        </ion-buttons>\n      </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>{{notificacion.titulo}}</ion-card-title>\n        </ion-card-header>\n      \n        <ion-card-content>\n         {{notificacion.mensaje}}\n        </ion-card-content>\n      </ion-card>\n</ion-content>\n"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-title>Notificación</ion-title>\n        <ion-buttons slot=\"end\">\n          <ion-icon slot=\"icon-only\" (click)=\"salir()\" name=\"close\"></ion-icon>\n        </ion-buttons>\n      </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>{{notificacion.titulo}}</ion-card-title>\n          <ion-card-subtitle>{{notificacion.time}}</ion-card-subtitle>\n        </ion-card-header>\n      \n        <ion-card-content>\n         {{notificacion.mensaje}}\n        </ion-card-content>\n      </ion-card>\n</ion-content>\n"
 
 /***/ }),
 
@@ -175,7 +175,7 @@ var NotificacionesPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-title>Notificaciones</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button  (click)=\"borrarMensajes()\">\n        <ion-icon slot=\"icon-only\"  name=\"trash\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <!-- List of Text Items -->\n  <ion-list>\n    <ion-item *ngFor=\"let notificacion of mensajes\" (click)=\"verNotificacion(notificacion); notificacion.visto=1;\" href=\"javascript:;\" [ngClass]=\"(!notificacion.visto) ? 'novisto' : ''\">\n      <ion-label>\n        <h2>{{notificacion.titulo}}</h2>\n\n        <p>{{notificacion.mensaje}}</p>\n      </ion-label>\n    </ion-item>\n    <ion-item *ngIf=\"!existen\">\n      <ion-label>\n        <h3>No hay notificaciones</h3>\n\n      </ion-label>\n    </ion-item>\n    \n  </ion-list>\n<!-- \n  <ion-button color=\"danger\" (click)=\"verNotificacion('Notificacion','Mensaje');\">\n      <ion-icon slot=\"icon-only\" color=\"danger\" name=\"trash\"></ion-icon>\n    </ion-button> -->\n\n\n\n  \n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-title>Notificaciones</ion-title>\n    <!-- <ion-buttons slot=\"end\">\n      <ion-button  (click)=\"borrarMensajes()\">\n        <ion-icon slot=\"icon-only\"  name=\"trash\"></ion-icon>\n      </ion-button>\n    </ion-buttons> -->\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <!-- List of Text Items -->\n  <ion-list>\n    <ion-item *ngFor=\"let notificacion of mensajes\" (click)=\"verNotificacion(notificacion); notificacion.visto=1;\" href=\"javascript:;\" [ngClass]=\"(!notificacion.visto) ? 'novisto' : ''\">\n      <ion-label>\n        <h2>{{notificacion.titulo}}</h2>\n        <h3>{{notificacion.mensaje}}</h3>\n        <p>{{notificacion.time}}</p>\n      </ion-label>\n    </ion-item>\n    <ion-item *ngIf=\"!existen\">\n      <ion-label>\n        <h3>No hay notificaciones</h3>\n\n      </ion-label>\n    </ion-item>\n    \n  </ion-list>\n<!-- \n  <ion-button color=\"danger\" (click)=\"verNotificacion('Notificacion','Mensaje');\">\n      <ion-icon slot=\"icon-only\" color=\"danger\" name=\"trash\"></ion-icon>\n    </ion-button> -->\n\n\n\n  \n</ion-content>"
 
 /***/ }),
 
@@ -186,7 +186,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-titl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".novisto {\n  --ion-background-color: #e4e4e4; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvbm90aWZpY2FjaW9uZXMvbm90aWZpY2FjaW9uZXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQXVCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9ub3RpZmljYWNpb25lcy9ub3RpZmljYWNpb25lcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubm92aXN0b3tcbiAgICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjZTRlNGU0O1xuXHR9XG4iXX0= */"
+module.exports = ".novisto {\n  --ion-background-color: #e4e4e4; }\n\nh3 {\n  color: #373744; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvbm90aWZpY2FjaW9uZXMvbm90aWZpY2FjaW9uZXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQXVCLEVBQUE7O0FBRTNCO0VBQ0ksY0FBc0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL25vdGlmaWNhY2lvbmVzL25vdGlmaWNhY2lvbmVzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ub3Zpc3Rve1xuICAgIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XG5cdH1cbmgze1xuICAgIGNvbG9yOiByZ2IoNTUsIDU1LCA2OCk7XG59Il19 */"
 
 /***/ }),
 
@@ -318,7 +318,9 @@ var NotificacionesPage = /** @class */ (function () {
                         })];
                     case 1:
                         modal = _a.sent();
-                        this._as.sinleer = this._as.sinleer - 1;
+                        if (this._as.sinleer > 0) {
+                            this._as.sinleer = this._as.sinleer - 1;
+                        }
                         this.pushService.marcar_visto(notificacion.id);
                         return [4 /*yield*/, modal.present()];
                     case 2: return [2 /*return*/, _a.sent()];

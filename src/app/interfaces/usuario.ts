@@ -1,6 +1,7 @@
 interface IUsuario {
   avatar?: string;
   id?: string;
+  socio_id?: string;
   nombre?: string;
   apellidos?: string;
   email?:string;

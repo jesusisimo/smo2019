@@ -4,34 +4,33 @@
         <ion-menu-button></ion-menu-button>
         <ion-back-button color="light" text="Volver"></ion-back-button>
       </ion-buttons>
-      <ion-title>Caso Coloquio</ion-title>
+      <ion-title>Caso Clínico</ion-title>
     </ion-toolbar>
   </ion-header>
   
-  <ion-content class="background">
+  <ion-content class="background" *ngFor="let caso of casos">
   <ion-card class="backCards">
-    <ion-item lines="none">
-        <ion-avatar>
-            <img class="perfil" src="https://wsbrb-services.com/appsmo/img/avatar-no-img.png">
-        </ion-avatar>
-      <h3 class="name">Peter Parker</h3><br> 
+    
+    
+      <ion-item lines="none" class="postTexto"><h2>{{caso.titulo}}</h2></ion-item>
+      <p class="hora">{{caso.fecha}}</p> 
+      <ion-item lines="none">
+      <h3 class="name">{{caso.autor}}</h3><br> 
     </ion-item> 
-    <p class="hora">26/09/2019</p> 
-      <ion-item lines="none" class="postTexto"><h4>Coloquio Catarata y cirugía refractiva</h4></ion-item>
-       
+      <p class="ion-text-justify ion-padding">{{caso.descripcion}}</p> 
     <ion-card class="centerPost text-center">
-        <img class="postImagen text-center" src="../../assets/img/san_carlos.jpg" (click)="verImagen(imgLink)">
+        <img class="postImagen text-center" src="{{caso.ruta_arch}}" (click)="verImagen(caso.ruta_arch, caso.arch_ext)">
      </ion-card>
 
-     <ion-card>
+     <ion-card *ngFor="let comentario of comentarios">
       <ion-item lines="none">
         <ion-avatar>
           <img class="perfil" src="https://wsbrb-services.com/appsmo/img/avatar-no-img.png">
         </ion-avatar>
-        <h3 class="name">{{ usuario.nombre }} {{ usuario.apellidos }}</h3>
+        <h3 class="name">{{ comentario.nombre }}</h3>
       </ion-item>
-      <p class="hora">26/09/2019</p>  
-      <ion-item lines="none" id=""><h4>Excelente Coloquio</h4></ion-item>
+      <p class="hora">{{comentario.fecha}}</p>  
+      <ion-item lines="none" id=""><h4>{{comentario.comentario}}</h4></ion-item>
       <br>
     </ion-card>
 
@@ -41,11 +40,11 @@
     <ion-toolbar class="backgrounds">
       <ion-row class="input-position">
         <ion-col size="9">
-          <ion-input class="input restrict" type="text" placeholder="   Escribe tu comentario"></ion-input>
+          <ion-input class="input restrict" type="text" placeholder="   Escribe tu comentario" id="comentario" name="comentario" [(ngModel)]="comentario"></ion-input>
         </ion-col>
         <ion-col size="3">
           <ion-button shape="round" class="send-button"  >
-            <ion-text color="light">Enviar</ion-text>
+            <ion-text color="light" (click)="comentar(usuario.socio_id)">Enviar</ion-text>
           </ion-button>
         </ion-col>
       </ion-row>

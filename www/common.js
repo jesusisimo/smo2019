@@ -1,87 +1,405 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-81780b86.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-81780b86.js ***!
-  \***********************************************************************/
-/*! exports provided: a, b, c, d */
+/***/ "./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-2812fda3.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-2812fda3.js ***!
+  \************************************************************************/
+/*! exports provided: P, g */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hapticSelectionChanged; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return hapticSelectionStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return Point; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getTimeGivenProgression; });
+/**
+ * Based on:
+ * https://stackoverflow.com/questions/7348009/y-coordinate-for-a-given-x-cubic-bezier
+ * https://math.stackexchange.com/questions/26846/is-there-an-explicit-form-for-cubic-b%C3%A9zier-curves
+ * TODO: Reduce rounding error
+ */
+var Point = /** @class */ (function () {
+    function Point(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    return Point;
+}());
+/**
+ * Given a cubic-bezier curve, get the x value (time) given
+ * the y value (progression).
+ * Ex: cubic-bezier(0.32, 0.72, 0, 1);
+ * P0: (0, 0)
+ * P1: (0.32, 0.72)
+ * P2: (0, 1)
+ * P3: (1, 1)
+ *
+ * If you give a cubic bezier curve that never reaches the
+ * provided progression, this function will return NaN.
+ */
+var getTimeGivenProgression = function (p0, p1, p2, p3, progression) {
+    var tValues = solveCubicBezier(p0.y, p1.y, p2.y, p3.y, progression);
+    return solveCubicParametricEquation(p0.x, p1.x, p2.x, p3.x, tValues[0]); // TODO: Add better strategy for dealing with multiple solutions
+};
+/**
+ * Solve a cubic equation in one dimension (time)
+ */
+var solveCubicParametricEquation = function (p0, p1, p2, p3, t) {
+    var partA = (3 * p1) * Math.pow(t - 1, 2);
+    var partB = (-3 * p2 * t) + (3 * p2) + (p3 * t);
+    var partC = p0 * Math.pow(t - 1, 3);
+    return t * (partA + (t * partB)) - partC;
+};
+/**
+ * Find the `t` value for a cubic bezier using Cardano's formula
+ */
+var solveCubicBezier = function (p0, p1, p2, p3, refPoint) {
+    p0 -= refPoint;
+    p1 -= refPoint;
+    p2 -= refPoint;
+    p3 -= refPoint;
+    var roots = solveCubicEquation(p3 - 3 * p2 + 3 * p1 - p0, 3 * p2 - 6 * p1 + 3 * p0, 3 * p1 - 3 * p0, p0);
+    return roots.filter(function (root) { return root >= 0 && root <= 1; });
+};
+var solveQuadraticEquation = function (a, b, c) {
+    var discriminant = b * b - 4 * a * c;
+    if (discriminant < 0) {
+        return [];
+    }
+    else {
+        return [
+            (-b + Math.sqrt(discriminant)) / (2 * a),
+            (-b - Math.sqrt(discriminant)) / (2 * a)
+        ];
+    }
+};
+var solveCubicEquation = function (a, b, c, d) {
+    if (a === 0) {
+        return solveQuadraticEquation(b, c, d);
+    }
+    b /= a;
+    c /= a;
+    d /= a;
+    var p = (3 * c - b * b) / 3;
+    var q = (2 * b * b * b - 9 * b * c + 27 * d) / 27;
+    if (p === 0) {
+        return [Math.pow(-q, 1 / 3)];
+    }
+    else if (q === 0) {
+        return [Math.sqrt(-p), -Math.sqrt(-p)];
+    }
+    var discriminant = Math.pow(q / 2, 2) + Math.pow(p / 3, 3);
+    if (discriminant === 0) {
+        return [Math.pow(q / 2, 1 / 2) - b / 3];
+    }
+    else if (discriminant > 0) {
+        return [Math.pow(-(q / 2) + Math.sqrt(discriminant), 1 / 3) - Math.pow((q / 2) + Math.sqrt(discriminant), 1 / 3) - b / 3];
+    }
+    var r = Math.sqrt(Math.pow(-(p / 3), 3));
+    var phi = Math.acos(-(q / (2 * Math.sqrt(Math.pow(-(p / 3), 3)))));
+    var s = 2 * Math.pow(r, 1 / 3);
+    return [
+        s * Math.cos(phi / 3) - b / 3,
+        s * Math.cos((phi + 2 * Math.PI) / 3) - b / 3,
+        s * Math.cos((phi + 4 * Math.PI) / 3) - b / 3
+    ];
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/haptic-c8f1473e.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/haptic-c8f1473e.js ***!
+  \******************************************************************/
+/*! exports provided: a, b, c, h */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hapticSelectionStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return hapticSelectionChanged; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hapticSelectionEnd; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hapticSelection; });
-function hapticSelection(){var e=window.TapticEngine;e&&e.selection()}function hapticSelectionStart(){var e=window.TapticEngine;e&&e.gestureSelectionStart()}function hapticSelectionChanged(){var e=window.TapticEngine;e&&e.gestureSelectionChanged()}function hapticSelectionEnd(){var e=window.TapticEngine;e&&e.gestureSelectionEnd()}
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hapticSelection; });
+/**
+ * Check to see if the Haptic Plugin is available
+ * @return Returns `true` or false if the plugin is available
+ */
+/**
+ * Trigger a selection changed haptic event. Good for one-time events
+ * (not for gestures)
+ */
+var hapticSelection = function () {
+    var engine = window.TapticEngine;
+    if (engine) {
+        engine.selection();
+    }
+};
+/**
+ * Tell the haptic engine that a gesture for a selection change is starting.
+ */
+var hapticSelectionStart = function () {
+    var engine = window.TapticEngine;
+    if (engine) {
+        engine.gestureSelectionStart();
+    }
+};
+/**
+ * Tell the haptic engine that a selection changed during a gesture.
+ */
+var hapticSelectionChanged = function () {
+    var engine = window.TapticEngine;
+    if (engine) {
+        engine.gestureSelectionChanged();
+    }
+};
+/**
+ * Tell the haptic engine we are done with a gesture. This needs to be
+ * called lest resources are not properly recycled.
+ */
+var hapticSelectionEnd = function () {
+    var engine = window.TapticEngine;
+    if (engine) {
+        engine.gestureSelectionEnd();
+    }
+};
+
+
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-90d954cd.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-90d954cd.js ***!
-  \***********************************************************************/
-/*! exports provided: a, b, c, d, e */
+/***/ "./node_modules/@ionic/core/dist/esm-es5/index-3476b023.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/index-3476b023.js ***!
+  \*****************************************************************/
+/*! exports provided: s */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LIFECYCLE_WILL_LEAVE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return LIFECYCLE_WILL_ENTER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return LIFECYCLE_DID_ENTER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return LIFECYCLE_DID_LEAVE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return LIFECYCLE_WILL_UNLOAD; });
-var LIFECYCLE_WILL_ENTER="ionViewWillEnter",LIFECYCLE_DID_ENTER="ionViewDidEnter",LIFECYCLE_WILL_LEAVE="ionViewWillLeave",LIFECYCLE_DID_LEAVE="ionViewDidLeave",LIFECYCLE_WILL_UNLOAD="ionViewWillUnload";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return sanitizeDOMString; });
+/**
+ * Does a simple sanitization of all elements
+ * in an untrusted string
+ */
+var sanitizeDOMString = function (untrustedString) {
+    try {
+        if (typeof untrustedString !== 'string' || untrustedString === '') {
+            return untrustedString;
+        }
+        /**
+         * Create a document fragment
+         * separate from the main DOM,
+         * create a div to do our work in
+         */
+        var documentFragment_1 = document.createDocumentFragment();
+        var workingDiv = document.createElement('div');
+        documentFragment_1.appendChild(workingDiv);
+        workingDiv.innerHTML = untrustedString;
+        /**
+         * Remove any elements
+         * that are blocked
+         */
+        blockedTags.forEach(function (blockedTag) {
+            var getElementsToRemove = documentFragment_1.querySelectorAll(blockedTag);
+            for (var elementIndex = getElementsToRemove.length - 1; elementIndex >= 0; elementIndex--) {
+                var element = getElementsToRemove[elementIndex];
+                if (element.parentNode) {
+                    element.parentNode.removeChild(element);
+                }
+                else {
+                    documentFragment_1.removeChild(element);
+                }
+                /**
+                 * We still need to sanitize
+                 * the children of this element
+                 * as they are left behind
+                 */
+                var childElements = getElementChildren(element);
+                /* tslint:disable-next-line */
+                for (var childIndex = 0; childIndex < childElements.length; childIndex++) {
+                    sanitizeElement(childElements[childIndex]);
+                }
+            }
+        });
+        /**
+         * Go through remaining elements and remove
+         * non-allowed attribs
+         */
+        // IE does not support .children on document fragments, only .childNodes
+        var dfChildren = getElementChildren(documentFragment_1);
+        /* tslint:disable-next-line */
+        for (var childIndex = 0; childIndex < dfChildren.length; childIndex++) {
+            sanitizeElement(dfChildren[childIndex]);
+        }
+        // Append document fragment to div
+        var fragmentDiv = document.createElement('div');
+        fragmentDiv.appendChild(documentFragment_1);
+        // First child is always the div we did our work in
+        var getInnerDiv = fragmentDiv.querySelector('div');
+        return (getInnerDiv !== null) ? getInnerDiv.innerHTML : fragmentDiv.innerHTML;
+    }
+    catch (err) {
+        console.error(err);
+        return '';
+    }
+};
+/**
+ * Clean up current element based on allowed attributes
+ * and then recursively dig down into any child elements to
+ * clean those up as well
+ */
+var sanitizeElement = function (element) {
+    // IE uses childNodes, so ignore nodes that are not elements
+    if (element.nodeType && element.nodeType !== 1) {
+        return;
+    }
+    for (var i = element.attributes.length - 1; i >= 0; i--) {
+        var attribute = element.attributes.item(i);
+        var attributeName = attribute.name;
+        // remove non-allowed attribs
+        if (!allowedAttributes.includes(attributeName.toLowerCase())) {
+            element.removeAttribute(attributeName);
+            continue;
+        }
+        // clean up any allowed attribs
+        // that attempt to do any JS funny-business
+        var attributeValue = attribute.value;
+        /* tslint:disable-next-line */
+        if (attributeValue != null && attributeValue.toLowerCase().includes('javascript:')) {
+            element.removeAttribute(attributeName);
+        }
+    }
+    /**
+     * Sanitize any nested children
+     */
+    var childElements = getElementChildren(element);
+    /* tslint:disable-next-line */
+    for (var i = 0; i < childElements.length; i++) {
+        sanitizeElement(childElements[i]);
+    }
+};
+/**
+ * IE doesn't always support .children
+ * so we revert to .childNodes instead
+ */
+var getElementChildren = function (el) {
+    return (el.children != null) ? el.children : el.childNodes;
+};
+var allowedAttributes = ['class', 'id', 'href', 'src', 'name', 'slot'];
+var blockedTags = ['script', 'style', 'iframe', 'meta', 'link', 'object', 'embed'];
+
+
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-99929188.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-99929188.js ***!
-  \***********************************************************************/
-/*! exports provided: a, b */
+/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-18cbe2cc.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-18cbe2cc.js ***!
+  \*****************************************************************/
+/*! exports provided: c, g, h, o */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return attachComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return detachComponent; });
-/* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
-function attachComponent(e,t,n,o,r){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var a;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:if(e)return[2,e.attachViewToDom(t,n,r,o)];if("string"!=typeof n&&!(n instanceof HTMLElement))throw new Error("framework delegate is missing");return a="string"==typeof n?t.ownerDocument&&t.ownerDocument.createElement(n):n,o&&o.forEach(function(e){return a.classList.add(e)}),r&&Object.assign(a,r),t.appendChild(a),a.componentOnReady?[4,a.componentOnReady()]:[3,2];case 1:i.sent(),i.label=2;case 2:return[2,a]}})})}function detachComponent(e,t){if(t){if(e)return e.removeViewFromDom(t.parentElement,t);t.remove()}return Promise.resolve()}
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return openURL; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/@ionic/core/node_modules/tslib/tslib.es6.js");
+
+var hostContext = function (selector, el) {
+    return el.closest(selector) !== null;
+};
+/**
+ * Create the mode and color classes for the component based on the classes passed in
+ */
+var createColorClasses = function (color) {
+    var _a;
+    return (typeof color === 'string' && color.length > 0) ? (_a = {
+            'ion-color': true
+        },
+        _a["ion-color-" + color] = true,
+        _a) : undefined;
+};
+var getClassList = function (classes) {
+    if (classes !== undefined) {
+        var array = Array.isArray(classes) ? classes : classes.split(' ');
+        return array
+            .filter(function (c) { return c != null; })
+            .map(function (c) { return c.trim(); })
+            .filter(function (c) { return c !== ''; });
+    }
+    return [];
+};
+var getClassMap = function (classes) {
+    var map = {};
+    getClassList(classes).forEach(function (c) { return map[c] = true; });
+    return map;
+};
+var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+var openURL = function (url, ev, direction) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var router;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
+            router = document.querySelector('ion-router');
+            if (router) {
+                if (ev != null) {
+                    ev.preventDefault();
+                }
+                return [2 /*return*/, router.push(url, direction)];
+            }
+        }
+        return [2 /*return*/, false];
+    });
+}); };
+
+
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-e89a7020.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-e89a7020.js ***!
-  \***********************************************************************/
-/*! exports provided: a, b, c, d */
+/***/ "./node_modules/@ionic/core/dist/esm-es5/watch-options-2af96011.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/watch-options-2af96011.js ***!
+  \*************************************************************************/
+/*! exports provided: f, w */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return deepReady; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return lifecycle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return transition; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return setPageHidden; });
-/* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
-/* harmony import */ var _chunk_90d954cd_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chunk-90d954cd.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-90d954cd.js");
-var iosTransitionAnimation=function(){return __webpack_require__.e(/*! import() */ 140).then(__webpack_require__.bind(null, /*! ./chunk-8cdfc1ff.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-8cdfc1ff.js"))},mdTransitionAnimation=function(){return __webpack_require__.e(/*! import() */ 141).then(__webpack_require__.bind(null, /*! ./chunk-f2d9e763.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-f2d9e763.js"))};function transition(e){return new Promise(function(n,i){e.queue.write(function(){beforeTransition(e),runTransition(e).then(function(i){i.animation&&i.animation.destroy(),afterTransition(e),n(i)},function(n){afterTransition(e),i(n)})})})}function beforeTransition(e){var n=e.enteringEl,i=e.leavingEl;setZIndex(n,i,e.direction),e.showGoBack?n.classList.add("can-go-back"):n.classList.remove("can-go-back"),setPageHidden(n,!1),i&&setPageHidden(i,!1)}function runTransition(e){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var n;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:return[4,getAnimationBuilder(e)];case 1:return[2,(n=i.sent())?animation(n,e):noAnimation(e)]}})})}function afterTransition(e){var n=e.leavingEl;e.enteringEl.classList.remove("ion-page-invisible"),void 0!==n&&n.classList.remove("ion-page-invisible")}function getAnimationBuilder(e){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var n;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:return e.leavingEl&&e.animated&&0!==e.duration?e.animationBuilder?[2,e.animationBuilder]:"ios"!==e.mode?[3,2]:[4,iosTransitionAnimation()]:[2,void 0];case 1:return n=i.sent().iosTransitionAnimation,[3,4];case 2:return[4,mdTransitionAnimation()];case 3:n=i.sent().mdTransitionAnimation,i.label=4;case 4:return[2,n]}})})}function animation(e,n){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var i;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return[4,waitForReady(n,!0)];case 1:return t.sent(),[4,__webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./chunk-816d48a8.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-816d48a8.js")).then(function(i){return i.create(e,n.baseEl,n)})];case 2:return i=t.sent(),fireWillEvents(n.enteringEl,n.leavingEl),[4,playTransition(i,n)];case 3:return t.sent(),n.progressCallback&&n.progressCallback(void 0),i.hasCompleted&&fireDidEvents(n.enteringEl,n.leavingEl),[2,{hasCompleted:i.hasCompleted,animation:i}]}})})}function noAnimation(e){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var n,i;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return n=e.enteringEl,i=e.leavingEl,[4,waitForReady(e,!1)];case 1:return t.sent(),fireWillEvents(n,i),fireDidEvents(n,i),[2,{hasCompleted:!0}]}})})}function waitForReady(e,n){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var i;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return i=(void 0!==e.deepWait?e.deepWait:n)?[deepReady(e.enteringEl),deepReady(e.leavingEl)]:[shallowReady(e.enteringEl),shallowReady(e.leavingEl)],[4,Promise.all(i)];case 1:return t.sent(),[4,notifyViewReady(e.viewIsReady,e.enteringEl)];case 2:return t.sent(),[2]}})})}function notifyViewReady(e,n){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:return e?[4,e(n)]:[3,2];case 1:i.sent(),i.label=2;case 2:return[2]}})})}function playTransition(e,n){var i=n.progressCallback,t=new Promise(function(n){return e.onFinish(n)});return i?(e.progressStart(),i(e)):e.play(),t}function fireWillEvents(e,n){lifecycle(n,_chunk_90d954cd_js__WEBPACK_IMPORTED_MODULE_1__["a"]),lifecycle(e,_chunk_90d954cd_js__WEBPACK_IMPORTED_MODULE_1__["b"])}function fireDidEvents(e,n){lifecycle(e,_chunk_90d954cd_js__WEBPACK_IMPORTED_MODULE_1__["c"]),lifecycle(n,_chunk_90d954cd_js__WEBPACK_IMPORTED_MODULE_1__["d"])}function lifecycle(e,n){if(e){var i=new CustomEvent(n,{bubbles:!1,cancelable:!1});e.dispatchEvent(i)}}function shallowReady(e){return e&&e.componentOnReady?e.componentOnReady():Promise.resolve()}function deepReady(e){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var n;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:return(n=e)?null==n.componentOnReady?[3,2]:[4,n.componentOnReady()]:[3,4];case 1:if(null!=i.sent())return[2];i.label=2;case 2:return[4,Promise.all(Array.from(n.children).map(deepReady))];case 3:i.sent(),i.label=4;case 4:return[2]}})})}function setPageHidden(e,n){n?(e.setAttribute("aria-hidden","true"),e.classList.add("ion-page-hidden")):(e.hidden=!1,e.removeAttribute("aria-hidden"),e.classList.remove("ion-page-hidden"))}function setZIndex(e,n,i){void 0!==e&&(e.style.zIndex="back"===i?"99":"101"),void 0!==n&&(n.style.zIndex="100")}
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return findCheckedOption; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return watchForOptions; });
+var watchForOptions = function (containerEl, tagName, onChange) {
+    var mutation = new MutationObserver(function (mutationList) {
+        onChange(getSelectedOption(mutationList, tagName));
+    });
+    mutation.observe(containerEl, {
+        childList: true,
+        subtree: true
+    });
+    return mutation;
+};
+var getSelectedOption = function (mutationList, tagName) {
+    var newOption;
+    mutationList.forEach(function (mut) {
+        // tslint:disable-next-line: prefer-for-of
+        for (var i = 0; i < mut.addedNodes.length; i++) {
+            newOption = findCheckedOption(mut.addedNodes[i], tagName) || newOption;
+        }
+    });
+    return newOption;
+};
+var findCheckedOption = function (el, tagName) {
+    if (el.nodeType !== 1) {
+        return undefined;
+    }
+    var options = (el.tagName === tagName.toUpperCase())
+        ? [el]
+        : Array.from(el.querySelectorAll(tagName));
+    return options.find(function (o) { return o.checked === true; });
+};
 
-/***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-f56eaea8.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-f56eaea8.js ***!
-  \***********************************************************************/
-/*! exports provided: createGesture, GESTURE_CONTROLLER */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createGesture", function() { return createGesture; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GESTURE_CONTROLLER", function() { return GESTURE_CONTROLLER; });
-var _sPassive,GestureController=function(){function t(t){this.doc=t,this.gestureId=0,this.requestedStart=new Map,this.disabledGestures=new Map,this.disabledScroll=new Set}return t.prototype.createGesture=function(t){return new GestureDelegate(this,this.newID(),t.name,t.priority||0,!!t.disableScroll)},t.prototype.createBlocker=function(t){return void 0===t&&(t={}),new BlockerDelegate(this,this.newID(),t.disable,!!t.disableScroll)},t.prototype.start=function(t,e,r){return this.canStart(t)?(this.requestedStart.set(e,r),!0):(this.requestedStart.delete(e),!1)},t.prototype.capture=function(t,e,r){if(!this.start(t,e,r))return!1;var i=this.requestedStart,s=-1e4;if(i.forEach(function(t){s=Math.max(s,t)}),s===r){this.capturedId=e,i.clear();var n=new CustomEvent("ionGestureCaptured",{detail:{gestureName:t}});return this.doc.dispatchEvent(n),!0}return i.delete(e),!1},t.prototype.release=function(t){this.requestedStart.delete(t),this.capturedId===t&&(this.capturedId=void 0)},t.prototype.disableGesture=function(t,e){var r=this.disabledGestures.get(t);void 0===r&&(r=new Set,this.disabledGestures.set(t,r)),r.add(e)},t.prototype.enableGesture=function(t,e){var r=this.disabledGestures.get(t);void 0!==r&&r.delete(e)},t.prototype.disableScroll=function(t){this.disabledScroll.add(t),1===this.disabledScroll.size&&this.doc.body.classList.add(BACKDROP_NO_SCROLL)},t.prototype.enableScroll=function(t){this.disabledScroll.delete(t),0===this.disabledScroll.size&&this.doc.body.classList.remove(BACKDROP_NO_SCROLL)},t.prototype.canStart=function(t){return void 0===this.capturedId&&!this.isDisabled(t)},t.prototype.isCaptured=function(){return void 0!==this.capturedId},t.prototype.isScrollDisabled=function(){return this.disabledScroll.size>0},t.prototype.isDisabled=function(t){var e=this.disabledGestures.get(t);return!!(e&&e.size>0)},t.prototype.newID=function(){return this.gestureId++,this.gestureId},t}(),GestureDelegate=function(){function t(t,e,r,i,s){this.id=e,this.name=r,this.disableScroll=s,this.priority=1e6*i+e,this.ctrl=t}return t.prototype.canStart=function(){return!!this.ctrl&&this.ctrl.canStart(this.name)},t.prototype.start=function(){return!!this.ctrl&&this.ctrl.start(this.name,this.id,this.priority)},t.prototype.capture=function(){if(!this.ctrl)return!1;var t=this.ctrl.capture(this.name,this.id,this.priority);return t&&this.disableScroll&&this.ctrl.disableScroll(this.id),t},t.prototype.release=function(){this.ctrl&&(this.ctrl.release(this.id),this.disableScroll&&this.ctrl.enableScroll(this.id))},t.prototype.destroy=function(){this.release(),this.ctrl=void 0},t}(),BlockerDelegate=function(){function t(t,e,r,i){this.id=e,this.disable=r,this.disableScroll=i,this.ctrl=t}return t.prototype.block=function(){if(this.ctrl){if(this.disable)for(var t=0,e=this.disable;t<e.length;t++)this.ctrl.disableGesture(e[t],this.id);this.disableScroll&&this.ctrl.disableScroll(this.id)}},t.prototype.unblock=function(){if(this.ctrl){if(this.disable)for(var t=0,e=this.disable;t<e.length;t++)this.ctrl.enableGesture(e[t],this.id);this.disableScroll&&this.ctrl.enableScroll(this.id)}},t.prototype.destroy=function(){this.unblock(),this.ctrl=void 0},t}(),BACKDROP_NO_SCROLL="backdrop-no-scroll",GESTURE_CONTROLLER=new GestureController(document);function addEventListener(t,e,r,i){var s,n,o=supportsPassive(t)?{capture:!!i.capture,passive:!!i.passive}:!!i.capture;return t.__zone_symbol__addEventListener?(s="__zone_symbol__addEventListener",n="__zone_symbol__removeEventListener"):(s="addEventListener",n="removeEventListener"),t[s](e,r,o),function(){t[n](e,r,o)}}function supportsPassive(t){if(void 0===_sPassive)try{var e=Object.defineProperty({},"passive",{get:function(){_sPassive=!0}});t.addEventListener("optsTest",function(){},e)}catch(t){_sPassive=!1}return!!_sPassive}var MOUSE_WAIT=2e3;function createPointerEvents(t,e,r,i,s){var n,o,a,c,u,l,d,h=0;function p(i){h=Date.now()+MOUSE_WAIT,e(i)&&(!o&&r&&(o=addEventListener(t,"touchmove",r,s)),a||(a=addEventListener(t,"touchend",f,s)),c||(c=addEventListener(t,"touchcancel",f,s)))}function v(i){h>Date.now()||e(i)&&(!l&&r&&(l=addEventListener(getDocument(t),"mousemove",r,s)),d||(d=addEventListener(getDocument(t),"mouseup",b,s)))}function f(t){S(),i&&i(t)}function b(t){y(),i&&i(t)}function S(){o&&o(),a&&a(),c&&c(),o=a=c=void 0}function y(){l&&l(),d&&d(),l=d=void 0}function m(){S(),y()}function D(e){e?(n&&n(),u&&u(),n=u=void 0,m()):(n||(n=addEventListener(t,"touchstart",p,s)),u||(u=addEventListener(t,"mousedown",v,s)))}return{setDisabled:D,stop:m,destroy:function(){D(!0),i=r=e=void 0}}}function getDocument(t){return t instanceof Document?t:t.ownerDocument}function createPanRecognizer(t,e,r){var i=r*(Math.PI/180),s="x"===t,n=Math.cos(i),o=e*e,a=0,c=0,u=!1,l=0;return{start:function(t,e){a=t,c=e,l=0,u=!0},detect:function(t,e){if(!u)return!1;var r=t-a,i=e-c,d=r*r+i*i;if(d<o)return!1;var h=Math.sqrt(d),p=(s?r:i)/h;return l=p>n?1:p<-n?-1:0,u=!1,!0},isGesture:function(){return 0!==l},getDirection:function(){return l}}}function createGesture(t){var e=Object.assign({disableScroll:!1,direction:"x",gesturePriority:0,passive:!0,maxAngle:40,threshold:10},t),r=e.canStart,i=e.onWillStart,s=e.onStart,n=e.onEnd,o=e.notCaptured,a=e.onMove,c=e.threshold,u=e.queue,l={type:"pan",startX:0,startY:0,startTimeStamp:0,currentX:0,currentY:0,velocityX:0,velocityY:0,deltaX:0,deltaY:0,timeStamp:0,event:void 0,data:void 0},d=createPointerEvents(e.el,function(t){var e=now(t);return!(f||!b)&&(updateDetail(t,l),l.startX=l.currentX,l.startY=l.currentY,l.startTimeStamp=l.timeStamp=e,l.velocityX=l.velocityY=l.deltaX=l.deltaY=0,l.event=t,(!r||!1!==r(l))&&(p.release(),!!p.start()&&(f=!0,0===c?m():(h.start(l.startX,l.startY),!0))))},function(t){v?!S&&b&&(S=!0,calcGestureData(l,t),u.write(y)):(calcGestureData(l,t),h.detect(l.currentX,l.currentY)&&(h.isGesture()&&m()||(g(),d.stop(),o&&o(l))))},E,{capture:!1}),h=createPanRecognizer(e.direction,e.threshold,e.maxAngle),p=GESTURE_CONTROLLER.createGesture({name:t.gestureName,priority:t.gesturePriority,disableScroll:t.disableScroll}),v=!1,f=!1,b=!0,S=!1;function y(){v&&(S=!1,a&&a(l))}function m(){return!(p&&!p.capture()||(v=!0,b=!1,l.startX=l.currentX,l.startY=l.currentY,l.startTimeStamp=l.timeStamp,i?i(l).then(D):D(),0))}function D(){s&&s(l),b=!0}function g(){v=!1,f=!1,S=!1,b=!0,p.release()}function E(t){var e=v,r=b;g(),r&&(calcGestureData(l,t),e?n&&n(l):o&&o(l))}return{setDisabled:function(t){t&&v&&E(void 0),d.setDisabled(t)},destroy:function(){p.destroy(),d.destroy()}}}function calcGestureData(t,e){if(e){var r=t.currentX,i=t.currentY,s=t.timeStamp;updateDetail(e,t);var n=t.currentX,o=t.currentY,a=(t.timeStamp=now(e))-s;if(a>0&&a<100){var c=(o-i)/a;t.velocityX=(n-r)/a*.7+.3*t.velocityX,t.velocityY=.7*c+.3*t.velocityY}t.deltaX=n-t.startX,t.deltaY=o-t.startY,t.event=e}}function updateDetail(t,e){var r=0,i=0;if(t){var s=t.changedTouches;if(s&&s.length>0){var n=s[0];r=n.clientX,i=n.clientY}else void 0!==t.pageX&&(r=t.pageX,i=t.pageY)}e.currentX=r,e.currentY=i}function now(t){return t.timeStamp||Date.now()}
 
 /***/ }),
 
@@ -262,228 +580,6 @@ var CongresistasService = /** @class */ (function () {
             _ajustes_service__WEBPACK_IMPORTED_MODULE_2__["AjustesService"]])
     ], CongresistasService);
     return CongresistasService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/usuario.service.ts":
-/*!*********************************************!*\
-  !*** ./src/app/services/usuario.service.ts ***!
-  \*********************************************/
-/*! exports provided: UsuarioService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsuarioService", function() { return UsuarioService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config/url.servicios */ "./src/app/config/url.servicios.ts");
-/* harmony import */ var _ajustes_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ajustes.service */ "./src/app/services/ajustes.service.ts");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-
-
-
-
-
-
-
-var UsuarioService = /** @class */ (function () {
-    function UsuarioService(storage, http, _as, navCtrl) {
-        this.storage = storage;
-        this.http = http;
-        this._as = _as;
-        this.navCtrl = navCtrl;
-        this.token = null;
-        this.usuario = {};
-    }
-    UsuarioService.prototype.login = function (email, password) {
-        var _this = this;
-        var data = { email: email, password: password };
-        var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/login.php";
-        return new Promise(function (resolve) {
-            _this.http.post(url, data).subscribe(function (resp) {
-                console.log(resp);
-                if (!resp['error']) {
-                    _this.guardarToken(resp['token']);
-                    resolve(true);
-                }
-                else {
-                    _this._as.presentAlert(resp['mensaje']);
-                    _this.token = null;
-                    _this.storage.remove('token');
-                    resolve(false);
-                }
-            });
-        });
-    };
-    UsuarioService.prototype.registro = function (usuario) {
-        var _this = this;
-        var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/registro.php";
-        return new Promise(function (resolve) {
-            _this.http.post(url, usuario).subscribe(function (resp) {
-                console.log(resp);
-                if (!resp['error']) {
-                    _this.guardarToken(resp['token']);
-                    resolve(true);
-                }
-                else {
-                    _this._as.presentAlert(resp['mensaje']);
-                    _this.token = null;
-                    _this.storage.remove('token');
-                    resolve(false);
-                }
-            });
-        });
-    };
-    UsuarioService.prototype.getUsuario = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.validaToken()];
-                    case 1:
-                        _a.sent();
-                        return [4 /*yield*/, tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, this.usuario)];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    UsuarioService.prototype.guardarToken = function (token) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.token = token;
-                        return [4 /*yield*/, this.storage.set('token', token)];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    UsuarioService.prototype.cargarToken = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var _a;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        _a = this;
-                        return [4 /*yield*/, this.storage.get('token')];
-                    case 1:
-                        _a.token = (_b.sent()) || null;
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    UsuarioService.prototype.existeToken = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.cargarToken()];
-                    case 1:
-                        _a.sent();
-                        if (!this.token) {
-                            console.log("No existe token");
-                            return [2 /*return*/, Promise.resolve(false)];
-                        }
-                        else {
-                            console.log("Si existe token");
-                            return [2 /*return*/, Promise.resolve(true)];
-                        }
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    UsuarioService.prototype.tienePermiso = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.cargarToken()];
-                    case 1:
-                        _a.sent();
-                        if (!this.token) {
-                            //this._as.presentAlert("Ir a mi perfil para registrarme");
-                            return [2 /*return*/, Promise.resolve(false)];
-                        }
-                        else {
-                            console.log("Si existe token");
-                            return [2 /*return*/, Promise.resolve(true)];
-                        }
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    UsuarioService.prototype.validaToken = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var _this = this;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.cargarToken()];
-                    case 1:
-                        _a.sent();
-                        if (!this.token) {
-                            this.navCtrl.navigateRoot('/tabs/login');
-                            return [2 /*return*/, Promise.resolve(false)];
-                        }
-                        return [2 /*return*/, new Promise(function (resolve) {
-                                var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/usuario.php";
-                                var data = { token: _this.token };
-                                _this.http.post(url, data)
-                                    .subscribe(function (resp) {
-                                    if (resp['id']) {
-                                        _this.usuario = resp;
-                                        resolve(true);
-                                    }
-                                    else {
-                                        _this.navCtrl.navigateRoot('/tabs/login');
-                                        resolve(false);
-                                    }
-                                });
-                            })];
-                }
-            });
-        });
-    };
-    UsuarioService.prototype.logout = function () {
-        this.token = null;
-        this.usuario = null;
-        this.storage.remove('token');
-        this.navCtrl.navigateRoot('/tabs/login', { animated: true });
-    };
-    UsuarioService.prototype.actualizarUsuario = function (usuario) {
-        var _this = this;
-        return new Promise(function (resolve) {
-            var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/updateuser.php";
-            _this.http.post(url, usuario)
-                .subscribe(function (resp) {
-                if (resp['success']) {
-                    resolve(true);
-                }
-                else {
-                    resolve(false);
-                }
-            });
-        });
-    };
-    UsuarioService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
-            _ajustes_service__WEBPACK_IMPORTED_MODULE_5__["AjustesService"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"]])
-    ], UsuarioService);
-    return UsuarioService;
 }());
 
 

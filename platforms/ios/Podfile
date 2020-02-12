@@ -4,5 +4,5 @@ platform :ios, '11.0'
 
 target 'SMO' do
 	project 'SMO.xcodeproj'
-	pod 'OneSignal', '2.10.0'
+	pod 'OneSignal', '2.12.6'
 end

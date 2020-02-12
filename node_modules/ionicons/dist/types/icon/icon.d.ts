@@ -1,22 +1,16 @@
-import '../stencil.core';
+/**
+ * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
+ */
 export declare class Icon {
     private io?;
+    mode: string;
     el: HTMLElement;
     private svgContent?;
     private isVisible;
-    isServer: boolean;
-    resourcesUrl: string;
-    doc: Document;
-    win: any;
     /**
      * The color to use for the background of the item.
      */
     color?: string;
-    /**
-     * The mode determines which platform styles to use.
-     * Possible values are: `"ios"` or `"md"`.
-     */
-    mode?: 'ios' | 'md';
     /**
      * Specifies the label to use for accessibility. Defaults to the icon name.
      */
@@ -46,7 +40,7 @@ export declare class Icon {
      * it will set the `src` property. Otherwise it assumes it's a built-in named
      * SVG and set the `name` property.
      */
-    icon?: string;
+    icon?: any;
     /**
      * The size of the icon.
      * Available options are: `"small"` and `"large"`.
@@ -57,22 +51,9 @@ export declare class Icon {
      * Default, `false`.
      */
     lazy: boolean;
-    componentWillLoad(): void;
-    componentDidUnload(): void;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
     private waitUntilVisible;
     loadIcon(): void;
-    getName(): string | undefined;
-    getUrl(): string | null;
-    private getNamedUrl;
-    hostData(): {
-        'role': string;
-        class: {
-            'flip-rtl': boolean | "" | undefined;
-        } | {
-            [x: string]: boolean | "" | undefined;
-            'flip-rtl': boolean | "" | undefined;
-            'ion-color': boolean;
-        };
-    };
-    render(): JSX.Element;
+    render(): any;
 }

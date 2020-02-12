@@ -58,7 +58,7 @@ var CasosListaPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-menu-button></ion-menu-button>\n          <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n        </ion-buttons>\n    <ion-title>Casos Clínicos</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n        \n  <ion-item (click)=\"casoImagen('casos')\">\n      <ion-label class=\"ion-text-wrap\">     \n        <ion-row>\n          <ion-col size=\"3\">\n              <ion-avatar>\n                  <img class=\"perfil\" src=\"../../assets/avatars/av-4.png\">\n                </ion-avatar>\n          </ion-col>\n          <ion-col size=\"8\">               \n        <ion-text color=\"secondary\">\n            <ion-text color=\"primary\">         \n                <h3>Coloquio Sociedad Mexicana de Oftalmología</h3>\n              </ion-text>\n              <p>Peter Parker</p>\n        </ion-text>\n        <p>26/09/2019</p>\n      </ion-col>\n      <ion-col size=\"1\">\n          <ion-icon name=\"photos\"></ion-icon>\n      </ion-col>\n    </ion-row>  \n      </ion-label>\n    </ion-item>\n\n  <ion-item>\n      <ion-label class=\"ion-text-wrap\">     \n        <ion-row>\n          <ion-col size=\"3\">\n              <ion-avatar>\n                  <img class=\"perfil\" src=\"../../assets/avatars/{{ usuario.avatar }}\">\n                </ion-avatar>\n          </ion-col>\n          <ion-col size=\"8\">               \n        <ion-text color=\"secondary\">\n            <ion-text color=\"primary\">         \n                <h3>Caso Clinico Oftalmología</h3>\n              </ion-text>\n              <p>{{ usuario.nombre }} {{ usuario.apellidos }}</p>\n        </ion-text>\n        <p>29/09/2019</p>\n      </ion-col>\n      <ion-col size=\"1\">\n          <ion-icon name=\"document\"></ion-icon>\n      </ion-col>\n    </ion-row>  \n      </ion-label>\n    </ion-item>\n\n \n</ion-content>\n"
+module.exports = "\n<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-menu-button></ion-menu-button>\n          <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n        </ion-buttons>\n    <ion-title>Casos Clínicos</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n        <ion-list>\n  <ion-item (click)=\"casoImagen(caso.id)\" *ngFor=\"let caso of casos\">\n      <ion-label class=\"ion-text-wrap\">     \n        <ion-row>\n          <ion-col size=\"3\">\n              <ion-avatar>\n                  <img class=\"perfil\" src=\"https://wsbrb-services.com/appsmo/img/avatar-no-img.png\">\n                </ion-avatar>\n          </ion-col>\n          <ion-col size=\"8\">               \n        <ion-text color=\"secondary\">\n            <ion-text color=\"primary\">         \n                <h3>{{caso.titulo}}</h3>\n              </ion-text>\n              <p>{{caso.autor}}</p>\n        </ion-text>\n        <p>{{caso.fecha}}</p>\n      </ion-col>\n      <ion-col size=\"1\">\n        <ion-icon name=\"photos\" *ngIf=\"caso.arch_ext=='.jpg' || caso.arch_ext=='.png' || caso.arch_ext=='.bmp' \"></ion-icon>\n        <ion-icon name=\"document\" *ngIf=\"caso.arch_ext=='.pdf' || caso.arch_ext=='.doc'  || caso.arch_ext=='.docx' \"></ion-icon>\n      </ion-col>\n    </ion-row>  \n      </ion-label>\n    </ion-item>\n</ion-list>\n\n \n</ion-content>\n"
 
 /***/ }),
 
@@ -86,57 +86,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_services_usuario_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/usuario.service */ "./src/app/services/usuario.service.ts");
-/* harmony import */ var src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/ajustes.service */ "./src/app/services/ajustes.service.ts");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var src_app_services_casos_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/casos.service */ "./src/app/services/casos.service.ts");
 
 
 
 
 
 var CasosListaPage = /** @class */ (function () {
-    function CasosListaPage(navCtrl, _us, _as) {
+    function CasosListaPage(navCtrl, _us, _cs) {
         this.navCtrl = navCtrl;
         this._us = _us;
-        this._as = _as;
-        this.avatars = [
-            {
-                img: 'av-1.png',
-                seleccionado: true
-            },
-            {
-                img: 'av-2.png',
-                seleccionado: false
-            },
-            {
-                img: 'av-3.png',
-                seleccionado: false
-            },
-            {
-                img: 'av-4.png',
-                seleccionado: false
-            },
-            {
-                img: 'av-5.png',
-                seleccionado: false
-            },
-            {
-                img: 'av-6.png',
-                seleccionado: false
-            },
-            {
-                img: 'av-7.png',
-                seleccionado: false
-            },
-            {
-                img: 'av-8.png',
-                seleccionado: false
-            },
-        ];
-        this.avatarSlide = {
-            slidesPerView: 3.5
-        };
+        this._cs = _cs;
         this.usuario = {};
-        this.avatarActual = 'av-1.png';
+        this.cargarCasos();
     }
     CasosListaPage.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -154,12 +117,26 @@ var CasosListaPage = /** @class */ (function () {
             });
         });
     };
-    CasosListaPage.prototype.casoImagen = function (pagina) {
+    CasosListaPage.prototype.casoImagen = function (id) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                console.log(pagina);
-                this.navCtrl.navigateForward('/tabs/principal/' + pagina);
+                this.navCtrl.navigateForward("/tabs/principal/casos/" + id);
                 return [2 /*return*/];
+            });
+        });
+    };
+    CasosListaPage.prototype.cargarCasos = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this._cs.cargar_todos()];
+                    case 1:
+                        _a.casos = _b.sent();
+                        return [2 /*return*/];
+                }
             });
         });
     };
@@ -169,9 +146,9 @@ var CasosListaPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./casos-lista.page.html */ "./src/app/pages/pages/casos-lista/casos-lista.page.html"),
             styles: [__webpack_require__(/*! ./casos-lista.page.scss */ "./src/app/pages/pages/casos-lista/casos-lista.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavController"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"],
             src_app_services_usuario_service__WEBPACK_IMPORTED_MODULE_2__["UsuarioService"],
-            src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_3__["AjustesService"]])
+            src_app_services_casos_service__WEBPACK_IMPORTED_MODULE_4__["CasosService"]])
     ], CasosListaPage);
     return CasosListaPage;
 }());

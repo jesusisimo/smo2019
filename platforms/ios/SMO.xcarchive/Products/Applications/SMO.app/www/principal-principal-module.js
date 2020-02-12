@@ -58,7 +58,7 @@ var PrincipalPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <ion-header>\n\t<ion-toolbar color=\"primary\">\n\t\t<ion-title>PAAO Cancun 2019</ion-title>\n\t</ion-toolbar>\n</ion-header> -->\n\n\n\n<ion-content text-center class=\"icons-basic-page\" >\n\t\t<ion-item color=\"primary\" class=\"banner\">\n\t<img class=\"logoSmall\" color=\"primary\" src=\"../../assets/img/logo_smo_blanco.png\">\n\t</ion-item>\n\t<ion-row>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"validarVista()\" color=\"secondary\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/socios.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('coloquios')\"expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/coloq.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('transm-lista')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/transm.png\">\n\t\t\t\t\t  </ion-buttons>\n\t\t\t\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('congresos')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/congres.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('sesiones')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/sesion.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"abrirWeb('http://www.rmo.com.mx','_system')\" color=\"secondary\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/REVISTA.png\">\n\t\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('mesadirectiva')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/mesa.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"abrirWeb('https://www.smo.org.mx/solicitud_articulos.php','_system')\"  expand=\"full\" shape=\"round\">\n\t\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/articulos.png\">\n\t\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('lista')\"  expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/casos.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"abrirWeb('https://www.facebook.com/socmexofta/','_system')\" color=\"secondary\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/redes.png\">\n\t\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('contacto')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/contact.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\n\t\t\n\t</ion-row>\n</ion-content>"
+module.exports = "<!-- <ion-header>\n\t<ion-toolbar color=\"primary\">\n\t\t<ion-title>PAAO Cancun 2019</ion-title>\n\t</ion-toolbar>\n</ion-header> -->\n\n\n\n<ion-content text-center class=\"icons-basic-page\" >\n\t\t<ion-item color=\"primary\" class=\"banner\">\n\t<img class=\"logoSmall\" color=\"primary\" src=\"../../assets/img/logo_smo_blanco.png\">\n\t</ion-item>\n\t<ion-row>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"validarVista()\" color=\"secondary\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/socios.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('coloquios')\"expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/coloq.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('transm-lista')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/transm.png\">\n\t\t\t\t\t  </ion-buttons>\n\t\t\t\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('congresos')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/congres.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('sesiones')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/sesion.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"abrirWeb('http://www.rmo.com.mx','_system')\" color=\"secondary\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/REVISTA.png\">\n\t\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('mesadirectiva')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/mesa.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"abrirWeb('https://www.smo.org.mx/solicitud_articulos.php','_system')\"  expand=\"full\" shape=\"round\">\n\t\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/articulos.png\">\n\t\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t<ion-buttons (click)=\"abrirWeb('http://abrelosojos.org/home','_system')\"  expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/abre.png\">\n\t\t\t\t  </ion-buttons>\n\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('lista')\"  expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/casos.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"abrirWeb('https://www.facebook.com/socmexofta/','_system')\" color=\"secondary\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/redes.png\">\n\t\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\n\t\t<ion-col>\n\t\t\t\t<ion-buttons (click)=\"navegarPagina('contacto')\" expand=\"full\" shape=\"round\">\n\t\t\t\t\t<img class=\"iconos\" src=\"../../assets/icon/contact.png\">\n\t\t\t\t  </ion-buttons>\n\t\t</ion-col>\n\n\t\t\n\t</ion-row>\n</ion-content>"
 
 /***/ }),
 
@@ -69,7 +69,7 @@ module.exports = "<!-- <ion-header>\n\t<ion-toolbar color=\"primary\">\n\t\t<ion
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host ion-content {\n  --background:none;\n  background: url(\"/assets/img/background.jpg\");\n  background-size: cover;\n  background-position: center center;\n  --color: var(--ion-text-color,#fff); }\n\n:host .banner {\n  --padding-top: 13px;\n  --padding-bottom: 7px; }\n\n:host .iconos {\n  size: 1em;\n  padding: 7px; }\n\n:host .icons-basic-page ion-icon {\n  font-size: 60px;\n  /*80px para ios 60 para android*/\n  color: #ffffff; }\n\n:host .icons-basic-page ion-row {\n  flex-wrap: wrap; }\n\n:host .icons-basic-page ion-col {\n  flex: 0 0 33%;\n  max-width: 33%;\n  text-align: center;\n  padding: 10px 5px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvcHJpbmNpcGFsL3ByaW5jaXBhbC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFUSxpQkFBYTtFQUNmLDZDQUE0QztFQUM1QyxzQkFBc0I7RUFDdEIsa0NBQWtDO0VBQ3JDLG1DQUFRLEVBQUE7O0FBTlg7RUFTRSxtQkFBYztFQUNkLHFCQUFpQixFQUFBOztBQVZuQjtFQWFFLFNBQVM7RUFDVCxZQUFZLEVBQUE7O0FBZGQ7RUFrQkcsZUFBZTtFQUFDLGdDQUFBO0VBQ2hCLGNBQWMsRUFBQTs7QUFuQmpCO0VBd0JHLGVBQWUsRUFBQTs7QUF4QmxCO0VBNEJHLGFBQWE7RUFDYixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGlCQUFpQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvcHJpbmNpcGFsL3ByaW5jaXBhbC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgaW9uLWNvbnRlbnQge1xuICAgICAgICAtLWJhY2tncm91bmQ6bm9uZTtcbiAgICAgIGJhY2tncm91bmQ6dXJsKCcvYXNzZXRzL2ltZy9iYWNrZ3JvdW5kLmpwZycpO1xuICAgICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlciBjZW50ZXI7XG5cdCAgLS1jb2xvcjogdmFyKC0taW9uLXRleHQtY29sb3IsI2ZmZik7XG4gICAgfVxuXHQuYmFubmVye1xuXHRcdC0tcGFkZGluZy10b3A6IDEzcHg7XG5cdFx0LS1wYWRkaW5nLWJvdHRvbTogN3B4O1xuXHR9XG5cdC5pY29ub3N7XG5cdFx0c2l6ZTogMWVtO1xuXHRcdHBhZGRpbmc6IDdweDtcblx0fVxuXHQuaWNvbnMtYmFzaWMtcGFnZSB7XG5cdFx0aW9uLWljb24ge1xuXHRcdFx0Zm9udC1zaXplOiA2MHB4Oy8qODBweCBwYXJhIGlvcyA2MCBwYXJhIGFuZHJvaWQqL1xuXHRcdFx0Y29sb3I6ICNmZmZmZmY7XG5cdFx0fVxuXG5cdFx0aW9uLXJvdyB7XG5cdFx0XHRcblx0XHRcdGZsZXgtd3JhcDogd3JhcDtcblx0XHR9XG5cblx0XHRpb24tY29sIHtcblx0XHRcdGZsZXg6IDAgMCAzMyU7XG5cdFx0XHRtYXgtd2lkdGg6IDMzJTtcblx0XHRcdHRleHQtYWxpZ246IGNlbnRlcjtcblx0XHRcdHBhZGRpbmc6IDEwcHggNXB4O1xuXHRcdH1cblx0fVxuXHRcbn0iXX0= */"
+module.exports = ":host ion-content {\n  --background:none;\n  background: url(\"/assets/img/background.jpg\");\n  background-size: cover;\n  background-position: center center;\n  --color: var(--ion-text-color,#fff); }\n\n:host .banner {\n  --padding-top: 13px;\n  --padding-bottom: 7px; }\n\n:host .iconos {\n  size: 1em;\n  padding: 7px; }\n\n:host .icons-basic-page ion-icon {\n  font-size: 60px;\n  /*80px para ios 60 para android*/\n  color: #ffffff; }\n\n:host .icons-basic-page ion-row {\n  flex-wrap: wrap; }\n\n:host .icons-basic-page ion-col {\n  -webkit-box-flex: 0;\n          flex: 0 0 33%;\n  max-width: 33%;\n  text-align: center;\n  padding: 10px 5px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvcHJpbmNpcGFsL3ByaW5jaXBhbC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFUSxpQkFBYTtFQUNmLDZDQUE0QztFQUM1QyxzQkFBc0I7RUFDdEIsa0NBQWtDO0VBQ3JDLG1DQUFRLEVBQUE7O0FBTlg7RUFTRSxtQkFBYztFQUNkLHFCQUFpQixFQUFBOztBQVZuQjtFQWFFLFNBQVM7RUFDVCxZQUFZLEVBQUE7O0FBZGQ7RUFrQkcsZUFBZTtFQUFDLGdDQUFBO0VBQ2hCLGNBQWMsRUFBQTs7QUFuQmpCO0VBd0JHLGVBQWUsRUFBQTs7QUF4QmxCO0VBNEJHLG1CQUFhO1VBQWIsYUFBYTtFQUNiLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsaUJBQWlCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9wcmluY2lwYWwvcHJpbmNpcGFsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgICBpb24tY29udGVudCB7XG4gICAgICAgIC0tYmFja2dyb3VuZDpub25lO1xuICAgICAgYmFja2dyb3VuZDp1cmwoJy9hc3NldHMvaW1nL2JhY2tncm91bmQuanBnJyk7XG4gICAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICAgICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyIGNlbnRlcjtcblx0ICAtLWNvbG9yOiB2YXIoLS1pb24tdGV4dC1jb2xvciwjZmZmKTtcbiAgICB9XG5cdC5iYW5uZXJ7XG5cdFx0LS1wYWRkaW5nLXRvcDogMTNweDtcblx0XHQtLXBhZGRpbmctYm90dG9tOiA3cHg7XG5cdH1cblx0Lmljb25vc3tcblx0XHRzaXplOiAxZW07XG5cdFx0cGFkZGluZzogN3B4O1xuXHR9XG5cdC5pY29ucy1iYXNpYy1wYWdlIHtcblx0XHRpb24taWNvbiB7XG5cdFx0XHRmb250LXNpemU6IDYwcHg7Lyo4MHB4IHBhcmEgaW9zIDYwIHBhcmEgYW5kcm9pZCovXG5cdFx0XHRjb2xvcjogI2ZmZmZmZjtcblx0XHR9XG5cblx0XHRpb24tcm93IHtcblx0XHRcdFxuXHRcdFx0ZmxleC13cmFwOiB3cmFwO1xuXHRcdH1cblxuXHRcdGlvbi1jb2wge1xuXHRcdFx0ZmxleDogMCAwIDMzJTtcblx0XHRcdG1heC13aWR0aDogMzMlO1xuXHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXHRcdFx0cGFkZGluZzogMTBweCA1cHg7XG5cdFx0fVxuXHR9XG5cdFxufSJdfQ== */"
 
 /***/ }),
 
@@ -220,6 +220,228 @@ var PrincipalPage = /** @class */ (function () {
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"]])
     ], PrincipalPage);
     return PrincipalPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/usuario.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/usuario.service.ts ***!
+  \*********************************************/
+/*! exports provided: UsuarioService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsuarioService", function() { return UsuarioService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config/url.servicios */ "./src/app/config/url.servicios.ts");
+/* harmony import */ var _ajustes_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ajustes.service */ "./src/app/services/ajustes.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+
+
+
+
+
+var UsuarioService = /** @class */ (function () {
+    function UsuarioService(storage, http, _as, navCtrl) {
+        this.storage = storage;
+        this.http = http;
+        this._as = _as;
+        this.navCtrl = navCtrl;
+        this.token = null;
+        this.usuario = {};
+    }
+    UsuarioService.prototype.login = function (email, password) {
+        var _this = this;
+        var data = { email: email, password: password };
+        var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/login.php";
+        return new Promise(function (resolve) {
+            _this.http.post(url, data).subscribe(function (resp) {
+                console.log(resp);
+                if (!resp['error']) {
+                    _this.guardarToken(resp['token']);
+                    resolve(true);
+                }
+                else {
+                    _this._as.presentAlert(resp['mensaje']);
+                    _this.token = null;
+                    _this.storage.remove('token');
+                    resolve(false);
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.registro = function (usuario) {
+        var _this = this;
+        var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/registro.php";
+        return new Promise(function (resolve) {
+            _this.http.post(url, usuario).subscribe(function (resp) {
+                console.log(resp);
+                if (!resp['error']) {
+                    _this.guardarToken(resp['token']);
+                    resolve(true);
+                }
+                else {
+                    _this._as.presentAlert(resp['mensaje']);
+                    _this.token = null;
+                    _this.storage.remove('token');
+                    resolve(false);
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.getUsuario = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.validaToken()];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, this.usuario)];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.guardarToken = function (token) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.token = token;
+                        return [4 /*yield*/, this.storage.set('token', token)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.cargarToken = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.storage.get('token')];
+                    case 1:
+                        _a.token = (_b.sent()) || null;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.existeToken = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.cargarToken()];
+                    case 1:
+                        _a.sent();
+                        if (!this.token) {
+                            console.log("No existe token");
+                            return [2 /*return*/, Promise.resolve(false)];
+                        }
+                        else {
+                            console.log("Si existe token");
+                            return [2 /*return*/, Promise.resolve(true)];
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.tienePermiso = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.cargarToken()];
+                    case 1:
+                        _a.sent();
+                        if (!this.token) {
+                            //this._as.presentAlert("Ir a mi perfil para registrarme");
+                            return [2 /*return*/, Promise.resolve(false)];
+                        }
+                        else {
+                            console.log("Si existe token");
+                            return [2 /*return*/, Promise.resolve(true)];
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.validaToken = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.cargarToken()];
+                    case 1:
+                        _a.sent();
+                        if (!this.token) {
+                            this.navCtrl.navigateRoot('/tabs/login');
+                            return [2 /*return*/, Promise.resolve(false)];
+                        }
+                        return [2 /*return*/, new Promise(function (resolve) {
+                                var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/usuario.php";
+                                var data = { token: _this.token };
+                                _this.http.post(url, data)
+                                    .subscribe(function (resp) {
+                                    if (resp['id']) {
+                                        _this.usuario = resp;
+                                        resolve(true);
+                                    }
+                                    else {
+                                        _this.navCtrl.navigateRoot('/tabs/login');
+                                        resolve(false);
+                                    }
+                                });
+                            })];
+                }
+            });
+        });
+    };
+    UsuarioService.prototype.logout = function () {
+        this.token = null;
+        this.usuario = null;
+        this.storage.remove('token');
+        this.navCtrl.navigateRoot('/tabs/login', { animated: true });
+    };
+    UsuarioService.prototype.actualizarUsuario = function (usuario) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_4__["URL_SERVICIOS"] + "/updateuser.php";
+            _this.http.post(url, usuario)
+                .subscribe(function (resp) {
+                if (resp['success']) {
+                    resolve(true);
+                }
+                else {
+                    resolve(false);
+                }
+            });
+        });
+    };
+    UsuarioService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
+            _ajustes_service__WEBPACK_IMPORTED_MODULE_5__["AjustesService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"]])
+    ], UsuarioService);
+    return UsuarioService;
 }());
 
 

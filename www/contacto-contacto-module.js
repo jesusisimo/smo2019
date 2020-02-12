@@ -58,7 +58,7 @@ var ContactoPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Contacto</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  \n  \n\n<ion-content class=\"background\">\n  <ion-card color=\"primary\">\n    <ion-card-header>\n      <ion-card-title color=\"primary\" >Sociedad Mexicana de Oftalmología A.C.</ion-card-title>\n    </ion-card-header>\n  \n    <ion-card-content>\n      Boston 99, <br>\n      Col. Nochebuena, <br>\n      CDMX C.P. 03720, <br>\n      Telefonos:(55) 5563-9393, 5563-7812, 5598-3827 y 5598-5372, 5611-1343 <br>\n      contacto@smo.org.mx\n    </ion-card-content>\n  </ion-card>\n\n \n          <h2>Formulario de Contácto</h2>\n          <div>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"text\" placeholder=\"Nombre:\" [(ngModel)]=\"Nombre\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"text\" placeholder=\"Apellido:\" [(ngModel)]=\"Apellido\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"number\" placeholder=\"Teléfono\" [(ngModel)]=\"Telefono\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"email\" placeholder=\"Correo Electrónico:\" [(ngModel)]=\"email\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                \n                <ion-textarea clearInput type=\"text\" placeholder=\"Comentarios:\" [(ngModel)]=\"comentario\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-textarea>\n              </ion-col>\n            </ion-row>\n   \n      <ion-button>Enviar</ion-button>\n      <img src=\"../../assets/img/logo_smo_blanco.png\" class=\"logoSmall\">\n    </div>\n    <br>\n        <br>\n</ion-content>\n"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Contacto</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  \n  \n\n<ion-content class=\"background\">\n  <ion-card color=\"primary\">\n    <ion-card-header>\n      <ion-card-title color=\"primary\" >Sociedad Mexicana de Oftalmología A.C.</ion-card-title>\n    </ion-card-header>\n  \n    <ion-card-content>\n      Boston 99, <br>\n      Col. Nochebuena, <br>\n      CDMX C.P. 03720, <br>\n      Telefonos:(55) 5563-9393, 5563-7812, 5598-3827 y 5598-5372, 5611-1343 <br>\n      contacto@smo.org.mx\n    </ion-card-content>\n  </ion-card>\n\n \n          <h2>Formulario de contácto</h2>\n          <div>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"text\" placeholder=\"Nombre:\" [(ngModel)]=\"nombre\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"number\" placeholder=\"Teléfono\" [(ngModel)]=\"telefono\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-input clearInput type=\"email\" placeholder=\"Correo Electrónico:\" [(ngModel)]=\"email\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-input>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                \n                <ion-textarea clearInput type=\"text\" placeholder=\"Comentarios:\" [(ngModel)]=\"comentario\" class=\"input\" padding-horizontal clear-input=\"true\"></ion-textarea>\n              </ion-col>\n            </ion-row>\n   \n      <ion-button (click)=\"enviarMensaje()\">Enviar</ion-button>\n      <img src=\"../../assets/img/logo_smo_blanco.png\" class=\"logoSmall\">\n    </div>\n    <br>\n        <br>\n</ion-content>\n"
 
 /***/ }),
 
@@ -85,12 +85,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactoPage", function() { return ContactoPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/ajustes.service */ "./src/app/services/ajustes.service.ts");
+/* harmony import */ var src_app_services_contacto_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/contacto.service */ "./src/app/services/contacto.service.ts");
+
+
 
 
 var ContactoPage = /** @class */ (function () {
-    function ContactoPage() {
+    function ContactoPage(_as, _cs) {
+        this._as = _as;
+        this._cs = _cs;
+        this.nombre = "";
+        this.email = "";
+        this.telefono = "";
+        this.comentario = "";
     }
     ContactoPage.prototype.ngOnInit = function () {
+    };
+    ContactoPage.prototype.enviarMensaje = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var respuesta;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(this.comentario != "" && this.email != "" && this.nombre != "")) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this._cs.sendMensaje(this.email, this.nombre, this.comentario, this.telefono)];
+                    case 1:
+                        respuesta = _a.sent();
+                        this.comentario = "";
+                        this.email = "";
+                        this.telefono = "";
+                        this.nombre = "";
+                        return [3 /*break*/, 3];
+                    case 2:
+                        this._as.presentAlert("Por favor complete el formulario");
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
     };
     ContactoPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -98,9 +131,70 @@ var ContactoPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./contacto.page.html */ "./src/app/pages/contacto/contacto.page.html"),
             styles: [__webpack_require__(/*! ./contacto.page.scss */ "./src/app/pages/contacto/contacto.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_2__["AjustesService"],
+            src_app_services_contacto_service__WEBPACK_IMPORTED_MODULE_3__["ContactoService"]])
     ], ContactoPage);
     return ContactoPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/contacto.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/services/contacto.service.ts ***!
+  \**********************************************/
+/*! exports provided: ContactoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactoService", function() { return ContactoService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _config_url_servicios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config/url.servicios */ "./src/app/config/url.servicios.ts");
+/* harmony import */ var _ajustes_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ajustes.service */ "./src/app/services/ajustes.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+
+
+var ContactoService = /** @class */ (function () {
+    function ContactoService(_as, http) {
+        this._as = _as;
+        this.http = http;
+    }
+    ContactoService.prototype.sendMensaje = function (email, nombre, comentario, telefono) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve) {
+                        var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_2__["URL_SERVICIOS"] + "/formpost.php";
+                        _this.http.post(url, { 'email': email, 'nombre': nombre, 'telefono': telefono, 'comentario': comentario })
+                            .subscribe(function (resp) {
+                            if (!resp['error']) {
+                                resolve(true);
+                                _this._as.presentAlert("Mensaje enviado correctamente");
+                            }
+                            else {
+                                resolve(false);
+                                _this._as.presentAlert("No se pudo enviar el mensaje");
+                            }
+                        });
+                    })];
+            });
+        });
+    };
+    ContactoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ajustes_service__WEBPACK_IMPORTED_MODULE_3__["AjustesService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]])
+    ], ContactoService);
+    return ContactoService;
 }());
 
 

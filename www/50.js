@@ -1,252 +1,775 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[50],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js ***!
-  \***********************************************************************/
-/*! exports provided: a, b, c, d, e, f, g, h, i, j, k */
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-menu_4-md.entry.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-menu_4-md.entry.js ***!
+  \**********************************************************************/
+/*! exports provided: ion_menu, ion_menu_button, ion_menu_controller, ion_menu_toggle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return rIC; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return now; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hasShadowDom; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return findItemLabel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return renderHiddenInput; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return debounceEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return isEndSide; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return assert; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return clamp; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return debounce; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return pointerCoord; });
-function rIC(e){"requestIdleCallback"in window?window.requestIdleCallback(e):setTimeout(e,32)}function hasShadowDom(e){return!!e.shadowRoot&&!!e.attachShadow}function findItemLabel(e){var n=e.closest("ion-item");return n?n.querySelector("ion-label"):null}function renderHiddenInput(e,n,t,a,r){if(e||hasShadowDom(n)){var o=n.querySelector("input.aux-input");o||((o=n.ownerDocument.createElement("input")).type="hidden",o.classList.add("aux-input"),n.appendChild(o)),o.disabled=r,o.name=t,o.value=a||""}}function clamp(e,n,t){return Math.max(e,Math.min(n,t))}function assert(e,n){if(!e){var t="ASSERT: "+n;throw console.error(t),new Error(t)}}function now(e){return e.timeStamp||Date.now()}function pointerCoord(e){if(e){var n=e.changedTouches;if(n&&n.length>0){var t=n[0];return{x:t.clientX,y:t.clientY}}if(void 0!==e.pageX)return{x:e.pageX,y:e.pageY}}return{x:0,y:0}}function isEndSide(e,n){var t="rtl"===e.document.dir;switch(n){case"start":return t;case"end":return!t;default:throw new Error('"'+n+'" is not a valid value for [side]. Use "start" or "end" instead.')}}function debounceEvent(e,n){var t=e._original||e;return{_original:e,emit:debounce(t.emit.bind(t),n)}}function debounce(e,n){var t;return void 0===n&&(n=0),function(){for(var a=[],r=0;r<arguments.length;r++)a[r]=arguments[r];clearTimeout(t),t=setTimeout.apply(void 0,[e,n].concat(a))}}
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_menu", function() { return Menu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_menu_button", function() { return MenuButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_menu_controller", function() { return MenuController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_menu_toggle", function() { return MenuToggle; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/@ionic/core/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./core-ca0488fc.js */ "./node_modules/@ionic/core/dist/esm-es5/core-ca0488fc.js");
+/* harmony import */ var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config-3c7f3790.js */ "./node_modules/@ionic/core/dist/esm-es5/config-3c7f3790.js");
+/* harmony import */ var _helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-46f4a262.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-46f4a262.js");
+/* harmony import */ var _animation_af478fe9_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animation-af478fe9.js */ "./node_modules/@ionic/core/dist/esm-es5/animation-af478fe9.js");
+/* harmony import */ var _index_624eea58_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index-624eea58.js */ "./node_modules/@ionic/core/dist/esm-es5/index-624eea58.js");
+/* harmony import */ var _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-1e5940d5.js */ "./node_modules/@ionic/core/dist/esm-es5/index-1e5940d5.js");
+/* harmony import */ var _theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./theme-18cbe2cc.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-18cbe2cc.js");
+/* harmony import */ var _cubic_bezier_2812fda3_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./cubic-bezier-2812fda3.js */ "./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-2812fda3.js");
 
-/***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-7c632336.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-7c632336.js ***!
-  \***********************************************************************/
-/*! exports provided: a, b, c, d, e */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getClassMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return openURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return createColorClasses; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hostContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return createThemedClasses; });
-/* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
-function hostContext(t,e){return null!==e.closest(t)}function createColorClasses(t){var e;return"string"==typeof t&&t.length>0?((e={"ion-color":!0})["ion-color-"+t]=!0,e):void 0}function createThemedClasses(t,e){var r;return(r={})[e]=!0,r[e+"-"+t]=void 0!==t,r}function getClassList(t){return void 0!==t?(Array.isArray(t)?t:t.split(" ")).filter(function(t){return null!=t}).map(function(t){return t.trim()}).filter(function(t){return""!==t}):[]}function getClassMap(t){var e={};return getClassList(t).forEach(function(t){return e[t]=!0}),e}var SCHEME=/^[a-z][a-z0-9+\-.]*:/;function openURL(t,e,r,n){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var s;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(o){switch(o.label){case 0:return null==e||"#"===e[0]||SCHEME.test(e)?[3,2]:(s=t.document.querySelector("ion-router"))?(null!=r&&r.preventDefault(),[4,s.componentOnReady()]):[3,2];case 1:return o.sent(),[2,s.push(e,n)];case 2:return[2,!1]}})})}
 
-/***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/tqgphjq7.entry.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/tqgphjq7.entry.js ***!
-  \***********************************************************************/
-/*! exports provided: IonSlide, IonSlides */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonSlide", function() { return Slide; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonSlides", function() { return Slides; });
-/* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
-/* harmony import */ var _ionic_core_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ionic.core.js */ "./node_modules/@ionic/core/dist/esm/es5/ionic.core.js");
-/* harmony import */ var _chunk_7c632336_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./chunk-7c632336.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-7c632336.js");
-/* harmony import */ var _chunk_6d7d2f8c_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chunk-6d7d2f8c.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-6d7d2f8c.js");
-var Slide=function(){function e(){}return e.prototype.componentDidLoad=function(){this.ionSlideChanged.emit()},e.prototype.componentDidUnload=function(){this.ionSlideChanged.emit()},e.prototype.hostData=function(){return{class:{"swiper-slide":!0}}},Object.defineProperty(e,"is",{get:function(){return"ion-slide"},enumerable:!0,configurable:!0}),Object.defineProperty(e,"events",{get:function(){return[{name:"ionSlideChanged",method:"ionSlideChanged",bubbles:!0,cancelable:!0,composed:!0}]},enumerable:!0,configurable:!0}),Object.defineProperty(e,"style",{get:function(){return"ion-slide{height:100%}.slide-zoom,ion-slide{display:block;width:100%}.slide-zoom,.swiper-slide{text-align:center}.swiper-slide{display:-ms-flexbox;display:flex;position:relative;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;font-size:18px;-webkit-box-sizing:border-box;box-sizing:border-box}.swiper-slide img{width:auto;max-width:100%;height:auto;max-height:100%}"},enumerable:!0,configurable:!0}),e}(),Slides=function(){function e(){var e=this;this.didInit=!1,this.swiper=new Promise(function(t){e.readySwiper=t}),this.options={},this.pager=!1,this.scrollbar=!1}return e.prototype.optionsChanged=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var e;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return this.didInit?[4,this.getSwiper()]:[3,3];case 1:return e=t.sent(),Object.assign(e.params,this.options),[4,this.update()];case 2:t.sent(),t.label=3;case 3:return[2]}})})},e.prototype.componentDidLoad=function(){var e=this;Object(_chunk_6d7d2f8c_js__WEBPACK_IMPORTED_MODULE_3__["a"])(function(){return e.initSwiper()})},e.prototype.componentDidUnload=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(e){switch(e.label){case 0:return[4,this.getSwiper()];case 1:return e.sent().destroy(!0,!0),[2]}})})},e.prototype.onSlideChanged=function(){this.didInit&&this.update()},e.prototype.update=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(e){switch(e.label){case 0:return[4,this.getSwiper()];case 1:return e.sent().update(),[2]}})})},e.prototype.updateAutoHeight=function(e){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return[4,this.getSwiper()];case 1:return t.sent().updateAutoHeight(e),[2]}})})},e.prototype.slideTo=function(e,t,i){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(n){switch(n.label){case 0:return[4,this.getSwiper()];case 1:return n.sent().slideTo(e,t,i),[2]}})})},e.prototype.slideNext=function(e,t){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:return[4,this.getSwiper()];case 1:return i.sent().slideNext(e,t),[2]}})})},e.prototype.slidePrev=function(e,t){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:return[4,this.getSwiper()];case 1:return i.sent().slidePrev(e,t),[2]}})})},e.prototype.getActiveIndex=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(e){switch(e.label){case 0:return[4,this.getSwiper()];case 1:return[2,e.sent().activeIndex]}})})},e.prototype.getPreviousIndex=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(e){switch(e.label){case 0:return[4,this.getSwiper()];case 1:return[2,e.sent().previousIndex]}})})},e.prototype.length=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(e){switch(e.label){case 0:return[4,this.getSwiper()];case 1:return[2,e.sent().slides.length]}})})},e.prototype.isEnd=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(e){switch(e.label){case 0:return[4,this.getSwiper()];case 1:return[2,e.sent().isEnd]}})})},e.prototype.isBeginning=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(e){switch(e.label){case 0:return[4,this.getSwiper()];case 1:return[2,e.sent().isBeginning]}})})},e.prototype.startAutoplay=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var e;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return[4,this.getSwiper()];case 1:return(e=t.sent()).autoplay&&e.autoplay.start(),[2]}})})},e.prototype.stopAutoplay=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var e;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return[4,this.getSwiper()];case 1:return(e=t.sent()).autoplay&&e.autoplay.stop(),[2]}})})},e.prototype.lockSwipeToNext=function(e){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return[4,this.getSwiper()];case 1:return t.sent().allowSlideNext=!e,[2]}})})},e.prototype.lockSwipeToPrev=function(e){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(t){switch(t.label){case 0:return[4,this.getSwiper()];case 1:return t.sent().allowSlidePrev=!e,[2]}})})},e.prototype.lockSwipes=function(e){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var t;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(i){switch(i.label){case 0:return[4,this.getSwiper()];case 1:return(t=i.sent()).allowSlideNext=!e,t.allowSlidePrev=!e,t.allowTouchMove=!e,[2]}})})},e.prototype.initSwiper=function(){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var e,t,i;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(n){switch(n.label){case 0:return e=this.normalizeOptions(),[4,__webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./chunk-f9db771e.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-f9db771e.js"))];case 1:return t=n.sent().Swiper,i=new t(this.el,e),this.didInit=!0,this.readySwiper(i),[2]}})})},e.prototype.getSwiper=function(){return this.swiper},e.prototype.normalizeOptions=function(){var e=this,t={effect:"slide",direction:"horizontal",initialSlide:0,loop:!1,parallax:!1,slidesPerView:1,spaceBetween:0,speed:300,slidesPerColumn:1,slidesPerColumnFill:"column",slidesPerGroup:1,centeredSlides:!1,slidesOffsetBefore:0,slidesOffsetAfter:0,touchEventsTarget:"container",autoplay:!1,freeMode:!1,freeModeMomentum:!0,freeModeMomentumRatio:1,freeModeMomentumBounce:!0,freeModeMomentumBounceRatio:1,freeModeMomentumVelocityRatio:1,freeModeSticky:!1,freeModeMinimumVelocity:.02,autoHeight:!1,setWrapperSize:!1,zoom:{maxRatio:3,minRatio:1,toggle:!0},touchRatio:1,touchAngle:45,simulateTouch:!0,shortSwipes:!0,longSwipes:!0,longSwipesRatio:.5,longSwipesMs:300,followFinger:!0,threshold:0,touchMoveStopPropagation:!0,touchReleaseOnEdges:!1,iOSEdgeSwipeDetection:!1,iOSEdgeSwipeThreshold:20,resistance:!0,resistanceRatio:.85,watchSlidesProgress:!1,watchSlidesVisibility:!1,preventClicks:!0,preventClicksPropagation:!0,slideToClickedSlide:!1,loopAdditionalSlides:0,noSwiping:!0,runCallbacksOnInit:!0,coverflowEffect:{rotate:50,stretch:0,depth:100,modifier:1,slideShadows:!0},flipEffect:{slideShadows:!0,limitRotation:!0},cubeEffect:{slideShadows:!0,shadow:!0,shadowOffset:20,shadowScale:.94},fadeEffect:{crossfade:!1},a11y:{prevSlideMessage:"Previous slide",nextSlideMessage:"Next slide",firstSlideMessage:"This is the first slide",lastSlideMessage:"This is the last slide"}};return this.pager&&(t.pagination={el:this.paginationEl,type:"bullets",clickable:!1,hideOnClick:!1}),this.scrollbar&&(t.scrollbar={el:this.scrollbarEl,hide:!0}),Object.assign({},t,this.options,{on:{init:function(){setTimeout(function(){e.ionSlidesDidLoad.emit()},20)},slideChangeTransitionStart:this.ionSlideWillChange.emit,slideChangeTransitionEnd:this.ionSlideDidChange.emit,slideNextTransitionStart:this.ionSlideNextStart.emit,slidePrevTransitionStart:this.ionSlidePrevStart.emit,slideNextTransitionEnd:this.ionSlideNextEnd.emit,slidePrevTransitionEnd:this.ionSlidePrevEnd.emit,transitionStart:this.ionSlideTransitionStart.emit,transitionEnd:this.ionSlideTransitionEnd.emit,sliderMove:this.ionSlideDrag.emit,reachBeginning:this.ionSlideReachStart.emit,reachEnd:this.ionSlideReachEnd.emit,touchStart:this.ionSlideTouchStart.emit,touchEnd:this.ionSlideTouchEnd.emit,tap:this.ionSlideTap.emit,doubleTap:this.ionSlideDoubleTap.emit}})},e.prototype.hostData=function(){return{class:Object.assign({},Object(_chunk_7c632336_js__WEBPACK_IMPORTED_MODULE_2__["e"])(this.mode,"slides"),{"swiper-container":!0})}},e.prototype.render=function(){var e=this;return[Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div",{class:"swiper-wrapper"},Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot",null)),this.pager&&Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div",{class:"swiper-pagination",ref:function(t){return e.paginationEl=t}}),this.scrollbar&&Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div",{class:"swiper-scrollbar",ref:function(t){return e.scrollbarEl=t}})]},Object.defineProperty(e,"is",{get:function(){return"ion-slides"},enumerable:!0,configurable:!0}),Object.defineProperty(e,"properties",{get:function(){return{el:{elementRef:!0},getActiveIndex:{method:!0},getPreviousIndex:{method:!0},isBeginning:{method:!0},isEnd:{method:!0},length:{method:!0},lockSwipes:{method:!0},lockSwipeToNext:{method:!0},lockSwipeToPrev:{method:!0},mode:{type:String,attr:"mode"},options:{type:"Any",attr:"options",watchCallbacks:["optionsChanged"]},pager:{type:Boolean,attr:"pager"},scrollbar:{type:Boolean,attr:"scrollbar"},slideNext:{method:!0},slidePrev:{method:!0},slideTo:{method:!0},startAutoplay:{method:!0},stopAutoplay:{method:!0},update:{method:!0},updateAutoHeight:{method:!0}}},enumerable:!0,configurable:!0}),Object.defineProperty(e,"events",{get:function(){return[{name:"ionSlidesDidLoad",method:"ionSlidesDidLoad",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideTap",method:"ionSlideTap",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideDoubleTap",method:"ionSlideDoubleTap",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideWillChange",method:"ionSlideWillChange",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideDidChange",method:"ionSlideDidChange",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideNextStart",method:"ionSlideNextStart",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlidePrevStart",method:"ionSlidePrevStart",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideNextEnd",method:"ionSlideNextEnd",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlidePrevEnd",method:"ionSlidePrevEnd",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideTransitionStart",method:"ionSlideTransitionStart",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideTransitionEnd",method:"ionSlideTransitionEnd",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideDrag",method:"ionSlideDrag",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideReachStart",method:"ionSlideReachStart",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideReachEnd",method:"ionSlideReachEnd",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideTouchStart",method:"ionSlideTouchStart",bubbles:!0,cancelable:!0,composed:!0},{name:"ionSlideTouchEnd",method:"ionSlideTouchEnd",bubbles:!0,cancelable:!0,composed:!0}]},enumerable:!0,configurable:!0}),Object.defineProperty(e,"listeners",{get:function(){return[{name:"ionSlideChanged",method:"onSlideChanged"}]},enumerable:!0,configurable:!0}),Object.defineProperty(e,"style",{get:function(){return".swiper-container{margin:0 auto;position:relative;overflow:hidden;list-style:none;padding:0;z-index:1}.swiper-container-no-flexbox .swiper-slide{float:left}.swiper-container-vertical>.swiper-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.swiper-wrapper{position:relative;width:100%;height:100%;z-index:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-box-sizing:content-box;box-sizing:content-box}.swiper-container-android .swiper-slide,.swiper-wrapper{-webkit-transform:translateZ(0);transform:translateZ(0)}.swiper-container-multirow>.swiper-wrapper{-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}.swiper-container-free-mode>.swiper-wrapper{-webkit-transition-timing-function:ease-out;-o-transition-timing-function:ease-out;transition-timing-function:ease-out;margin:0 auto}.swiper-slide{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;width:100%;height:100%;position:relative;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform}.swiper-invisible-blank-slide{visibility:hidden}.swiper-container-autoheight,.swiper-container-autoheight .swiper-slide{height:auto}.swiper-container-autoheight .swiper-wrapper{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-transition-property:height,-webkit-transform;transition-property:height,-webkit-transform;-o-transition-property:transform,height;transition-property:transform,height;transition-property:transform,height,-webkit-transform}.swiper-container-3d{-webkit-perspective:1200px;perspective:1200px}.swiper-container-3d .swiper-cube-shadow,.swiper-container-3d .swiper-slide,.swiper-container-3d .swiper-slide-shadow-bottom,.swiper-container-3d .swiper-slide-shadow-left,.swiper-container-3d .swiper-slide-shadow-right,.swiper-container-3d .swiper-slide-shadow-top,.swiper-container-3d .swiper-wrapper{-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.swiper-container-3d .swiper-slide-shadow-bottom,.swiper-container-3d .swiper-slide-shadow-left,.swiper-container-3d .swiper-slide-shadow-right,.swiper-container-3d .swiper-slide-shadow-top{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:10}.swiper-container-3d .swiper-slide-shadow-left{background-image:-webkit-gradient(linear,right top,left top,from(rgba(0,0,0,.5)),to(transparent));background-image:-webkit-linear-gradient(right,rgba(0,0,0,.5),transparent);background-image:-o-linear-gradient(right,rgba(0,0,0,.5),transparent);background-image:linear-gradient(270deg,rgba(0,0,0,.5),transparent)}.swiper-container-3d .swiper-slide-shadow-right{background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(transparent));background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5),transparent);background-image:-o-linear-gradient(left,rgba(0,0,0,.5),transparent);background-image:linear-gradient(90deg,rgba(0,0,0,.5),transparent)}.swiper-container-3d .swiper-slide-shadow-top{background-image:-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.5)),to(transparent));background-image:-webkit-linear-gradient(bottom,rgba(0,0,0,.5),transparent);background-image:-o-linear-gradient(bottom,rgba(0,0,0,.5),transparent);background-image:linear-gradient(0deg,rgba(0,0,0,.5),transparent)}.swiper-container-3d .swiper-slide-shadow-bottom{background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.5)),to(transparent));background-image:-webkit-linear-gradient(top,rgba(0,0,0,.5),transparent);background-image:-o-linear-gradient(top,rgba(0,0,0,.5),transparent);background-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent)}.swiper-container-wp8-horizontal,.swiper-container-wp8-horizontal>.swiper-wrapper{-ms-touch-action:pan-y;touch-action:pan-y}.swiper-container-wp8-vertical,.swiper-container-wp8-vertical>.swiper-wrapper{-ms-touch-action:pan-x;touch-action:pan-x}.swiper-button-next,.swiper-button-prev{position:absolute;top:50%;width:27px;height:44px;margin-top:-22px;z-index:10;cursor:pointer;background-size:27px 44px;background-position:50%;background-repeat:no-repeat}.swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled{opacity:.35;cursor:auto;pointer-events:none}.swiper-button-prev,.swiper-container-rtl .swiper-button-next{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E\");left:10px;right:auto}.swiper-button-next,.swiper-container-rtl .swiper-button-prev{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E\");right:10px;left:auto}.swiper-button-prev.swiper-button-white,.swiper-container-rtl .swiper-button-next.swiper-button-white{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E\")}.swiper-button-next.swiper-button-white,.swiper-container-rtl .swiper-button-prev.swiper-button-white{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E\")}.swiper-button-prev.swiper-button-black,.swiper-container-rtl .swiper-button-next.swiper-button-black{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E\")}.swiper-button-next.swiper-button-black,.swiper-container-rtl .swiper-button-prev.swiper-button-black{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E\")}.swiper-button-lock{display:none}.swiper-pagination{position:absolute;text-align:center;-webkit-transition:opacity .3s;-o-transition:.3s opacity;transition:opacity .3s;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:10}.swiper-pagination.swiper-pagination-hidden{opacity:0}.swiper-container-horizontal>.swiper-pagination-bullets,.swiper-pagination-custom,.swiper-pagination-fraction{bottom:10px;left:0;width:100%}.swiper-pagination-bullets-dynamic{overflow:hidden;font-size:0}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{-webkit-transform:scale(.33);-ms-transform:scale(.33);transform:scale(.33);position:relative}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active,.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev{-webkit-transform:scale(.66);-ms-transform:scale(.66);transform:scale(.66)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev{-webkit-transform:scale(.33);-ms-transform:scale(.33);transform:scale(.33)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next{-webkit-transform:scale(.66);-ms-transform:scale(.66);transform:scale(.66)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next{-webkit-transform:scale(.33);-ms-transform:scale(.33);transform:scale(.33)}.swiper-pagination-bullet{width:8px;height:8px;display:inline-block;border-radius:100%;background:#000;opacity:.2}button.swiper-pagination-bullet{border:none;margin:0;padding:0;-webkit-box-shadow:none;box-shadow:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}.swiper-pagination-clickable .swiper-pagination-bullet{cursor:pointer}.swiper-pagination-bullet-active{opacity:1;background:#007aff}.swiper-container-vertical>.swiper-pagination-bullets{right:10px;top:50%;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin:6px 0;display:block}.swiper-container-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);width:8px}.swiper-container-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{display:inline-block;-webkit-transition:top .2s,-webkit-transform .2s;transition:top .2s,-webkit-transform .2s;-o-transition:.2s transform,.2s top;transition:transform .2s,top .2s;transition:transform .2s,top .2s,-webkit-transform .2s}.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 4px}.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);white-space:nowrap}.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{-webkit-transition:left .2s,-webkit-transform .2s;transition:left .2s,-webkit-transform .2s;-o-transition:.2s transform,.2s left;transition:transform .2s,left .2s;transition:transform .2s,left .2s,-webkit-transform .2s}.swiper-container-horizontal.swiper-container-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{-webkit-transition:right .2s,-webkit-transform .2s;transition:right .2s,-webkit-transform .2s;-o-transition:.2s transform,.2s right;transition:transform .2s,right .2s;transition:transform .2s,right .2s,-webkit-transform .2s}.swiper-pagination-progressbar{background:rgba(0,0,0,.25);position:absolute}.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{background:#007aff;position:absolute;left:0;top:0;width:100%;height:100%;-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);-webkit-transform-origin:left top;-ms-transform-origin:left top;transform-origin:left top}.swiper-container-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{-webkit-transform-origin:right top;-ms-transform-origin:right top;transform-origin:right top}.swiper-container-horizontal>.swiper-pagination-progressbar,.swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{width:100%;height:4px;left:0;top:0}.swiper-container-horizontal>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,.swiper-container-vertical>.swiper-pagination-progressbar{width:4px;height:100%;left:0;top:0}.swiper-pagination-white .swiper-pagination-bullet-active{background:#fff}.swiper-pagination-progressbar.swiper-pagination-white{background:hsla(0,0%,100%,.25)}.swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill{background:#fff}.swiper-pagination-black .swiper-pagination-bullet-active{background:#000}.swiper-pagination-progressbar.swiper-pagination-black{background:rgba(0,0,0,.25)}.swiper-pagination-progressbar.swiper-pagination-black .swiper-pagination-progressbar-fill{background:#000}.swiper-pagination-lock{display:none}.swiper-scrollbar{border-radius:10px;position:relative;-ms-touch-action:none;background:rgba(0,0,0,.1)}.swiper-container-horizontal>.swiper-scrollbar{position:absolute;left:1%;bottom:3px;z-index:50;height:5px;width:98%}.swiper-container-vertical>.swiper-scrollbar{position:absolute;right:3px;top:1%;z-index:50;width:5px;height:98%}.swiper-scrollbar-drag{height:100%;width:100%;position:relative;background:rgba(0,0,0,.5);border-radius:10px;left:0;top:0}.swiper-scrollbar-cursor-drag{cursor:move}.swiper-scrollbar-lock{display:none}.swiper-zoom-container{width:100%;height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;text-align:center}.swiper-zoom-container>canvas,.swiper-zoom-container>img,.swiper-zoom-container>svg{max-width:100%;max-height:100%;-o-object-fit:contain;object-fit:contain}.swiper-slide-zoomed{cursor:move}.swiper-lazy-preloader{width:42px;height:42px;position:absolute;left:50%;top:50%;margin-left:-21px;margin-top:-21px;z-index:10;-webkit-transform-origin:50%;-ms-transform-origin:50%;transform-origin:50%;-webkit-animation:swiper-preloader-spin 1s steps(12,end) infinite;animation:swiper-preloader-spin 1s steps(12,end) infinite}.swiper-lazy-preloader:after{display:block;content:\"\";width:100%;height:100%;background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%236c6c6c'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E\");background-position:50%;background-size:100%;background-repeat:no-repeat}.swiper-lazy-preloader-white:after{background-image:url(\"data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%23fff'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E\")}\@-webkit-keyframes swiper-preloader-spin{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}\@keyframes swiper-preloader-spin{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.swiper-container .swiper-notification{position:absolute;left:0;top:0;pointer-events:none;opacity:0;z-index:-1000}.swiper-container-fade.swiper-container-free-mode .swiper-slide{-webkit-transition-timing-function:ease-out;-o-transition-timing-function:ease-out;transition-timing-function:ease-out}.swiper-container-fade .swiper-slide{pointer-events:none;-webkit-transition-property:opacity;-o-transition-property:opacity;transition-property:opacity}.swiper-container-fade .swiper-slide .swiper-slide{pointer-events:none}.swiper-container-fade .swiper-slide-active,.swiper-container-fade .swiper-slide-active .swiper-slide-active{pointer-events:auto}.swiper-container-cube{overflow:visible}.swiper-container-cube .swiper-slide{pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;z-index:1;visibility:hidden;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;width:100%;height:100%}.swiper-container-cube .swiper-slide .swiper-slide{pointer-events:none}.swiper-container-cube.swiper-container-rtl .swiper-slide{-webkit-transform-origin:100% 0;-ms-transform-origin:100% 0;transform-origin:100% 0}.swiper-container-cube .swiper-slide-active,.swiper-container-cube .swiper-slide-active .swiper-slide-active{pointer-events:auto}.swiper-container-cube .swiper-slide-active,.swiper-container-cube .swiper-slide-next,.swiper-container-cube .swiper-slide-next+.swiper-slide,.swiper-container-cube .swiper-slide-prev{pointer-events:auto;visibility:visible}.swiper-container-cube .swiper-slide-shadow-bottom,.swiper-container-cube .swiper-slide-shadow-left,.swiper-container-cube .swiper-slide-shadow-right,.swiper-container-cube .swiper-slide-shadow-top{z-index:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}.swiper-container-cube .swiper-cube-shadow{position:absolute;left:0;bottom:0;width:100%;height:100%;background:#000;opacity:.6;-webkit-filter:blur(50px);filter:blur(50px);z-index:0}.swiper-container-flip{overflow:visible}.swiper-container-flip .swiper-slide{pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;z-index:1}.swiper-container-flip .swiper-slide .swiper-slide{pointer-events:none}.swiper-container-flip .swiper-slide-active,.swiper-container-flip .swiper-slide-active .swiper-slide-active{pointer-events:auto}.swiper-container-flip .swiper-slide-shadow-bottom,.swiper-container-flip .swiper-slide-shadow-left,.swiper-container-flip .swiper-slide-shadow-right,.swiper-container-flip .swiper-slide-shadow-top{z-index:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}.swiper-container-coverflow .swiper-wrapper{-ms-perspective:1200px}.slides{display:block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swiper-pagination-bullet{background:var(--bullet-background)}.swiper-pagination-bullet-active{background:var(--bullet-background-active)}.swiper-pagination-progressbar{background:var(--progress-bar-background)}.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{background:var(--progress-bar-background-active)}.swiper-scrollbar{background:var(--scroll-bar-background)}.swiper-scrollbar-drag{background:var(--scroll-bar-background-active)}.slides-md{--bullet-background:var(--ion-color-step-200,#ccc);--bullet-background-active:var(--ion-color-primary,#3880ff);--progress-bar-background:rgba(var(--ion-text-color-rgb,0,0,0),0.25);--progress-bar-background-active:var(--ion-color-primary-shade,#3171e0);--scroll-bar-background:rgba(var(--ion-text-color-rgb,0,0,0),0.1);--scroll-bar-background-active:rgba(var(--ion-text-color-rgb,0,0,0),0.5)}"},enumerable:!0,configurable:!0}),Object.defineProperty(e,"styleMode",{get:function(){return"md"},enumerable:!0,configurable:!0}),e}();
 
-/***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js ***!
-  \******************************************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __await, __makeTemplateObject, __importStar, __importDefault */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
-// REV: 9dd9aa322c893e5e0b3f1609b1126314ccf37bbb
-
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-  extendStatics = Object.setPrototypeOf ||
-      ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-      function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-  return extendStatics(d, b);
+var Menu = /** @class */ (function () {
+    function class_1(hostRef) {
+        Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.lastOnEnd = 0;
+        this.blocker = _index_624eea58_js__WEBPACK_IMPORTED_MODULE_5__["GESTURE_CONTROLLER"].createBlocker({ disableScroll: true });
+        this.mode = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["d"])(this);
+        this.isAnimating = false;
+        this._isOpen = false;
+        this.isPaneVisible = false;
+        this.isEndSide = false;
+        /**
+         * If `true`, the menu is disabled.
+         */
+        this.disabled = false;
+        /**
+         * Which side of the view the menu should be placed.
+         */
+        this.side = 'start';
+        /**
+         * If `true`, swiping the menu is enabled.
+         */
+        this.swipeGesture = true;
+        /**
+         * The edge threshold for dragging the menu open.
+         * If a drag/swipe happens over this value, the menu is not triggered.
+         */
+        this.maxEdgeStart = 50;
+        this.ionWillOpen = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["c"])(this, "ionWillOpen", 7);
+        this.ionWillClose = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["c"])(this, "ionWillClose", 7);
+        this.ionDidOpen = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["c"])(this, "ionDidOpen", 7);
+        this.ionDidClose = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["c"])(this, "ionDidClose", 7);
+        this.ionMenuChange = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["c"])(this, "ionMenuChange", 7);
+    }
+    class_1.prototype.typeChanged = function (type, oldType) {
+        var contentEl = this.contentEl;
+        if (contentEl) {
+            if (oldType !== undefined) {
+                contentEl.classList.remove("menu-content-" + oldType);
+            }
+            contentEl.classList.add("menu-content-" + type);
+            contentEl.removeAttribute('style');
+        }
+        if (this.menuInnerEl) {
+            // Remove effects of previous animations
+            this.menuInnerEl.removeAttribute('style');
+        }
+        this.animation = undefined;
+    };
+    class_1.prototype.disabledChanged = function () {
+        this.updateState();
+        this.ionMenuChange.emit({
+            disabled: this.disabled,
+            open: this._isOpen
+        });
+    };
+    class_1.prototype.sideChanged = function () {
+        this.isEndSide = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["i"])(this.side);
+    };
+    class_1.prototype.swipeGestureChanged = function () {
+        this.updateState();
+    };
+    class_1.prototype.connectedCallback = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var el, parent, content, _a;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        if (this.type === undefined) {
+                            this.type = _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_2__["b"].get('menuType', this.mode === 'ios' ? 'reveal' : 'overlay');
+                        }
+                        el = this.el;
+                        parent = el.parentNode;
+                        if (this.contentId === undefined) {
+                            console.warn("[DEPRECATED][ion-menu] Using the [main] attribute is deprecated, please use the \"contentId\" property instead:\nBEFORE:\n  <ion-menu>...</ion-menu>\n  <div main>...</div>\n\nAFTER:\n  <ion-menu contentId=\"my-content\"></ion-menu>\n  <div id=\"my-content\">...</div>\n");
+                        }
+                        content = this.contentId !== undefined
+                            ? document.getElementById(this.contentId)
+                            : parent && parent.querySelector && parent.querySelector('[main]');
+                        if (!content || !content.tagName) {
+                            // requires content element
+                            console.error('Menu: must have a "content" element to listen for drag events on.');
+                            return [2 /*return*/];
+                        }
+                        this.contentEl = content;
+                        // add menu's content classes
+                        content.classList.add('menu-content');
+                        this.typeChanged(this.type, undefined);
+                        this.sideChanged();
+                        // register this menu with the app's menu controller
+                        _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"]._register(this);
+                        _a = this;
+                        return [4 /*yield*/, Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-624eea58.js */ "./node_modules/@ionic/core/dist/esm-es5/index-624eea58.js"))];
+                    case 1:
+                        _a.gesture = (_b.sent()).createGesture({
+                            el: document,
+                            gestureName: 'menu-swipe',
+                            gesturePriority: 30,
+                            threshold: 10,
+                            canStart: function (ev) { return _this.canStart(ev); },
+                            onWillStart: function () { return _this.onWillStart(); },
+                            onStart: function () { return _this.onStart(); },
+                            onMove: function (ev) { return _this.onMove(ev); },
+                            onEnd: function (ev) { return _this.onEnd(ev); },
+                        });
+                        this.updateState();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.componentDidLoad = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                this.ionMenuChange.emit({ disabled: this.disabled, open: this._isOpen });
+                this.updateState();
+                return [2 /*return*/];
+            });
+        });
+    };
+    class_1.prototype.disconnectedCallback = function () {
+        this.blocker.destroy();
+        _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"]._unregister(this);
+        if (this.animation) {
+            this.animation.destroy();
+        }
+        if (this.gesture) {
+            this.gesture.destroy();
+            this.gesture = undefined;
+        }
+        this.animation = undefined;
+        this.contentEl = this.backdropEl = this.menuInnerEl = undefined;
+    };
+    class_1.prototype.onSplitPaneChanged = function (ev) {
+        this.isPaneVisible = ev.detail.isPane(this.el);
+        this.updateState();
+    };
+    class_1.prototype.onBackdropClick = function (ev) {
+        if (this._isOpen && this.lastOnEnd < ev.timeStamp - 100) {
+            var shouldClose = (ev.composedPath)
+                ? !ev.composedPath().includes(this.menuInnerEl)
+                : false;
+            if (shouldClose) {
+                ev.preventDefault();
+                ev.stopPropagation();
+                this.close();
+            }
+        }
+    };
+    /**
+     * Returns `true` is the menu is open.
+     */
+    class_1.prototype.isOpen = function () {
+        return Promise.resolve(this._isOpen);
+    };
+    /**
+     * Returns `true` is the menu is active.
+     *
+     * A menu is active when it can be opened or closed, meaning it's enabled
+     * and it's not part of a `ion-split-pane`.
+     */
+    class_1.prototype.isActive = function () {
+        return Promise.resolve(this._isActive());
+    };
+    /**
+     * Opens the menu. If the menu is already open or it can't be opened,
+     * it returns `false`.
+     */
+    class_1.prototype.open = function (animated) {
+        if (animated === void 0) { animated = true; }
+        return this.setOpen(true, animated);
+    };
+    /**
+     * Closes the menu. If the menu is already closed or it can't be closed,
+     * it returns `false`.
+     */
+    class_1.prototype.close = function (animated) {
+        if (animated === void 0) { animated = true; }
+        return this.setOpen(false, animated);
+    };
+    /**
+     * Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.
+     * If the operation can't be completed successfully, it returns `false`.
+     */
+    class_1.prototype.toggle = function (animated) {
+        if (animated === void 0) { animated = true; }
+        return this.setOpen(!this._isOpen, animated);
+    };
+    /**
+     * Opens or closes the button.
+     * If the operation can't be completed successfully, it returns `false`.
+     */
+    class_1.prototype.setOpen = function (shouldOpen, animated) {
+        if (animated === void 0) { animated = true; }
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"]._setOpen(this, shouldOpen, animated);
+    };
+    class_1.prototype._setOpen = function (shouldOpen, animated) {
+        if (animated === void 0) { animated = true; }
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        // If the menu is disabled or it is currently being animated, let's do nothing
+                        if (!this._isActive() || this.isAnimating || shouldOpen === this._isOpen) {
+                            return [2 /*return*/, false];
+                        }
+                        this.beforeAnimation(shouldOpen);
+                        return [4 /*yield*/, this.loadAnimation()];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, this.startAnimation(shouldOpen, animated)];
+                    case 2:
+                        _a.sent();
+                        this.afterAnimation(shouldOpen);
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    class_1.prototype.loadAnimation = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var width, _a;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        width = this.menuInnerEl.offsetWidth;
+                        if (width === this.width && this.animation !== undefined) {
+                            return [2 /*return*/];
+                        }
+                        this.width = width;
+                        // Destroy existing animation
+                        if (this.animation) {
+                            this.animation.destroy();
+                            this.animation = undefined;
+                        }
+                        // Create new animation
+                        _a = this;
+                        return [4 /*yield*/, _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"]._createAnimation(this.type, this)];
+                    case 1:
+                        // Create new animation
+                        _a.animation = _b.sent();
+                        if (!_config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_2__["b"].getBoolean('animated', true)) {
+                            this.animation.duration(0);
+                        }
+                        this.animation.fill('both');
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.startAnimation = function (shouldOpen, animated) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var isReversed, ani;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        isReversed = !shouldOpen;
+                        ani = this.animation
+                            .direction((isReversed) ? 'reverse' : 'normal')
+                            .easing((isReversed) ? 'cubic-bezier(0.4, 0.0, 0.6, 1)' : 'cubic-bezier(0.0, 0.0, 0.2, 1)');
+                        if (!animated) return [3 /*break*/, 2];
+                        return [4 /*yield*/, ani.playAsync()];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        ani.playSync();
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype._isActive = function () {
+        return !this.disabled && !this.isPaneVisible;
+    };
+    class_1.prototype.canSwipe = function () {
+        return this.swipeGesture && !this.isAnimating && this._isActive();
+    };
+    class_1.prototype.canStart = function (detail) {
+        if (!this.canSwipe()) {
+            return false;
+        }
+        if (this._isOpen) {
+            return true;
+            // TODO error
+        }
+        else if (_index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"]._getOpenSync()) {
+            return false;
+        }
+        return checkEdgeSide(window, detail.currentX, this.isEndSide, this.maxEdgeStart);
+    };
+    class_1.prototype.onWillStart = function () {
+        this.beforeAnimation(!this._isOpen);
+        return this.loadAnimation();
+    };
+    class_1.prototype.onStart = function () {
+        if (!this.isAnimating || !this.animation) {
+            Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["b"])(false, 'isAnimating has to be true');
+            return;
+        }
+        // the cloned animation should not use an easing curve during seek
+        this.animation
+            .direction((this._isOpen) ? 'reverse' : 'normal')
+            .progressStart(true);
+    };
+    class_1.prototype.onMove = function (detail) {
+        if (!this.isAnimating || !this.animation) {
+            Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["b"])(false, 'isAnimating has to be true');
+            return;
+        }
+        var delta = computeDelta(detail.deltaX, this._isOpen, this.isEndSide);
+        var stepValue = delta / this.width;
+        this.animation.progressStep(stepValue);
+    };
+    class_1.prototype.onEnd = function (detail) {
+        var _this = this;
+        if (!this.isAnimating || !this.animation) {
+            Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["b"])(false, 'isAnimating has to be true');
+            return;
+        }
+        var isOpen = this._isOpen;
+        var isEndSide = this.isEndSide;
+        var delta = computeDelta(detail.deltaX, isOpen, isEndSide);
+        var width = this.width;
+        var stepValue = delta / width;
+        var velocity = detail.velocityX;
+        var z = width / 2.0;
+        var shouldCompleteRight = velocity >= 0 && (velocity > 0.2 || detail.deltaX > z);
+        var shouldCompleteLeft = velocity <= 0 && (velocity < -0.2 || detail.deltaX < -z);
+        var shouldComplete = isOpen
+            ? isEndSide ? shouldCompleteRight : shouldCompleteLeft
+            : isEndSide ? shouldCompleteLeft : shouldCompleteRight;
+        var shouldOpen = !isOpen && shouldComplete;
+        if (isOpen && !shouldComplete) {
+            shouldOpen = true;
+        }
+        this.lastOnEnd = detail.timeStamp;
+        // Account for rounding errors in JS
+        var newStepValue = (shouldComplete) ? 0.001 : -0.001;
+        /**
+         * TODO: stepValue can sometimes return a negative
+         * value, but you can't have a negative time value
+         * for the cubic bezier curve (at least with web animations)
+         * Not sure if the negative step value is an error or not
+         */
+        var adjustedStepValue = (stepValue <= 0) ? 0.01 : stepValue;
+        /**
+         * Animation will be reversed here, so need to
+         * reverse the easing curve as well
+         *
+         * Additionally, we need to account for the time relative
+         * to the new easing curve, as `stepValue` is going to be given
+         * in terms of a linear curve.
+         */
+        newStepValue += Object(_cubic_bezier_2812fda3_js__WEBPACK_IMPORTED_MODULE_8__["g"])(new _cubic_bezier_2812fda3_js__WEBPACK_IMPORTED_MODULE_8__["P"](0, 0), new _cubic_bezier_2812fda3_js__WEBPACK_IMPORTED_MODULE_8__["P"](0.4, 0), new _cubic_bezier_2812fda3_js__WEBPACK_IMPORTED_MODULE_8__["P"](0.6, 1), new _cubic_bezier_2812fda3_js__WEBPACK_IMPORTED_MODULE_8__["P"](1, 1), Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["c"])(0, adjustedStepValue, 1));
+        this.animation
+            .easing('cubic-bezier(0.4, 0.0, 0.6, 1)')
+            .onFinish(function () { return _this.afterAnimation(shouldOpen); }, { oneTimeCallback: true })
+            .progressEnd(shouldComplete ? 1 : 0, newStepValue, 300);
+    };
+    class_1.prototype.beforeAnimation = function (shouldOpen) {
+        Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["b"])(!this.isAnimating, '_before() should not be called while animating');
+        // this places the menu into the correct location before it animates in
+        // this css class doesn't actually kick off any animations
+        this.el.classList.add(SHOW_MENU);
+        if (this.backdropEl) {
+            this.backdropEl.classList.add(SHOW_BACKDROP);
+        }
+        this.blocker.block();
+        this.isAnimating = true;
+        if (shouldOpen) {
+            this.ionWillOpen.emit();
+        }
+        else {
+            this.ionWillClose.emit();
+        }
+    };
+    class_1.prototype.afterAnimation = function (isOpen) {
+        Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["b"])(this.isAnimating, '_before() should be called while animating');
+        // keep opening/closing the menu disabled for a touch more yet
+        // only add listeners/css if it's enabled and isOpen
+        // and only remove listeners/css if it's not open
+        // emit opened/closed events
+        this._isOpen = isOpen;
+        this.isAnimating = false;
+        if (!this._isOpen) {
+            this.blocker.unblock();
+        }
+        if (isOpen) {
+            // add css class
+            if (this.contentEl) {
+                this.contentEl.classList.add(MENU_CONTENT_OPEN);
+            }
+            // emit open event
+            this.ionDidOpen.emit();
+        }
+        else {
+            // remove css classes
+            this.el.classList.remove(SHOW_MENU);
+            if (this.contentEl) {
+                this.contentEl.classList.remove(MENU_CONTENT_OPEN);
+            }
+            if (this.backdropEl) {
+                this.backdropEl.classList.remove(SHOW_BACKDROP);
+            }
+            if (this.animation) {
+                this.animation.stop();
+            }
+            // emit close event
+            this.ionDidClose.emit();
+        }
+    };
+    class_1.prototype.updateState = function () {
+        var isActive = this._isActive();
+        if (this.gesture) {
+            this.gesture.setDisabled(!isActive || !this.swipeGesture);
+        }
+        // Close menu immediately
+        if (!isActive && this._isOpen) {
+            // close if this menu is open, and should not be enabled
+            this.forceClosing();
+        }
+        if (!this.disabled) {
+            _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"]._setActiveMenu(this);
+        }
+        Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["b"])(!this.isAnimating, 'can not be animating');
+    };
+    class_1.prototype.forceClosing = function () {
+        Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_3__["b"])(this._isOpen, 'menu cannot be closed');
+        this.isAnimating = true;
+        var ani = this.animation.direction('reverse');
+        ani.playSync();
+        this.afterAnimation(false);
+    };
+    class_1.prototype.render = function () {
+        var _a;
+        var _this = this;
+        var _b = this, isEndSide = _b.isEndSide, type = _b.type, disabled = _b.disabled, mode = _b.mode, isPaneVisible = _b.isPaneVisible;
+        return (Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "navigation", class: (_a = {},
+                _a[mode] = true,
+                _a["menu-type-" + type] = true,
+                _a['menu-enabled'] = !disabled,
+                _a['menu-side-end'] = isEndSide,
+                _a['menu-side-start'] = !isEndSide,
+                _a['menu-pane-visible'] = isPaneVisible,
+                _a) }, Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "menu-inner", ref: function (el) { return _this.menuInnerEl = el; } }, Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-backdrop", { ref: function (el) { return _this.backdropEl = el; }, class: "menu-backdrop", tappable: false, stopPropagation: false })));
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(class_1, "watchers", {
+        get: function () {
+            return {
+                "type": ["typeChanged"],
+                "disabled": ["disabledChanged"],
+                "side": ["sideChanged"],
+                "swipeGesture": ["swipeGestureChanged"]
+            };
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(class_1, "style", {
+        get: function () { return ":host{--width:304px;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--background:var(--ion-background-color,#fff);left:0;right:0;top:0;bottom:0;display:none;position:absolute;contain:strict}:host(.show-menu){display:block}.menu-inner{left:0;right:auto;top:0;bottom:0;-webkit-transform:translate3d(-9999px,0,0);transform:translate3d(-9999px,0,0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:strict}:host-context([dir=rtl]) .menu-inner,[dir=rtl] .menu-inner{left:unset;right:unset;left:auto;right:0;-webkit-transform:translate3d(calc(-1 * -9999px),0,0);transform:translate3d(calc(-1 * -9999px),0,0)}:host(.menu-side-start) .menu-inner{--ion-safe-area-right:0px;right:auto;left:0}:host(.menu-side-end) .menu-inner{--ion-safe-area-left:0px;right:0;left:auto}ion-backdrop{display:none;opacity:.01;z-index:-1}\@media (max-width:340px){.menu-inner{--width:264px}}:host(.menu-type-reveal){z-index:0}:host(.menu-type-reveal.show-menu) .menu-inner{-webkit-transform:translateZ(0);transform:translateZ(0)}:host(.menu-type-overlay){z-index:1000}:host(.menu-type-overlay) .show-backdrop{display:block;cursor:pointer}:host(.menu-pane-visible) .menu-inner{left:0;right:0;width:auto;-webkit-transform:none!important;transform:none!important;-webkit-box-shadow:none!important;box-shadow:none!important}:host(.menu-pane-visible) ion-backdrop{display:hidden!important}:host(.menu-type-overlay) .menu-inner{-webkit-box-shadow:0 2px 22px 0 rgba(0,0,0,.09),4px 0 16px 0 rgba(0,0,0,.18);box-shadow:0 2px 22px 0 rgba(0,0,0,.09),4px 0 16px 0 rgba(0,0,0,.18)}"; },
+        enumerable: true,
+        configurable: true
+    });
+    return class_1;
+}());
+var computeDelta = function (deltaX, isOpen, isEndSide) {
+    return Math.max(0, isOpen !== isEndSide ? -deltaX : deltaX);
 };
-
-function __extends(d, b) {
-  extendStatics(d, b);
-  function __() { this.constructor = d; }
-  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-  __assign = Object.assign || function __assign(t) {
-      for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-      return t;
-  }
-  return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-      t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function")
-      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-          t[p[i]] = s[p[i]];
-  return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-  var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-  else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-  return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __metadata(metadataKey, metadataValue) {
-  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-  return new (P || (P = Promise))(function (resolve, reject) {
-      function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-      function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-      function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-      step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-}
-
-function __generator(thisArg, body) {
-  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-  function verb(n) { return function (v) { return step([n, v]); }; }
-  function step(op) {
-      if (f) throw new TypeError("Generator is already executing.");
-      while (_) try {
-          if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-          if (y = 0, t) op = [op[0] & 2, t.value];
-          switch (op[0]) {
-              case 0: case 1: t = op; break;
-              case 4: _.label++; return { value: op[1], done: false };
-              case 5: _.label++; y = op[1]; op = [0]; continue;
-              case 7: op = _.ops.pop(); _.trys.pop(); continue;
-              default:
-                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                  if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                  if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                  if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                  if (t[2]) _.ops.pop();
-                  _.trys.pop(); continue;
-          }
-          op = body.call(thisArg, _);
-      } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-      if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-  }
-}
-
-function __exportStar(m, exports) {
-  for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-
-function __values(o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
-  if (m) return m.call(o);
-  return {
-      next: function () {
-          if (o && i >= o.length) o = void 0;
-          return { value: o && o[i++], done: !o };
-      }
-  };
-}
-
-function __read(o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o), r, ar = [], e;
-  try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  }
-  catch (error) { e = { error: error }; }
-  finally {
-      try {
-          if (r && !r.done && (m = i["return"])) m.call(i);
-      }
-      finally { if (e) throw e.error; }
-  }
-  return ar;
-}
-
-function __spread() {
-  for (var ar = [], i = 0; i < arguments.length; i++)
-      ar = ar.concat(__read(arguments[i]));
-  return ar;
-}
-
-function __await(v) {
-  return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __makeTemplateObject(cooked, raw) {
-  if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-  return cooked;
+var checkEdgeSide = function (win, posX, isEndSide, maxEdgeStart) {
+    if (isEndSide) {
+        return posX >= win.innerWidth - maxEdgeStart;
+    }
+    else {
+        return posX <= maxEdgeStart;
+    }
 };
+var SHOW_MENU = 'show-menu';
+var SHOW_BACKDROP = 'show-backdrop';
+var MENU_CONTENT_OPEN = 'menu-content-open';
+// Given a menu, return whether or not the menu toggle should be visible
+var updateVisibility = function (menu) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var menuEl, _a;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+        switch (_b.label) {
+            case 0: return [4 /*yield*/, _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].get(menu)];
+            case 1:
+                menuEl = _b.sent();
+                _a = menuEl;
+                if (!_a) return [3 /*break*/, 3];
+                return [4 /*yield*/, menuEl.isActive()];
+            case 2:
+                _a = (_b.sent());
+                _b.label = 3;
+            case 3: return [2 /*return*/, !!(_a)];
+        }
+    });
+}); };
+var MenuButton = /** @class */ (function () {
+    function class_2(hostRef) {
+        var _this = this;
+        Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.visible = false;
+        /**
+         * If `true`, the user cannot interact with the menu button.
+         */
+        this.disabled = false;
+        /**
+         * Automatically hides the menu button when the corresponding menu is not active
+         */
+        this.autoHide = true;
+        /**
+         * The type of the button.
+         */
+        this.type = 'button';
+        this.onClick = function () { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                return [2 /*return*/, _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].toggle(this.menu)];
+            });
+        }); };
+    }
+    class_2.prototype.componentDidLoad = function () {
+        this.visibilityChanged();
+    };
+    class_2.prototype.visibilityChanged = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _a;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, updateVisibility(this.menu)];
+                    case 1:
+                        _a.visible = _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_2.prototype.render = function () {
+        var _a;
+        var _b = this, color = _b.color, disabled = _b.disabled;
+        var mode = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["d"])(this);
+        var menuIcon = _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_2__["b"].get('menuIcon', 'menu');
+        var hidden = this.autoHide && !this.visible;
+        var attrs = {
+            type: this.type
+        };
+        return (Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, "aria-disabled": disabled ? 'true' : null, "aria-hidden": hidden ? 'true' : null, class: Object.assign(Object.assign((_a = {}, _a[mode] = true, _a), Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_7__["c"])(color)), { 'button': true, 'menu-button-hidden': hidden, 'menu-button-disabled': disabled, 'ion-activatable': true, 'ion-focusable': true }) }, Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native" }), Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null, Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { icon: menuIcon, mode: mode, lazy: false })), mode === 'md' && Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-ripple-effect", { type: "unbounded" }))));
+    };
+    Object.defineProperty(class_2, "style", {
+        get: function () { return ":host{--background:transparent;--color-focused:var(--color);--border-radius:initial;--padding-top:0;--padding-bottom:0;color:var(--color);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}\@supports ((-webkit-margin-start:0) or (margin-inline-start:0)) or (-webkit-margin-start:0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}ion-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;pointer-events:none}:host(.menu-button-hidden){display:none}:host(.menu-button-disabled){cursor:default;opacity:.5;pointer-events:none}\@media (any-hover:hover){:host(:hover) .button-native{background:var(--background-hover);color:var(--color-hover)}}:host(.ion-focused) .button-native{background:var(--background-focused);color:var(--color-focused)}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host-context(ion-toolbar:not(.ion-color)){color:var(--ion-toolbar-color,var(--color))}:host{--background-focused:rgba(66,66,66,0.24);--background-hover:rgba(66,66,66,0.08);--border-radius:50%;--color:initial;--padding-start:8px;--padding-end:8px;width:48px;height:48px;font-size:24px}\@media (any-hover:hover){:host(.ion-color:hover) .button-native{background:rgba(var(--ion-color-base-rgb),.08)}}:host(.ion-color.ion-focused) .button-native{background:rgba(var(--ion-color-base-rgb),.24);color:var(--ion-color-base)}"; },
+        enumerable: true,
+        configurable: true
+    });
+    return class_2;
+}());
+var MenuController = /** @class */ (function () {
+    function class_3(hostRef) {
+        Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+    }
+    /**
+     * Open the menu. If a menu is not provided then it will open the first
+     * menu found. If the specified menu is `start` or `end`, then it will open
+     * the enabled menu on that side. Otherwise, it will try to find the menu
+     * using the menu's `id` property. If a menu is not found then it will
+     * return `false`.
+     *
+     * @param menu The menuId or side of the menu to open.
+     */
+    class_3.prototype.open = function (menu) {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].open(menu);
+    };
+    /**
+     * Close the menu. If a menu is specified, it will close that menu.
+     * If no menu is specified, then it will close any menu that is open.
+     * If it does not find any open menus, it will return `false`.
+     *
+     * @param menu The menuId or side of the menu to close.
+     */
+    class_3.prototype.close = function (menu) {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].close(menu);
+    };
+    /**
+     * Toggle the menu open or closed. If the menu is already open, it will try to
+     * close the menu, otherwise it will try to open it. Returns `false` if
+     * a menu is not found.
+     *
+     * @param menu The menuId or side of the menu to toggle.
+     */
+    class_3.prototype.toggle = function (menu) {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].toggle(menu);
+    };
+    /**
+     * Enable or disable a menu. Disabling a menu will not allow gestures
+     * for that menu or any calls to open it. This is useful when there are
+     * multiple menus on the same side and only one of them should be allowed
+     * to open. Enabling a menu will automatically disable all other menus
+     * on that side.
+     *
+     * @param enable If `true`, the menu should be enabled.
+     * @param menu The menuId or side of the menu to enable or disable.
+     */
+    class_3.prototype.enable = function (enable, menu) {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].enable(enable, menu);
+    };
+    /**
+     * Enable or disable the ability to swipe open the menu.
+     *
+     * @param enable If `true`, the menu swipe gesture should be enabled.
+     * @param menu The menuId or side of the menu to enable or disable the swipe gesture on.
+     */
+    class_3.prototype.swipeGesture = function (enable, menu) {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].swipeGesture(enable, menu);
+    };
+    /**
+     * Get whether or not the menu is open. Returns `true` if the specified
+     * menu is open. If a menu is not specified, it will return `true` if
+     * any menu is currently open.
+     *
+     * @param menu The menuId or side of the menu that is being checked.
+     */
+    class_3.prototype.isOpen = function (menu) {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].isOpen(menu);
+    };
+    /**
+     * Get whether or not the menu is enabled. Returns `true` if the
+     * specified menu is enabled. Returns `false` if a menu is disabled
+     * or not found.
+     *
+     * @param menu The menuId or side of the menu that is being checked.
+     */
+    class_3.prototype.isEnabled = function (menu) {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].isEnabled(menu);
+    };
+    /**
+     * Get a menu instance. If a menu is not provided then it will return the first
+     * menu found. If the specified menu is `start` or `end`, then it will return the
+     * enabled menu on that side. Otherwise, it will try to find the menu using the menu's
+     * `id` property. If a menu is not found then it will return `null`.
+     *
+     * @param menu The menuId or side of the menu.
+     */
+    class_3.prototype.get = function (menu) {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].get(menu);
+    };
+    /**
+     * Get the instance of the opened menu. Returns `null` if a menu is not found.
+     */
+    class_3.prototype.getOpen = function () {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].getOpen();
+    };
+    /**
+     * Get all menu instances.
+     */
+    class_3.prototype.getMenus = function () {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].getMenus();
+    };
+    /**
+     * Get whether or not a menu is animating. Returns `true` if any
+     * menu is currently animating.
+     */
+    class_3.prototype.isAnimating = function () {
+        return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].isAnimating();
+    };
+    /**
+     * Registers a new animation that can be used with any `ion-menu` by
+     * passing the name of the animation in its `type` property.
+     *
+     * @param name The name of the animation to register.
+     * @param animation The animation function to register.
+     */
+    class_3.prototype.registerAnimation = function (name, animation) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                return [2 /*return*/, _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].registerAnimation(name, animation)];
+            });
+        });
+    };
+    return class_3;
+}());
+var MenuToggle = /** @class */ (function () {
+    function class_4(hostRef) {
+        var _this = this;
+        Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.visible = false;
+        /**
+         * Automatically hides the content when the corresponding menu is not active.
+         *
+         * By default, it's `true`. Change it to `false` in order to
+         * keep `ion-menu-toggle` always visible regardless the state of the menu.
+         */
+        this.autoHide = true;
+        this.onClick = function () {
+            return _index_1e5940d5_js__WEBPACK_IMPORTED_MODULE_6__["m"].toggle(_this.menu);
+        };
+    }
+    class_4.prototype.connectedCallback = function () {
+        this.visibilityChanged();
+    };
+    class_4.prototype.visibilityChanged = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var _a;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, updateVisibility(this.menu)];
+                    case 1:
+                        _a.visible = _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_4.prototype.render = function () {
+        var _a;
+        var mode = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["d"])(this);
+        var hidden = this.autoHide && !this.visible;
+        return (Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, "aria-hidden": hidden ? 'true' : null, class: (_a = {},
+                _a[mode] = true,
+                _a['menu-toggle-hidden'] = hidden,
+                _a) }, Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
+    };
+    Object.defineProperty(class_4, "style", {
+        get: function () { return ":host(.menu-toggle-hidden){display:none}"; },
+        enumerable: true,
+        configurable: true
+    });
+    return class_4;
+}());
 
-function __importStar(mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  result.default = mod;
-  return result;
-}
 
-function __importDefault(mod) {
-  return (mod && mod.__esModule) ? mod : { default: mod };
-}
 
 /***/ })
 

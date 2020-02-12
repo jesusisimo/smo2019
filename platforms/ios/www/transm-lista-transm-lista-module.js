@@ -58,7 +58,7 @@ var TransmListaPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Transmisión en Vivo</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content>\n\n  <ion-card class=\"centerCard\">\n    <iframe  width=\"100%\" height=\"250\" src=\"https://player.vimeo.com/video/336680837\" frameborder=\"0\" allowfullscreen></iframe>\n  </ion-card>\n\n  <h3 class=\"center\">Próximas Transmisiones</h3><br>\n  <ion-list>\n    <ion-item *ngFor=\"let transmision of transmisiones\" >\n        <ion-label class=\"ion-text-wrap\">     \n          <ion-row>\n            <ion-col size=\"3\">\n                \n                    <img class=\"perfil\" src=\"../../assets/img/col1.png\">\n                  \n            </ion-col>\n            <ion-col size=\"9\">               \n          <ion-text color=\"secondary\">\n              <ion-text color=\"primary\">         \n                  <h3>{{transmision.titulo}}</h3>\n                </ion-text>\n                <p>{{transmision.fecha}}</p>\n          </ion-text>\n        </ion-col>\n      </ion-row>  \n        </ion-label>\n      </ion-item>\n    </ion-list>\n\n      \n</ion-content>\n"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Transmisión en Vivo</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content>\n  <ion-card *ngIf=\"url!=''\">\n    <img src=\"{{icono}}\" />\n    <ion-card-header class=\"ion-text-center\">\n      <ion-card-subtitle>{{fecha}}</ion-card-subtitle>\n      <ion-text color=\"primary\">\n        <h4>{{tema}}</h4>\n      </ion-text>\n    </ion-card-header>\n    <section class=\"full-width\" (click)=\"abrirWeb(url,'_system')\" >\n      <ion-button expand=\"full\" color=\"primary\">Ir a la transmisión</ion-button>\n    </section>\n  </ion-card>\n\n  <h3 class=\"center\">Próximas Transmisiones</h3><br>\n  <ion-list>\n    <ion-item *ngFor=\"let transmision of transmisiones\" >\n        <ion-label class=\"ion-text-wrap\">     \n          <ion-row>\n            <ion-col size=\"3\">\n                \n                    <img class=\"perfil\" src=\"{{transmision.ruta_img}}\">\n                  \n            </ion-col>\n            <ion-col size=\"9\">               \n          <ion-text color=\"secondary\">\n              <ion-text color=\"primary\">         \n                  <h3>{{transmision.titulo}}</h3>\n                </ion-text>\n                <p>{{transmision.fecha}}</p>\n          </ion-text>\n        </ion-col>\n      </ion-row>  \n        </ion-label>\n      </ion-item>\n    </ion-list>\n\n      \n</ion-content>\n"
 
 /***/ }),
 
@@ -86,13 +86,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_services_transmision_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/transmision.service */ "./src/app/services/transmision.service.ts");
+/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
+
 
 
 
 var TransmListaPage = /** @class */ (function () {
-    function TransmListaPage(tr) {
+    function TransmListaPage(tr, iab) {
         this.tr = tr;
-        this.url = "https://smo.org.mx";
+        this.iab = iab;
+        this.url = "";
+        this.icono = "";
+        this.tema = "";
+        this.fecha = "";
         this.cargarSesiones();
     }
     TransmListaPage.prototype.ngOnInit = function () {
@@ -108,11 +114,17 @@ var TransmListaPage = /** @class */ (function () {
                     case 1:
                         _a.transmisiones = _b.sent();
                         this.url = this.tr.url_video;
-                        console.log(this.url);
+                        this.icono = this.tr.icono;
+                        this.tema = this.tr.tema;
+                        this.fecha = this.tr.fecha;
+                        console.log(this.url, this.icono);
                         return [2 /*return*/];
                 }
             });
         });
+    };
+    TransmListaPage.prototype.abrirWeb = function (url, target) {
+        this.iab.create(url, target);
     };
     TransmListaPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -120,7 +132,8 @@ var TransmListaPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./transm-lista.page.html */ "./src/app/pages/transm-lista/transm-lista.page.html"),
             styles: [__webpack_require__(/*! ./transm-lista.page.scss */ "./src/app/pages/transm-lista/transm-lista.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_transmision_service__WEBPACK_IMPORTED_MODULE_2__["TransmisionService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_transmision_service__WEBPACK_IMPORTED_MODULE_2__["TransmisionService"],
+            _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_3__["InAppBrowser"]])
     ], TransmListaPage);
     return TransmListaPage;
 }());
@@ -169,6 +182,9 @@ var TransmisionService = /** @class */ (function () {
                                 .toPromise()
                                 .then(function (data) {
                                 _this.url_video = data.url;
+                                _this.icono = data.icono;
+                                _this.tema = data.tema;
+                                _this.fecha = data.fecha;
                                 _this.transmisiones = data.transmision;
                                 return _this.transmisiones;
                             })

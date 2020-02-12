@@ -45,7 +45,7 @@ const routes: Routes = [
             loadChildren: '../mesadirectiva/mesadirectiva.module#MesadirectivaPageModule'
           },
           {
-            path: 'casos',
+            path: 'casos/:id',
                 loadChildren: '../casos/casos.module#CasosPageModule'
           },
           {
