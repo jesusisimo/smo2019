@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { LoadingController, Platform, ToastController, AlertController } from '@ionic/angular';
 import { Network } from '@ionic-native/network/ngx';
 import { Device } from '@ionic-native/device/ngx';
+import { URL_SERVICIOS } from "../config/url.servicios";
+import { HttpClient } from '@angular/common/http';
+import { Congreso } from '../interfaces/congreso';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +14,16 @@ export class AjustesService {
   online: boolean = true;
   uuid:string= "XXXXX";
   sinleer:number=0;
+  congresos: Congreso;
   constructor(
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private platform: Platform,
     private network: Network,
     private alertCtrl: AlertController,
-    private device: Device
+    private device: Device,
+    private http: HttpClient,
+
   ) {
     this.checkConexion();
   }
@@ -76,5 +82,40 @@ async getDevice(){
     });
 
   }
+
+
+  async congreso(){
+
+    return new Promise<boolean>(resolve => {
+      let url = URL_SERVICIOS + "/congresos.php";
+      this.http.get(url)
+        .subscribe(resp => {
+           if (resp['activado']=="1") {
+            resolve(true);
+          } else {
+             resolve(false);
+         }
+        });
+    });
+
+  }
+
+  async getCongreso() {
+      
+    let url = URL_SERVICIOS + "/congresos.php";
+    let promesa = await this.http.get<Congreso>(url)
+      .toPromise()
+      .then(data => {
+        console.log(data);
+        this.congresos =  data;
+        return this.congresos;
+      })
+      .catch(error => {
+        this.loading.dismiss();
+        return Promise.reject(error);
+      });
+    return promesa;
+  
+}
 
 }

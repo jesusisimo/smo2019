@@ -27,9 +27,9 @@
 					  </ion-buttons>
 			
 		</ion-col>
-		<ion-col>
+		<ion-col *ngIf="congreso">
 				<ion-buttons (click)="navegarPagina('congresos')" expand="full" shape="round">
-					<img class="iconos" src="../../assets/icon/congres.png">
+					<img class="iconos" src="{{icono}}">
 				  </ion-buttons>
 		</ion-col>
 		<ion-col>
@@ -38,10 +38,25 @@
 				  </ion-buttons>
 		</ion-col>
 		<ion-col>
-				<ion-buttons (click)="abrirWeb('http://www.rmo.com.mx','_system')" color="secondary" expand="full" shape="round">
-						<img class="iconos" src="../../assets/icon/REVISTA.png">
-					  </ion-buttons>
-		</ion-col>
+			<ion-buttons  (click)="navegarPagina('webinars')" color="secondary" expand="full" shape="round">
+					<img class="iconos" src="../../assets/icon/webinars.png">
+				  </ion-buttons>
+	</ion-col>
+	<ion-col>
+		<ion-buttons  (click)="navegarPagina('comunicados')" color="secondary" expand="full" shape="round">
+				<img class="iconos" src="../../assets/icon/comunicados.png">
+			  </ion-buttons>
+</ion-col>
+<ion-col>
+	<ion-buttons  (click)="navegarPagina('seguro')" color="secondary" expand="full" shape="round">
+			<img class="iconos" src="../../assets/icon/seguro.png">
+		  </ion-buttons>
+</ion-col>
+<ion-col>
+	<ion-buttons (click)="abrirWeb('http://www.rmo.com.mx','_system')" color="secondary" expand="full" shape="round">
+			<img class="iconos" src="../../assets/icon/REVISTA.png">
+		  </ion-buttons>
+</ion-col>
 		<ion-col>
 				<ion-buttons (click)="navegarPagina('mesadirectiva')" expand="full" shape="round">
 					<img class="iconos" src="../../assets/icon/mesa.png">
@@ -53,10 +68,10 @@
 					  </ion-buttons>
 		</ion-col>
 		<ion-col>
-			<ion-buttons (click)="abrirWeb('http://abrelosojos.org/home','_system')"  expand="full" shape="round">
+			<ion-buttons (click)="navegarPagina('bienvenida')"   expand="full" shape="round">
 					<img class="iconos" src="../../assets/icon/abre.png">
 				  </ion-buttons>
-	</ion-col>
+		</ion-col>
 		<ion-col>
 				<ion-buttons (click)="navegarPagina('lista')"  expand="full" shape="round">
 					<img class="iconos" src="../../assets/icon/casos.png">

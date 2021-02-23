@@ -10,4 +10,5 @@
     time: string;
     mensaje: string;
     visto: number;
+    url: string;
   }

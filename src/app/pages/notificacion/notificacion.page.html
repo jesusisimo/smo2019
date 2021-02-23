@@ -19,6 +19,8 @@
       
         <ion-card-content>
          {{notificacion.mensaje}}
+         <br>
+         <ion-button *ngIf="notificacion.url" class="btn" size="small" (click)="abrirWeb(notificacion.url, '_system')">{{notificacion.url}}</ion-button>
         </ion-card-content>
       </ion-card>
 </ion-content>

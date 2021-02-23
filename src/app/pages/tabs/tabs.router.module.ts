@@ -33,8 +33,20 @@ const routes: Routes = [
             loadChildren: '../coloquios/coloquios.module#ColoquiosPageModule'
           },
           {
+            path: 'webinars',
+            loadChildren: '../webinars/webinars.module#WebinarsPageModule'
+          },
+          {
+            path: 'comunicados',
+            loadChildren: '../comunicados/comunicados.module#ComunicadosPageModule'
+          },
+          {
             path: 'congresos',
             loadChildren: '../congresos/congresos.module#CongresosPageModule'
+          },
+          {
+            path: 'seguro',
+            loadChildren: '../seguro/seguro.module#SeguroPageModule'
           },
           {
             path: 'sesiones',

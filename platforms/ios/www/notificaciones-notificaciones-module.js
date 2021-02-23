@@ -186,7 +186,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-titl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".novisto {\n  --ion-background-color: #e4e4e4; }\n\nh3 {\n  color: #373744; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvbm90aWZpY2FjaW9uZXMvbm90aWZpY2FjaW9uZXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQXVCLEVBQUE7O0FBRTNCO0VBQ0ksY0FBc0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL25vdGlmaWNhY2lvbmVzL25vdGlmaWNhY2lvbmVzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ub3Zpc3Rve1xuICAgIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XG5cdH1cbmgze1xuICAgIGNvbG9yOiByZ2IoNTUsIDU1LCA2OCk7XG59Il19 */"
+module.exports = ".novisto {\n  --ion-background-color: #e4e4e4; }\n\nh3 {\n  color: #373744; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvbm90aWZpY2FjaW9uZXMvbm90aWZpY2FjaW9uZXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQXVCLEVBQUE7O0FBSXZCO0VBQ0ksY0FBc0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL25vdGlmaWNhY2lvbmVzL25vdGlmaWNhY2lvbmVzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ub3Zpc3Rve1xuICAgIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XG4gICAgfVxuICAgIFxuXG4gICAgaDN7XG4gICAgICAgIGNvbG9yOiByZ2IoNTUsIDU1LCA2OCk7XG4gICAgfVxuIl19 */"
 
 /***/ }),
 

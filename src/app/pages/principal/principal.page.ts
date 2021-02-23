@@ -7,13 +7,17 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { Congreso } from '../../interfaces/congreso';
 
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.page.html',
   styleUrls: ['./principal.page.scss'],
 })
-export class PrincipalPage {
+export class PrincipalPage implements OnInit  {
+	congreso: boolean = false;
+	congresos: Congreso ;
+	icono:string="https://www.wsbrb-services.com/appsmo/servicios/";
 	constructor(
 		public navCtrl: NavController,
 		private iab: InAppBrowser,
@@ -28,6 +32,15 @@ export class PrincipalPage {
 		) {
 
   }
+
+  async ngOnInit(){
+	this.congreso=await this._as.congreso();
+	if(this.congreso){
+		this.congresos=await this._as.getCongreso();
+		this.icono=this.congresos.icono;
+	}
+
+}
 
 
 	async navegarPagina(pagina:any){

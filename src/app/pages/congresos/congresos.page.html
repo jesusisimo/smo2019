@@ -4,18 +4,23 @@
         <ion-menu-button></ion-menu-button>
         <ion-back-button color="light" text="Volver"></ion-back-button>
       </ion-buttons>
-      <ion-title>Congreso Nacional</ion-title>
+      <ion-title>{{titulo}}</ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content>
       <ion-card>
-        <img   src="../../assets/img/smo_final_congreso.png" (click)="viewPhoto('smo_final_congreso.png')" >
-        <ion-item color="primary" (click)="abrirWeb('https://www.servimed.com.mx/ev/2020/acapulco/','_system')">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center" color="primary">{{descripcion}}</ion-card-title>
+        </ion-card-header>
+        <img   src="{{poster}}" (click)="abrirWeb(poster,'_system')" >
+        <ion-item color="primary" (click)="abrirWeb(url,'_system')">
           <ion-buttons expand="full" class="text-center">
-          <h4>www.servimed.com.mx/ev/2020/acapulco</h4>
+          <h4>{{url}}</h4>
         </ion-buttons>
         </ion-item>
+        <br>
+
         </ion-card>
   </ion-content>
   
