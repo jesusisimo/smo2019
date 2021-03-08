@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jcinnovation.smo" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.jcinnovation.smo" version="1.2.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>SMO</name>
     <description>App Oficial de la Sociedad Mexicana de Oftalmología A.C.</description>
     <author email="jesus@jc-innovation.com" href="https://jc-innovation.com/">JC Innovation</author>
@@ -44,6 +44,11 @@
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
+        <preference name="WKWebViewOnly" value="true" />
+        <feature name="CDVWKWebViewEngine">
+            <param name="ios-package" value="CDVWKWebViewEngine" />
+        </feature>
+        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
         <allow-intent href="itms-apps:*" />
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
             <string>Necesita acceso a la ubicación para encontrar cosas cercanas</string>

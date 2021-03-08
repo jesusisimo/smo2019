@@ -6,7 +6,6 @@ import { AjustesService } from 'src/app/services/ajustes.service';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
-import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { Congreso } from '../../interfaces/congreso';
 
 @Component({
@@ -25,7 +24,6 @@ export class PrincipalPage implements OnInit  {
 		private _as:AjustesService,
 		private platform: Platform,
 		private file: File,
-		private ft:FileTransfer,
 		private fileOpener: FileOpener,
 		private document: DocumentViewer,
 		private alert:AlertController
@@ -88,21 +86,7 @@ export class PrincipalPage implements OnInit  {
 	}
 	
 	downloadAndOpenPdf() {
-		let downloadUrl = 'http://www.paaocancun2019.com/wp-content/uploads/2019/05/programa_paao2.pdf';
-		let path = this.file.dataDirectory;
-		const transfer = this.ft.create();
-	 
-		transfer.download(downloadUrl, path + 'programa.pdf').then(entry => {
-			let url = entry.toURL();
-	 
-			if (this.platform.is('ios')) {
-				this.document.viewDocument(url, 'application/pdf', {});
-			} else {
-				this.fileOpener.open(url, 'application/pdf')
-					.then(() => console.log('File is opened'))
-					.catch(e => console.log('Error opening file', e));
-			}
-		});
+		
 	}
 
 }

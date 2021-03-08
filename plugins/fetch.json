@@ -39,14 +39,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-inappbrowser": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-inappbrowser@3.0.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-network-information": {
     "source": {
       "type": "registry",
@@ -95,10 +87,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-file-transfer": {
+  "onesignal-cordova-plugin": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-file-transfer"
+      "id": "onesignal-cordova-plugin"
     },
     "is_top_level": true,
     "variables": {}
@@ -106,15 +98,23 @@
   "cordova-plugin-ionic-webview": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-ionic-webview@4.1.0"
+      "id": "cordova-plugin-ionic-webview@latest"
     },
     "is_top_level": true,
     "variables": {}
   },
-  "onesignal-cordova-plugin": {
+  "cordova-plugin-inappbrowser": {
     "source": {
       "type": "registry",
-      "id": "onesignal-cordova-plugin@^2.11.3"
+      "id": "git+https://github.com/apache/cordova-plugin-inappbrowser.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-nativestorage": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-nativestorage"
     },
     "is_top_level": true,
     "variables": {}

@@ -58,7 +58,7 @@ var MesadirectivaPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Mesa directiva</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n\n<ion-content>\n  <ion-list>\n    <ion-item *ngFor=\"let mesa of mesas\" >\n        <ion-label>\n          <h3>{{mesa.puesto}}</h3>\n          <p>{{mesa.nombre}}</p>\n        </ion-label>\n      </ion-item>    \n      \n  </ion-list>\n</ion-content>\n"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Consejo ejecutivo 2020</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n\n<ion-content>\n  <ion-list>\n    <ion-item *ngFor=\"let mesa of mesas\" >\n        <ion-label>\n          <h3>{{mesa.nombre}}</h3>\n          <p>{{mesa.puesto}}</p>\n        </ion-label>\n      </ion-item>    \n      \n  </ion-list>\n</ion-content>\n"
 
 /***/ }),
 

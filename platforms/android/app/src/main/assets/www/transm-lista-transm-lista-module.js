@@ -69,7 +69,7 @@ module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".center {\n  text-align: center; }\n\n.centerCard {\n  padding: 0 1rem;\n  margin: 1rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvdHJhbnNtLWxpc3RhL3RyYW5zbS1saXN0YS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0IsRUFBQTs7QUFJdEI7RUFDSSxlQUFlO0VBQ2pCLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3RyYW5zbS1saXN0YS90cmFuc20tbGlzdGEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNlbnRlcntcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cblxuLmNlbnRlckNhcmR7XG4gICAgcGFkZGluZzogMCAxcmVtO1xuICBtYXJnaW46IDFyZW07XG59Il19 */"
+module.exports = ".center {\n  text-align: center; }\n\n.centerCard {\n  padding: 0 1rem;\n  margin: 1rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qY2lubm92YXRpb24vSkMgSW5ub3ZhdGlvbiBEcm9wYm94L0plc3XMgXMgQ3VldmFzL01pIE1hYyAoTWFjQm9vay1Qcm8tZGUtSkMtSW5ub3ZhdGlvbi5sb2NhbCkvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvdHJhbnNtLWxpc3RhL3RyYW5zbS1saXN0YS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0IsRUFBQTs7QUFJdEI7RUFDSSxlQUFlO0VBQ2pCLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3RyYW5zbS1saXN0YS90cmFuc20tbGlzdGEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNlbnRlcntcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cblxuLmNlbnRlckNhcmR7XG4gICAgcGFkZGluZzogMCAxcmVtO1xuICBtYXJnaW46IDFyZW07XG59Il19 */"
 
 /***/ }),
 

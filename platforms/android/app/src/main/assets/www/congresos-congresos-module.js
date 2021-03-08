@@ -58,7 +58,7 @@ var CongresosPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Congreso Nacional</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n      <ion-card>\n        <img   src=\"../../assets/img/smo_final_congreso.png\" (click)=\"viewPhoto('smo_final_congreso.png')\" >\n        <ion-item color=\"primary\" (click)=\"abrirWeb('https://www.servimed.com.mx/ev/2020/acapulco/','_system')\">\n          <ion-buttons expand=\"full\" class=\"text-center\">\n          <h4>www.servimed.com.mx/ev/2020/acapulco</h4>\n        </ion-buttons>\n        </ion-item>\n        </ion-card>\n  </ion-content>\n  \n  "
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button></ion-menu-button>\n        <ion-back-button color=\"light\" text=\"Volver\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>{{titulo}}</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n      <ion-card>\n        <ion-card-header>\n          <ion-card-title class=\"ion-text-center\" color=\"primary\">{{descripcion}}</ion-card-title>\n        </ion-card-header>\n        <img   src=\"{{poster}}\" (click)=\"abrirWeb(poster,'_system')\" >\n        <ion-item color=\"primary\" (click)=\"abrirWeb(url,'_system')\">\n          <ion-buttons expand=\"full\" class=\"text-center\">\n          <h4>{{url}}</h4>\n        </ion-buttons>\n        </ion-item>\n        <br>\n\n        </ion-card>\n        <ion-card>\n        <iframe  width=\"100%\" height=\"315\" src=\"https://player.vimeo.com/video/512598159\" frameborder=\"0\" allowfullscreen></iframe>\n      </ion-card>\n  </ion-content>\n  \n  "
 
 /***/ }),
 
@@ -69,7 +69,7 @@ module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h4 {\n  font-size: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvY29uZ3Jlc29zL2NvbmdyZXNvcy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRyxlQUFlLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9jb25ncmVzb3MvY29uZ3Jlc29zLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImg0e1xuICAgZm9udC1zaXplOiAxNXB4O1xufVxuIl19 */"
+module.exports = "h4 {\n  font-size: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qY2lubm92YXRpb24vSkMgSW5ub3ZhdGlvbiBEcm9wYm94L0plc3XMgXMgQ3VldmFzL01pIE1hYyAoTWFjQm9vay1Qcm8tZGUtSkMtSW5ub3ZhdGlvbi5sb2NhbCkvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvY29uZ3Jlc29zL2NvbmdyZXNvcy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRyxlQUFlLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9jb25ncmVzb3MvY29uZ3Jlc29zLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImg0e1xuICAgZm9udC1zaXplOiAxNXB4O1xufVxuIl19 */"
 
 /***/ }),
 
@@ -88,18 +88,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/photo-viewer/ngx */ "./node_modules/@ionic-native/photo-viewer/ngx/index.js");
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
+/* harmony import */ var src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/ajustes.service */ "./src/app/services/ajustes.service.ts");
+
 
 
 
 
 
 var CongresosPage = /** @class */ (function () {
-    function CongresosPage(photoViewer, iab, file) {
+    function CongresosPage(photoViewer, iab, file, _as) {
         this.photoViewer = photoViewer;
         this.iab = iab;
         this.file = file;
+        this._as = _as;
+        this.titulo = "Congreso";
+        this.url = "";
+        this.poster = "";
+        this.descripcion = "";
     }
     CongresosPage.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this._as.getCongreso()];
+                    case 1:
+                        _a.congreso = _b.sent();
+                        this.url = this.congreso.url;
+                        this.titulo = this.congreso.titulo;
+                        this.poster = this.congreso.imagen;
+                        this.descripcion = this.congreso.descripcion;
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     CongresosPage.prototype.viewPhoto = function (img) {
         var imageName = img;
@@ -116,7 +140,8 @@ var CongresosPage = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_2__["PhotoViewer"],
             _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__["InAppBrowser"],
-            _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_3__["File"]])
+            _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_3__["File"],
+            src_app_services_ajustes_service__WEBPACK_IMPORTED_MODULE_5__["AjustesService"]])
     ], CongresosPage);
     return CongresosPage;
 }());

@@ -49,7 +49,7 @@ var NotificacionPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-title>Notificación</ion-title>\n        <ion-buttons slot=\"end\">\n          <ion-icon slot=\"icon-only\" (click)=\"salir()\" name=\"close\"></ion-icon>\n        </ion-buttons>\n      </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>{{notificacion.titulo}}</ion-card-title>\n          <ion-card-subtitle>{{notificacion.time}}</ion-card-subtitle>\n        </ion-card-header>\n      \n        <ion-card-content>\n         {{notificacion.mensaje}}\n        </ion-card-content>\n      </ion-card>\n</ion-content>\n"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-title>Notificación</ion-title>\n        <ion-buttons slot=\"end\">\n          <ion-icon slot=\"icon-only\" (click)=\"salir()\" name=\"close\"></ion-icon>\n        </ion-buttons>\n      </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>{{notificacion.titulo}}</ion-card-title>\n          <ion-card-subtitle>{{notificacion.time}}</ion-card-subtitle>\n        </ion-card-header>\n      \n        <ion-card-content>\n         {{notificacion.mensaje}}\n         <br>\n         <ion-button *ngIf=\"notificacion.url\" class=\"btn\" size=\"small\" (click)=\"abrirWeb(notificacion.url, '_system')\">{{notificacion.url}}</ion-button>\n        </ion-card-content>\n      </ion-card>\n</ion-content>\n"
 
 /***/ }),
 
@@ -77,18 +77,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
+
 
 
 
 var NotificacionPage = /** @class */ (function () {
-    function NotificacionPage(modalCtrl) {
+    function NotificacionPage(modalCtrl, iab) {
         this.modalCtrl = modalCtrl;
+        this.iab = iab;
     }
     NotificacionPage.prototype.ngOnInit = function () {
         console.log(this.notificacion);
     };
     NotificacionPage.prototype.salir = function () {
         this.modalCtrl.dismiss();
+    };
+    NotificacionPage.prototype.abrirWeb = function (url, target) {
+        this.iab.create(url, target);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -100,7 +106,7 @@ var NotificacionPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./notificacion.page.html */ "./src/app/pages/notificacion/notificacion.page.html"),
             styles: [__webpack_require__(/*! ./notificacion.page.scss */ "./src/app/pages/notificacion/notificacion.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"], _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_3__["InAppBrowser"]])
     ], NotificacionPage);
     return NotificacionPage;
 }());
@@ -186,7 +192,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-titl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".novisto {\n  --ion-background-color: #e4e4e4; }\n\nh3 {\n  color: #373744; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvbm90aWZpY2FjaW9uZXMvbm90aWZpY2FjaW9uZXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQXVCLEVBQUE7O0FBSXZCO0VBQ0ksY0FBc0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL25vdGlmaWNhY2lvbmVzL25vdGlmaWNhY2lvbmVzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ub3Zpc3Rve1xuICAgIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XG4gICAgfVxuICAgIFxuXG4gICAgaDN7XG4gICAgICAgIGNvbG9yOiByZ2IoNTUsIDU1LCA2OCk7XG4gICAgfVxuIl19 */"
+module.exports = ".novisto {\n  --ion-background-color: #e4e4e4; }\n\nh3 {\n  color: #373744; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qY2lubm92YXRpb24vSkMgSW5ub3ZhdGlvbiBEcm9wYm94L0plc3XMgXMgQ3VldmFzL01pIE1hYyAoTWFjQm9vay1Qcm8tZGUtSkMtSW5ub3ZhdGlvbi5sb2NhbCkvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvbm90aWZpY2FjaW9uZXMvbm90aWZpY2FjaW9uZXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQXVCLEVBQUE7O0FBSXZCO0VBQ0ksY0FBc0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL25vdGlmaWNhY2lvbmVzL25vdGlmaWNhY2lvbmVzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ub3Zpc3Rve1xuICAgIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XG4gICAgfVxuICAgIFxuXG4gICAgaDN7XG4gICAgICAgIGNvbG9yOiByZ2IoNTUsIDU1LCA2OCk7XG4gICAgfVxuIl19 */"
 
 /***/ }),
 

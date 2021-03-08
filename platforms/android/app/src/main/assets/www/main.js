@@ -466,6 +466,10 @@ var map = {
 		"./src/app/pages/coloquios/coloquios.module.ts",
 		"coloquios-coloquios-module"
 	],
+	"../comunicados/comunicados.module": [
+		"./src/app/pages/comunicados/comunicados.module.ts",
+		"comunicados-comunicados-module"
+	],
 	"../congresista/congresista.module": [
 		"./src/app/pages/congresista/congresista.module.ts",
 		"common",
@@ -536,6 +540,10 @@ var map = {
 		"common",
 		"programa-programa-module"
 	],
+	"../seguro/seguro.module": [
+		"./src/app/pages/seguro/seguro.module.ts",
+		"seguro-seguro-module"
+	],
 	"../sesiones/sesiones.module": [
 		"./src/app/pages/sesiones/sesiones.module.ts",
 		"sesiones-sesiones-module"
@@ -552,6 +560,10 @@ var map = {
 	"../videos/videos.module": [
 		"./src/app/pages/videos/videos.module.ts",
 		"videos-videos-module"
+	],
+	"../webinars/webinars.module": [
+		"./src/app/pages/webinars/webinars.module.ts",
+		"webinars-webinars-module"
 	],
 	"./pages/tabs/tabs.module": [
 		"./src/app/pages/tabs/tabs.module.ts",
@@ -598,7 +610,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+    { path: '', loadChildren: './pages/tabs/tabs.module#TabsPageModule' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -739,9 +751,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_device_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/device/ngx */ "./node_modules/@ionic-native/device/ngx/index.js");
 /* harmony import */ var _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/onesignal/ngx */ "./node_modules/@ionic-native/onesignal/ngx/index.js");
 /* harmony import */ var _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ionic-native/file-opener/ngx */ "./node_modules/@ionic-native/file-opener/ngx/index.js");
-/* harmony import */ var _ionic_native_file_transfer_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/file-transfer/ngx */ "./node_modules/@ionic-native/file-transfer/ngx/index.js");
-/* harmony import */ var _pages_post_imagen_post_imagen_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pages/post-imagen/post-imagen.component */ "./src/app/pages/post-imagen/post-imagen.component.ts");
-
+/* harmony import */ var _pages_post_imagen_post_imagen_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/post-imagen/post-imagen.component */ "./src/app/pages/post-imagen/post-imagen.component.ts");
 
 
 
@@ -768,8 +778,8 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _components_cartel_cartel_component__WEBPACK_IMPORTED_MODULE_9__["CartelComponent"], _pages_post_imagen_post_imagen_component__WEBPACK_IMPORTED_MODULE_21__["PostImagenComponent"]],
-            entryComponents: [_components_cartel_cartel_component__WEBPACK_IMPORTED_MODULE_9__["CartelComponent"], _pages_post_imagen_post_imagen_component__WEBPACK_IMPORTED_MODULE_21__["PostImagenComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _components_cartel_cartel_component__WEBPACK_IMPORTED_MODULE_9__["CartelComponent"], _pages_post_imagen_post_imagen_component__WEBPACK_IMPORTED_MODULE_20__["PostImagenComponent"]],
+            entryComponents: [_components_cartel_cartel_component__WEBPACK_IMPORTED_MODULE_9__["CartelComponent"], _pages_post_imagen_post_imagen_component__WEBPACK_IMPORTED_MODULE_20__["PostImagenComponent"]],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
@@ -787,7 +797,6 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_16__["File"],
                 _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_12__["Network"],
                 _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_19__["FileOpener"],
-                _ionic_native_file_transfer_ngx__WEBPACK_IMPORTED_MODULE_20__["FileTransfer"],
                 _ionic_native_document_viewer_ngx__WEBPACK_IMPORTED_MODULE_14__["DocumentViewer"],
                 _ionic_native_device_ngx__WEBPACK_IMPORTED_MODULE_17__["Device"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
@@ -907,7 +916,7 @@ module.exports = "<ion-content [forceOverscroll]=\"false\" color=\"dark\" fullsc
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".botonCerrar {\n  padding-left: 85%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvcG9zdC1pbWFnZW4vcG9zdC1pbWFnZW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxpQkFBaUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Bvc3QtaW1hZ2VuL3Bvc3QtaW1hZ2VuLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4uYm90b25DZXJyYXIge1xuICAgIHBhZGRpbmctbGVmdDogODUlO1xufSJdfQ== */"
+module.exports = ".botonCerrar {\n  padding-left: 85%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qY2lubm92YXRpb24vSkMgSW5ub3ZhdGlvbiBEcm9wYm94L0plc3XMgXMgQ3VldmFzL01pIE1hYyAoTWFjQm9vay1Qcm8tZGUtSkMtSW5ub3ZhdGlvbi5sb2NhbCkvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvcG9zdC1pbWFnZW4vcG9zdC1pbWFnZW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxpQkFBaUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Bvc3QtaW1hZ2VuL3Bvc3QtaW1hZ2VuLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4uYm90b25DZXJyYXIge1xuICAgIHBhZGRpbmctbGVmdDogODUlO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -973,19 +982,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/network/ngx */ "./node_modules/@ionic-native/network/ngx/index.js");
 /* harmony import */ var _ionic_native_device_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/device/ngx */ "./node_modules/@ionic-native/device/ngx/index.js");
+/* harmony import */ var _config_url_servicios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../config/url.servicios */ "./src/app/config/url.servicios.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
 
 
 
 
 
 var AjustesService = /** @class */ (function () {
-    function AjustesService(loadingCtrl, toastCtrl, platform, network, alertCtrl, device) {
+    function AjustesService(loadingCtrl, toastCtrl, platform, network, alertCtrl, device, http) {
         this.loadingCtrl = loadingCtrl;
         this.toastCtrl = toastCtrl;
         this.platform = platform;
         this.network = network;
         this.alertCtrl = alertCtrl;
         this.device = device;
+        this.http = http;
         this.online = true;
         this.uuid = "XXXXX";
         this.sinleer = 0;
@@ -1092,6 +1106,51 @@ var AjustesService = /** @class */ (function () {
             _this.online = true;
         });
     };
+    AjustesService.prototype.congreso = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve) {
+                        var url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_5__["URL_SERVICIOS"] + "/congresos.php";
+                        _this.http.get(url)
+                            .subscribe(function (resp) {
+                            if (resp['activado'] == "1") {
+                                resolve(true);
+                            }
+                            else {
+                                resolve(false);
+                            }
+                        });
+                    })];
+            });
+        });
+    };
+    AjustesService.prototype.getCongreso = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var url, promesa;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        url = _config_url_servicios__WEBPACK_IMPORTED_MODULE_5__["URL_SERVICIOS"] + "/congresos.php";
+                        return [4 /*yield*/, this.http.get(url)
+                                .toPromise()
+                                .then(function (data) {
+                                console.log(data);
+                                _this.congresos = data;
+                                return _this.congresos;
+                            })
+                                .catch(function (error) {
+                                _this.loading.dismiss();
+                                return Promise.reject(error);
+                            })];
+                    case 1:
+                        promesa = _a.sent();
+                        return [2 /*return*/, promesa];
+                }
+            });
+        });
+    };
     AjustesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
@@ -1101,7 +1160,8 @@ var AjustesService = /** @class */ (function () {
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"],
             _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_3__["Network"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"],
-            _ionic_native_device_ngx__WEBPACK_IMPORTED_MODULE_4__["Device"]])
+            _ionic_native_device_ngx__WEBPACK_IMPORTED_MODULE_4__["Device"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"]])
     ], AjustesService);
     return AjustesService;
 }());
@@ -2092,7 +2152,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/brb/Documents/GitHub/smo2019/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/jcinnovation/JC Innovation Dropbox/Jesús Cuevas/Mi Mac (MacBook-Pro-de-JC-Innovation.local)/Documents/GitHub/smo2019/src/main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -100,7 +100,7 @@ module.exports = "<ion-tabs>\n  <!-- <ion-toolbar class=\"publicidad\">\n    <io
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".publicidad {\n  --padding-top: 0px;\n  --padding-bottom: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  --min-height: 44px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9icmIvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvdGFicy90YWJzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFjO0VBRWxCLHFCQUFpQjtFQUVqQixvQkFBZ0I7RUFFaEIsa0JBQWM7RUFFZCxrQkFBYSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvdGFicy90YWJzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wdWJsaWNpZGFke1xuICAgIC0tcGFkZGluZy10b3A6IDBweDtcblxuLS1wYWRkaW5nLWJvdHRvbTogMHB4O1xuXG4tLXBhZGRpbmctc3RhcnQ6IDBweDtcblxuLS1wYWRkaW5nLWVuZDogMHB4O1xuXG4tLW1pbi1oZWlnaHQ6IDQ0cHg7XG59XG4iXX0= */"
+module.exports = ".publicidad {\n  --padding-top: 0px;\n  --padding-bottom: 0px;\n  --padding-start: 0px;\n  --padding-end: 0px;\n  --min-height: 44px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qY2lubm92YXRpb24vSkMgSW5ub3ZhdGlvbiBEcm9wYm94L0plc3XMgXMgQ3VldmFzL01pIE1hYyAoTWFjQm9vay1Qcm8tZGUtSkMtSW5ub3ZhdGlvbi5sb2NhbCkvRG9jdW1lbnRzL0dpdEh1Yi9zbW8yMDE5L3NyYy9hcHAvcGFnZXMvdGFicy90YWJzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFjO0VBRWxCLHFCQUFpQjtFQUVqQixvQkFBZ0I7RUFFaEIsa0JBQWM7RUFFZCxrQkFBYSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvdGFicy90YWJzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wdWJsaWNpZGFke1xuICAgIC0tcGFkZGluZy10b3A6IDBweDtcblxuLS1wYWRkaW5nLWJvdHRvbTogMHB4O1xuXG4tLXBhZGRpbmctc3RhcnQ6IDBweDtcblxuLS1wYWRkaW5nLWVuZDogMHB4O1xuXG4tLW1pbi1oZWlnaHQ6IDQ0cHg7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -233,8 +233,20 @@ var routes = [
                         loadChildren: '../coloquios/coloquios.module#ColoquiosPageModule'
                     },
                     {
+                        path: 'webinars',
+                        loadChildren: '../webinars/webinars.module#WebinarsPageModule'
+                    },
+                    {
+                        path: 'comunicados',
+                        loadChildren: '../comunicados/comunicados.module#ComunicadosPageModule'
+                    },
+                    {
                         path: 'congresos',
                         loadChildren: '../congresos/congresos.module#CongresosPageModule'
+                    },
+                    {
+                        path: 'seguro',
+                        loadChildren: '../seguro/seguro.module#SeguroPageModule'
                     },
                     {
                         path: 'sesiones',

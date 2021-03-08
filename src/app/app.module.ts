@@ -19,7 +19,6 @@ import { File } from '@ionic-native/file/ngx';
 import { Device } from '@ionic-native/device/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
-import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { PostImagenComponent } from './pages/post-imagen/post-imagen.component'
 
 @NgModule({
@@ -42,7 +41,6 @@ import { PostImagenComponent } from './pages/post-imagen/post-imagen.component'
     File,
     Network,
     FileOpener,
-    FileTransfer,
     DocumentViewer,
     Device,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

@@ -1,28 +1,28 @@
 {
-  "_from": "onesignal-cordova-plugin",
-  "_id": "onesignal-cordova-plugin@2.8.3",
+  "_from": "onesignal-cordova-plugin@2.11.3",
+  "_id": "onesignal-cordova-plugin@2.11.3",
   "_inBundle": false,
-  "_integrity": "sha512-DKZGxrN9Tqj6z27Z5ix+9jpCaD+BsdpoAMlCDGH3gZAafkdp1PaRCHDcXMeXkmImFnYqP0gBThYIdSIN4mlXfQ==",
+  "_integrity": "sha512-vWPmXR4qML06Fg785bg6SW3mOJImQteZKqEZqKBO5vC0cvtLQXofhTdUAOFAQRlBAUavZbEIXF7ZGFeQCA1ukA==",
   "_location": "/onesignal-cordova-plugin",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "onesignal-cordova-plugin",
+    "raw": "onesignal-cordova-plugin@2.11.3",
     "name": "onesignal-cordova-plugin",
     "escapedName": "onesignal-cordova-plugin",
-    "rawSpec": "",
+    "rawSpec": "2.11.3",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "2.11.3"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-2.8.3.tgz",
-  "_shasum": "9de0464c7dbd2715016d2c4bf093abb73be46445",
-  "_spec": "onesignal-cordova-plugin",
-  "_where": "/Users/brb/Documents/GitHub/smo2019",
+  "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-2.11.3.tgz",
+  "_shasum": "3f105562f3b7dac9b40a05246df18ca52c51979b",
+  "_spec": "onesignal-cordova-plugin@2.11.3",
+  "_where": "/Users/jcinnovation/JC Innovation Dropbox/Jesús Cuevas/Mi Mac (MacBook-Pro-de-JC-Innovation.local)/Documents/GitHub/smo2019",
   "author": {
     "name": "Josh Kasten, Brad Hesse, Rodrigo Gomez-Palacio"
   },
@@ -92,5 +92,5 @@
     "type": "git",
     "url": "git+https://github.com/onesignal/OneSignal-Cordova-SDK.git"
   },
-  "version": "2.8.3"
+  "version": "2.11.3"
 }
