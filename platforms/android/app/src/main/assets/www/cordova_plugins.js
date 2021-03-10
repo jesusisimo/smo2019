@@ -207,14 +207,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-inappbrowser.inappbrowser",
-      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-      "pluginId": "cordova-plugin-inappbrowser",
-      "clobbers": [
-        "cordova.InAppBrowser.open"
-      ]
-    },
-    {
       "id": "cordova-plugin-ionic-keyboard.keyboard",
       "file": "plugins/cordova-plugin-ionic-keyboard/www/android/keyboard.js",
       "pluginId": "cordova-plugin-ionic-keyboard",
@@ -304,7 +296,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-document-viewer": "0.9.10",
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-file-opener2": "2.2.0",
-    "cordova-plugin-inappbrowser": "5.0.1-dev",
     "cordova-plugin-ionic-keyboard": "2.1.3",
     "cordova-plugin-ionic-webview": "5.0.0",
     "cordova-plugin-nativestorage": "2.3.2",
