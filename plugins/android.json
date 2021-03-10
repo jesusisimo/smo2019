@@ -23,7 +23,16 @@
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.jcinnovation.smo"
     },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.jcinnovation.smo"
+    },
     "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.jcinnovation.smo"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.jcinnovation.smo"
+    },
+    "cordova-plugin-nativestorage": {
       "PACKAGE_NAME": "com.jcinnovation.smo"
     },
     "cordova-plugin-network-information": {
@@ -42,12 +51,6 @@
       "PACKAGE_NAME": "com.jcinnovation.smo"
     },
     "onesignal-cordova-plugin": {
-      "PACKAGE_NAME": "com.jcinnovation.smo"
-    },
-    "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "com.jcinnovation.smo"
-    },
-    "cordova-plugin-nativestorage": {
       "PACKAGE_NAME": "com.jcinnovation.smo"
     }
   },

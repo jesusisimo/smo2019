@@ -53,9 +53,6 @@ MIT
 @ionic-native/file-opener
 MIT
 
-@ionic-native/file-transfer
-MIT
-
 @ionic-native/in-app-browser
 MIT
 

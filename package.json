@@ -39,13 +39,14 @@
     "@ionic/pro": "2.0.4",
     "@ionic/storage": "^2.2.0",
     "com-sarriaroman-photoviewer": "1.2.2",
-    "cordova-android": "8.1.0",
     "cordova-plugin-document-viewer": "0.9.10",
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-file-opener2": "2.2.0",
     "cordova-plugin-network-information": "2.0.1",
+    "cordova-res": "^0.15.3",
     "cordova-sqlite-storage": "3.2.0",
     "core-js": "^2.6.12",
+    "generate": "^0.14.0",
     "ngx-pinch-zoom": "^1.2.5",
     "paulstelzer-ionic-angular-toolkit": "^2.0.0",
     "rxjs": "^6.6.6",
@@ -65,6 +66,7 @@
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^10.17.55",
     "codelyzer": "~4.5.0",
+    "cordova-android": "^9.0.0",
     "cordova-ios": "^6.2.0",
     "cordova-plugin-device": "^2.0.3",
     "cordova-plugin-inappbrowser": "git+https://github.com/apache/cordova-plugin-inappbrowser.git",
@@ -108,8 +110,8 @@
       "cordova-plugin-nativestorage": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }
