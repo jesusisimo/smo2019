@@ -7,6 +7,24 @@ import { IonicModule } from '@ionic/angular';
 
 import { CongresosPage } from './congresos.page';
 
+
+
+
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+@Pipe({
+  name: 'safe'
+})
+export class VideoPipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) { }
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+}
+
+
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +39,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CongresosPage]
+  exports: [
+    VideoPipe
+  ],
+  declarations: [CongresosPage, VideoPipe]
 })
 export class CongresosPageModule {}

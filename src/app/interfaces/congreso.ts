@@ -6,4 +6,5 @@ export interface Congreso {
   url: string;
   activado: string;
   descripcion: string;
+  video: string;
 }
